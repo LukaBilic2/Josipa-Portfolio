@@ -1,0 +1,42 @@
+:root {
+  --black-color: rgba(0, 0, 0, 1);
+  --white-color: rgba(255, 255, 255, 1);
+  --tuscan-color: #793232;
+  --midnight-color: #213141;
+  --curry-color: #825d1e;
+  --nickel-color: #757272;
+  /* Body font */
+  --ff-primary: "Book Antiqua", sans-serif;
+  --title-size: 40px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: var(--white-color);
+}
+
+button {
+  min-width: 290px;
+  height: 65px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--curry-color);
+  color: var(--white-color);
+}
+
+button:active {
+  border: 1px solid black;
+}
