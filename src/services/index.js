@@ -1,4 +1,8 @@
 export { default as Home } from '../components/Home/Home.jsx';
+export { default as Agenda } from '../components/Agenda/Agenda.jsx';
+export { default as About } from '../components/About/About.jsx';
+export { default as Gallery } from '../components/Gallery/Gallery.jsx';
+export { default as Contact } from '../components/Contact/Contact.jsx';
 export { default as Signature } from '../images/signature-white.webp';
 export { default as facebookIcon } from '../images/facebook-white.webp';
 export { default as instagramIcon } from '../images/instagram-white.webp';
