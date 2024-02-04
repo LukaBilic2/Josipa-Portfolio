@@ -1,32 +1,32 @@
 import styles from './Agenda.module.css';
 import { Signature, kazaliste, facebookIcon, instagramIcon, youtubeIcon } from '../../services';
+import { NavLink } from 'react-router-dom';
+
 const Agenda = () => {
   return (
     <div>
-      <header>
-        <div className={styles['home-background-image']}></div>
+      <header className={styles['agenda-home-header']}>
+        <div className={styles['agenda-background-image']}></div>
         <div className={styles['home-header']}>
           <img src={Signature} alt="Signature" />
 
           <nav>
             <ul className={styles.navigation}>
-              <li>
-                <a href="" className={styles.current}>
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="">About</a>
-              </li>
-              <li>
-                <a href="">Gallery</a>
-              </li>
-              <li>
-                <a href="">Agenda</a>
-              </li>
-              <li>
-                <a href="">Contact</a>
-              </li>
+              <NavLink to="/">
+                <li className={styles['nav-li']}>Home</li>
+              </NavLink>
+              <NavLink to="/about">
+                <li className={styles['nav-li']}>About</li>
+              </NavLink>
+              <NavLink to="/gallery">
+                <li className={styles['nav-li']}>Gallery</li>
+              </NavLink>
+              <NavLink to="/agenda">
+                <li className={styles['nav-li']}>Agenda</li>
+              </NavLink>
+              <NavLink to="/contact">
+                <li className={styles['nav-li']}>Contact</li>
+              </NavLink>
             </ul>
           </nav>
         </div>
@@ -47,7 +47,7 @@ const Agenda = () => {
               </div>
               <p>
                 Name of the event <br />
-                Zagreb, Croatia
+                <span>Zagreb, Croatia</span>
               </p>
             </li>
             <hr />
@@ -62,7 +62,7 @@ const Agenda = () => {
               </div>
               <p>
                 Name of the event <br />
-                Zagreb, Croatia
+                <span>Zagreb, Croatia</span>
               </p>
             </li>
             <hr />
@@ -77,7 +77,7 @@ const Agenda = () => {
               </div>
               <p>
                 Name of the event <br />
-                Zagreb, Croatia
+                <span>Zagreb, Croatia</span>
               </p>
             </li>
             <hr />
@@ -92,7 +92,7 @@ const Agenda = () => {
               </div>
               <p>
                 Name of the event <br />
-                Zagreb, Croatia
+                <span>Zagreb, Croatia</span>
               </p>
             </li>
             <hr />

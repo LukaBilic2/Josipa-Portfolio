@@ -1,9 +1,14 @@
-import { Home } from './services';
+import { Agenda, Contact, Home } from './services';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
     <div>
-      <Home></Home>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/agenda" element={<Agenda />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
     </div>
   );
 }

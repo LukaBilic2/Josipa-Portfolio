@@ -3,7 +3,7 @@
     font-size: 20px;
 }
 
-header {
+.agenda-home-header {
     height: 75vh;
     color: var(--white-color);
 }
@@ -21,7 +21,7 @@ img[alt='Signature'] {
     padding: 15px;
 }
 
-.home-background-image {
+.agenda-background-image {
     background-image: url(../../images/Agenda/home-page-agenda.avif);
     background-size: cover;
     background-position: center 30%;
@@ -42,6 +42,7 @@ img[alt='Signature'] {
 
 h2 {
     color: var(--tuscan-color);
+    font-weight: bold;
 }
 
 .upcoming-container {
@@ -61,6 +62,20 @@ h2 {
     width: 20%;
     align-items: center;
     justify-content: space-evenly;
+}
+
+li>div>p {
+    color: var(--tuscan-color);
+    font-weight: bold;
+}
+
+li>p {
+    color: var(--midnight-color);
+    font-weight: bold;
+}
+
+span {
+    font-weight: normal;
 }
 
 .upcoming-container>button,
@@ -118,7 +133,12 @@ main {
 }
 
 a>img:hover,
-nav>ul>li>a:hover {
+.nav-li:hover {
     background-color: var(--curry-color);
     border-radius: 5px;
+    cursor: pointer;
+}
+
+.nav-li {
+    padding: 3px;
 }

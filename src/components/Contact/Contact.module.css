@@ -1,0 +1,65 @@
+* {
+    font-family: var(--ff-primary);
+    font-size: 20px;
+}
+
+.contact-home-header {
+    height: 86vh;
+    color: var(--white-color);
+}
+
+img[alt='Signature'] {
+    position: relative;
+    left: 30px;
+    top: 5px;
+}
+
+.home-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.contact-background-image {
+    background-image: url(../../images/contact/contact-background.avif);
+    background-size: cover;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 86%;
+    position: fixed;
+    z-index: -2;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-right: 40px;
+    list-style: none;
+}
+
+h2 {
+    color: var(--tuscan-color);
+    font-weight: bold;
+}
+
+.icons {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-right: 6.5%;
+    gap: 5px;
+}
+
+a>img:hover,
+.nav-li:hover {
+    background-color: var(--curry-color);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.nav-li {
+    padding: 3px;
+}

@@ -40,3 +40,8 @@ button {
 button:active {
   border: 1px solid black;
 }
+
+nav .active {
+  background-color: var(--curry-color);
+  border-radius: 5px;
+}

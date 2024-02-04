@@ -11,34 +11,33 @@ import {
   image4,
   image7,
 } from '../../services';
+import { NavLink } from 'react-router-dom';
 
 const Home = () => {
   return (
     <div className="sve placeholder">
-      <header>
+      <header className={styles['main-home-header']}>
         <div className={styles['home-background-image']}></div>
         <div className={styles['home-header']}>
           <img src={Signature} alt="Signature" />
 
           <nav>
             <ul className={styles.navigation}>
-              <li>
-                <a href="" className={styles.current}>
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="">About</a>
-              </li>
-              <li>
-                <a href="">Gallery</a>
-              </li>
-              <li>
-                <a href="">Agenda</a>
-              </li>
-              <li>
-                <a href="">Contact</a>
-              </li>
+              <NavLink to="/">
+                <li className={styles['nav-li']}>Home</li>
+              </NavLink>{' '}
+              <NavLink to="/about">
+                <li className={styles['nav-li']}>About</li>
+              </NavLink>{' '}
+              <NavLink to="/gallery">
+                <li className={styles['nav-li']}>Gallery</li>
+              </NavLink>
+              <NavLink to="/agenda">
+                <li className={styles['nav-li']}>Agenda</li>
+              </NavLink>{' '}
+              <NavLink to="/contact">
+                <li className={styles['nav-li']}>Contact</li>
+              </NavLink>
             </ul>
           </nav>
         </div>
@@ -87,7 +86,7 @@ const Home = () => {
               </div>
               <p>
                 Name of the event <br />
-                Zagreb, Croatia
+                <span>Zagreb, Croatia</span>
               </p>
             </li>
             <hr />
@@ -102,7 +101,7 @@ const Home = () => {
               </div>
               <p>
                 Name of the event <br />
-                Zagreb, Croatia
+                <span>Zagreb, Croatia</span>
               </p>
             </li>
             <hr />
@@ -151,11 +150,15 @@ const Home = () => {
         <section>
           <h2>GALLERY</h2>
           <div className={styles['images-container']}>
-            <img className={styles['image-1']} src={image1} alt="image1" />
-            <img className={styles['image-4']} src={image4} alt="image4" />
-            <img className={styles['image-3']} src={image3} alt="image3" />
-            <img className={styles['image-7']} src={image7} alt="image7" />
-            <img className={styles['image-2']} src={image2} alt="image2" />
+            <div className={styles['left-images-container']}>
+              <img className={styles['image-1']} src={image1} alt="image1" />
+              <img className={styles['image-7']} src={image7} alt="image7" />
+            </div>
+            <div className={styles['right-images-container']}>
+              <img className={styles['image-4']} src={image4} alt="image4" />
+              <img className={styles['image-3']} src={image3} alt="image3" />
+              <img className={styles['image-2']} src={image2} alt="image2" />
+            </div>
           </div>
           <button>See all</button>
         </section>
