@@ -1,0 +1,79 @@
+* {
+    font-family: var(--ff-primary);
+    font-size: 20px;
+}
+
+.about-home-header {
+    height: 75vh;
+    color: var(--white-color);
+}
+
+img[alt='Signature'] {
+    position: relative;
+    left: 30px;
+    top: 5px;
+}
+
+.home-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.about-background-image {
+    background-image: url(../../images/About/home-page-about.avif);
+    background-size: cover;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 75%;
+    position: fixed;
+    z-index: -2;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-right: 40px;
+    list-style: none;
+}
+
+a>img:hover,
+.nav-li:hover {
+    background-color: var(--curry-color);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.nav-li {
+    padding: 3px;
+}
+
+.about-icons {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-right: 4%;
+    gap: 5px;
+    margin-top: 30%;
+}
+
+h2 {
+    color: var(--tuscan-color);
+    font-weight: bold;
+}
+
+main>div.bio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5% 0 0 0;
+}
+
+.short-bio {
+    text-align: center;
+    width: 80%;
+    padding-bottom: 3%;
+}

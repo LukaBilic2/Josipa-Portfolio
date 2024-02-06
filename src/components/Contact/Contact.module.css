@@ -14,7 +14,7 @@ img[alt='Signature'] {
     top: 5px;
 }
 
-.home-header {
+.contact-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -32,7 +32,7 @@ img[alt='Signature'] {
     z-index: -2;
 }
 
-.navigation {
+.contact-navigation {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -40,17 +40,13 @@ img[alt='Signature'] {
     list-style: none;
 }
 
-h2 {
-    color: var(--tuscan-color);
-    font-weight: bold;
-}
-
-.icons {
+.contact-icons {
     display: flex;
     justify-content: end;
     align-items: center;
-    padding-right: 6.5%;
+    padding-right: 4%;
     gap: 5px;
+    margin-top: 16.5%;
 }
 
 a>img:hover,
@@ -62,4 +58,123 @@ a>img:hover,
 
 .nav-li {
     padding: 3px;
+}
+
+.quote-contact {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: var(--white-color);
+    width: 40%;
+    padding-top: 13.5%;
+    margin-left: 18%;
+}
+
+.quote-contact>p>em,
+.quote-contact>footer>p>i {
+    font-size: 30px;
+}
+
+.quote-contact>footer {
+    align-self: flex-end;
+    margin-top: 1.5%;
+}
+
+.main-contact {
+    background-color: white;
+}
+
+h2 {
+    color: var(--tuscan-color);
+    font-weight: bold;
+}
+
+.h2-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2% 0 1.5% 0;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+}
+
+.contact-item {
+    border: 1px solid black;
+    min-height: 70px;
+}
+
+.left-contact {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    gap: 15px;
+}
+
+.right-contact {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    gap: 15px;
+}
+
+input,
+textarea {
+    padding-left: 4px;
+}
+
+.right-contact div.contact-item {
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    border: none;
+}
+
+div.contact-item span {
+    font-size: 16px;
+    padding-bottom: 3%;
+}
+
+.pdf-a {
+    color: var(--black-color);
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 8%;
+    text-decoration: underline;
+}
+
+.contact-footer {
+    background-color: rgba(33, 49, 65, 255);
+    width: 100%;
+    height: 110px;
+}
+
+.contact-footer>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5%;
+}
+
+.contact-footer>div>img {
+    padding-left: 2%;
+}
+
+.contact-footer>p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--nickel-color);
+}
+
+.contact-footer-icons {
+    display: flex;
+    align-items: center;
+    padding-right: 3%;
+    gap: 5px;
 }

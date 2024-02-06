@@ -13,5 +13,5 @@ export { default as image2 } from '../images/Gallery/image-2-big.avif';
 export { default as image3 } from '../images/Gallery/image-3-big.avif';
 export { default as image4 } from '../images/Gallery/image-4-big.avif';
 export { default as image7 } from '../images/Gallery/image-7-big.avif';
-// export { default as } from '';
+export { default as pdf } from '../images/contact/Josipa-Bilic-CV.pdf';
 // export { default as } from '';

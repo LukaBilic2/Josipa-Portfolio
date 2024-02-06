@@ -70,7 +70,7 @@ const Home = () => {
         </div>
       </header>
 
-      <main>
+      <main className={styles['main-home']}>
         <div className={styles['upcoming-container']}>
           <h2>UPCOMING PERFORMANCES</h2>
           <ul>
@@ -108,7 +108,7 @@ const Home = () => {
           </ul>
           <button>See all</button>
         </div>
-        <blockquote>
+        <blockquote className={styles['quote-home']}>
           <p>
             <em>
               &ldquo;The beauty of her voice is unmistakable, paired with its excellent preparation, musicality, obvious

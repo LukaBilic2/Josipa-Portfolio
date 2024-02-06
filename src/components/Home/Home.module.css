@@ -156,7 +156,7 @@ span {
     flex-grow: 0.72;
 }
 
-blockquote {
+.quote-home {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -166,13 +166,13 @@ blockquote {
     color: var(--white-color);
 }
 
-blockquote>p {
+.quote-home>p {
     width: 80%;
     align-self: center;
     color: var(--white-color);
 }
 
-blockquote>footer {
+.quote-home>footer {
     align-self: flex-end;
     margin-top: 1.5%;
     margin-right: 20%;
@@ -292,6 +292,6 @@ iframe {
     gap: 5px;
 }
 
-main {
+.main-home {
     padding-bottom: 3%;
 }

@@ -1,4 +1,4 @@
-import { Agenda, Contact, Home } from './services';
+import { About, Agenda, Contact, Home } from './services';
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -8,6 +8,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/agenda" element={<Agenda />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </div>
   );
