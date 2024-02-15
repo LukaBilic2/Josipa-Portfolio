@@ -11,9 +11,26 @@ import {
   image4,
   image7,
 } from '../../services';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const videoSets = [
+    ['https://www.youtube.com/embed/KckM9MPGcMc', 'https://www.youtube.com/embed/XAtG4f0cfSc'],
+    ['https://www.youtube.com/embed/w43VLr58s3Y', 'https://www.youtube.com/embed/KVNuwG3LgkY'],
+    ['https://www.youtube.com/embed/rthci3XOfEQ', 'https://www.youtube.com/embed/nV3_A-BoO-c'],
+  ];
+
+  const [currentSetIndex, setCurrentSetIndex] = useState(0);
+
+  const handleSetChange = (index) => {
+    setCurrentSetIndex(index);
+  };
+
   return (
     <div className="sve placeholder">
       <header className={styles['main-home-header']}>
@@ -53,7 +70,9 @@ const Home = () => {
               rangister.
             </p>
             <br />
-            <button>Read more</button>
+            <Link to="/about">
+              <button>Read more</button>
+            </Link>
           </div>
         </div>
 
@@ -106,7 +125,9 @@ const Home = () => {
             </li>
             <hr />
           </ul>
-          <button>See all</button>
+          <Link to="/agenda">
+            <button>See all</button>
+          </Link>
         </div>
         <blockquote className={styles['quote-home']}>
           <p>
@@ -124,27 +145,32 @@ const Home = () => {
           </footer>
         </blockquote>
 
-        <section>
+        <section className={styles['performance-section']}>
           <h2>PERFORMANCES</h2>
           <div className={styles['iframe-videos']}>
-            <iframe
-              width="1250"
-              height="703"
-              src="https://www.youtube.com/embed/KckM9MPGcMc"
-              title='Händel: Agrippina, "Tu ben degno", HWV 6 - Josipa Bilić, soprano'
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
-            <iframe
-              width="1250"
-              height="703"
-              src="https://www.youtube.com/embed/XAtG4f0cfSc"
-              title="W. A. Mozart: Ch&#39;io mi scordi di te... Non temer, amato bene, K. 505"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
+            {videoSets[currentSetIndex].map((videoSrc, index) => (
+              <iframe
+                key={index}
+                className="youtube-iframe"
+                width="1250"
+                height="703"
+                src={videoSrc}
+                title={`Video ${index}`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            ))}
           </div>
-          <p>Placeholder track</p>
+
+          <div className={styles['button-container']}>
+            {videoSets.map((_, index) => (
+              <button
+                className={index === currentSetIndex ? styles['selectedButton'] : ''}
+                key={index}
+                onClick={() => handleSetChange(index)}
+              ></button>
+            ))}
+          </div>
         </section>
 
         <section>
@@ -160,7 +186,9 @@ const Home = () => {
               <img className={styles['image-2']} src={image2} alt="image2" />
             </div>
           </div>
-          <button>See all</button>
+          <Link to="/gallery">
+            <button>See all</button>
+          </Link>
         </section>
       </main>
 

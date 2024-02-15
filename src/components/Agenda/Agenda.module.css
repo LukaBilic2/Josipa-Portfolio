@@ -40,9 +40,19 @@ img[alt='Signature'] {
     list-style: none;
 }
 
+.about-icons {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-right: 4%;
+    gap: 5px;
+    margin-top: 30%;
+}
+
 h2 {
     color: var(--tuscan-color);
     font-weight: bold;
+    font-size: 25px;
 }
 
 .upcoming-container {

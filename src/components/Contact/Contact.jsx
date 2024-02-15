@@ -1,8 +1,12 @@
 import styles from './Contact.module.css';
 import { Signature, facebookIcon, instagramIcon, youtubeIcon, pdf } from '../../services';
 import { NavLink } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const Contact = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <header className={styles['contact-home-header']}>
@@ -61,7 +65,7 @@ const Contact = () => {
       <main className={styles['main-contact']}>
         <h2 className={styles['h2-contact']}>CONTACT</h2>
 
-        <div className={styles['contact-container']}>
+        <form className={styles['contact-container']}>
           <div className={styles['left-contact']}>
             <input
               className={styles['contact-item']}
@@ -115,7 +119,7 @@ const Contact = () => {
               </button>
             </div>
           </div>
-        </div>
+        </form>
       </main>
 
       <footer className={styles['contact-footer']}>

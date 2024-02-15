@@ -23,6 +23,9 @@ import { NavLink } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 
 const About = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [currentIndexTop, setCurrentIndexTop] = useState(0);
   const [currentIndexBottom, setCurrentIndexBottom] = useState(0);
   const intervalRef = useRef(null);
@@ -114,18 +117,18 @@ const About = () => {
 
         <div className={styles['slider']}>
           <div className={styles['slideTop']}>
-            <img src={slide1} alt="slider1" loading="lazy" />
+            <img src={slide4} alt="slider4" loading="lazy" />
             <div className={styles['content']}>
               <p>
                 Josipa made her professional International debut in 2018 after winning 10 th József Simándy Competition
                 in Hungary where she had a privilege to perform with Szeged Philharmonic Orchestra in Szeged National
-                Theatre .
+                Theatre.
               </p>
             </div>
           </div>
 
           <div className={styles['slideTop']}>
-            <img src={slide2} alt="slider2" loading="lazy" />
+            <img src={slide1} alt="slider1" loading="lazy" />
             <div className={styles['content']}>
               <p>
                 In 2022 she made her debut with the Grazer Philharmoniker and Maestro Marius Burkert in the Oper Graz at
@@ -136,7 +139,7 @@ const About = () => {
           </div>
 
           <div className={styles['slideTop']}>
-            <img src={slide3} alt="slider3" loading="lazy" />
+            <img src={slide2} alt="slider2" loading="lazy" />
             <div className={styles['content']}>
               <p>
                 Same year Josipa won the Darko Lukić Diploma on the 55th Darko Lukić Competition as well as the 19th
@@ -146,7 +149,7 @@ const About = () => {
           </div>
 
           <div className={styles['slideTop']}>
-            <img src={slide4} alt="slider4" loading="lazy" />
+            <img src={slide3} alt="slider3" loading="lazy" />
             <div className={styles['content']}>
               <p>
                 She received the Young Musician of the Year Award from the Zagreb Philharmonic Orchestra for her
@@ -196,32 +199,34 @@ const About = () => {
             </p>
           </div>
         </div>
-        <h2 className={styles['project-h2']}>EARLY BEGINNINGS</h2>
+        <div className={styles['beginnings-blue-background']}>
+          <h2 className={styles['project-h2']}>EARLY BEGINNINGS</h2>
 
-        <div className={styles['beginnings-container']}>
-          <img src={image3} alt="beginning1" loading="lazy" />
-          <img src={beginning2} alt="beginning2" loading="lazy" />
-          <p>
-            During her studies, she particularly drew attention in student Opera productions of Massenet s Cendrillon as
-            the main heroine (2021), in Mozart’s Idomeneo as Ilia (2020), as well as in Mozart’s Cosi fan tutté as
-            Despina (2018).
-          </p>
-        </div>
-
-        <div className={styles['beginnings-container2']}>
-          <img src={beginning3} alt="beginning3" loading="lazy" />
-          <img src={beginning4} alt="beginning4" loading="lazy" />
-
-          <div className={styles['paragraphs-container']}>
-            <p className={styles['paragraph-beg-1']}>
-              In 2020 she received prestigious Croatian Actor Award for the best female role in Opera - Young Artists
-              under 30 for her performance as Gretel (Humperdinck: Hansel and Gretel).
+          <div className={styles['beginnings-container']}>
+            <img src={image3} alt="beginning1" loading="lazy" />
+            <img src={beginning2} alt="beginning2" loading="lazy" />
+            <p>
+              During her studies, she particularly drew attention in student Opera productions of Massenet s Cendrillon
+              as the main heroine (2021), in Mozart’s Idomeneo as Ilia (2020), as well as in Mozart’s Cosi fan tutté as
+              Despina (2018).
             </p>
-            <p className={styles['paragraph-beg-2']}>
-              Before finishing musical studies in her native city Josipa has won numerous International and National
-              Competitions: József Simándy (2018 and 2021), Zoltán Kodály Award - ISA (2019), Lions grand prix (2017),
-              Lav Mirski (2016), Vera Kovač Vitkai (2015), Croatian National Competition HDGPP (2017 and 2019).
-            </p>
+          </div>
+
+          <div className={styles['beginnings-container2']}>
+            <img src={beginning3} alt="beginning3" loading="lazy" />
+            <img src={beginning4} alt="beginning4" loading="lazy" />
+
+            <div className={styles['paragraphs-container']}>
+              <p className={styles['paragraph-beg-1']}>
+                In 2020 she received prestigious Croatian Actor Award for the best female role in Opera - Young Artists
+                under 30 for her performance as Gretel (Humperdinck: Hansel and Gretel).
+              </p>
+              <p className={styles['paragraph-beg-2']}>
+                Before finishing musical studies in her native city Josipa has won numerous International and National
+                Competitions: József Simándy (2018 and 2021), Zoltán Kodály Award - ISA (2019), Lions grand prix (2017),
+                Lav Mirski (2016), Vera Kovač Vitkai (2015), Croatian National Competition HDGPP (2017 and 2019).
+              </p>
+            </div>
           </div>
         </div>
 

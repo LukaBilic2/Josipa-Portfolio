@@ -1,8 +1,12 @@
 import styles from './Agenda.module.css';
 import { Signature, kazaliste, facebookIcon, instagramIcon, youtubeIcon } from '../../services';
 import { NavLink } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const Agenda = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <header className={styles['agenda-home-header']}>
@@ -29,6 +33,18 @@ const Agenda = () => {
               </NavLink>
             </ul>
           </nav>
+        </div>
+
+        <div className={styles['about-icons']}>
+          <a href="https://www.facebook.com/JosipicaB" target="blank">
+            <img src={facebookIcon} alt="Facebook" />
+          </a>
+          <a href="https://www.instagram.com/josipa___bilic/" target="blank">
+            <img src={instagramIcon} alt="Instagram" />
+          </a>
+          <a href="https://www.youtube.com/@josipabilicsoprano/featured" target="blank">
+            <img src={youtubeIcon} alt="Youtube" />
+          </a>
         </div>
       </header>
       <main>

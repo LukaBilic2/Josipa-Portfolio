@@ -50,6 +50,15 @@ a>img:hover,
     padding: 3px;
 }
 
+.about-icons {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-right: 4%;
+    gap: 5px;
+    margin-top: 1%;
+}
+
 .p-main-background {
     display: flex;
     padding-top: 31%;
@@ -78,23 +87,42 @@ a>img:hover,
     justify-content: space-between;
     gap: 1%;
     flex-wrap: nowrap;
-    padding-left: 3%;
+    padding-left: 4.5%;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.images-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1%;
+    overflow: hidden;
 }
 
 .images-1>img {
+    width: 860px;
+    height: 571px;
+    object-fit: cover;
+}
+
+.images-2>img {
     width: 45%;
+    height: 571px;
+    object-fit: cover;
 }
 
 .images-1-p {
     display: flex;
     align-items: center;
-    padding: 1% 0 1% 3%;
+    padding: 1% 0 1% 4.5%;
 }
 
 .p-1 {
     color: var(--midnight-color);
     font-weight: bold;
     width: 40%;
+    padding-bottom: 1%;
 }
 
 .color-container {
@@ -105,4 +133,70 @@ a>img:hover,
 .p-2 {
     color: var(--white-color);
     width: 40%;
+    padding-bottom: 1%;
+}
+
+.big-image {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.big-image>img {
+    width: 85%;
+    height: 90vh;
+    object-fit: cover;
+    object-position: center 10%;
+}
+
+.big-image>p {
+    position: absolute;
+    color: var(--white-color);
+    padding: 38% 58% 0 0;
+}
+
+div.big-image2>p {
+    position: absolute;
+    color: var(--white-color);
+    padding-top: 38%;
+    padding-left: 6%;
+}
+
+.big-image2>img {
+    width: 100%;
+    height: 90vh;
+    object-fit: cover;
+    object-position: center 82%;
+}
+
+.gallery-footer {
+    background-color: rgba(33, 49, 65, 255);
+    width: 100%;
+    height: 110px;
+}
+
+.gallery-footer>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5%;
+}
+
+.gallery-footer>div>img {
+    padding-left: 2%;
+}
+
+.gallery-footer>p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--nickel-color);
+}
+
+.footer-icons {
+    display: flex;
+    align-items: center;
+    padding-right: 3%;
+    gap: 5px;
 }

@@ -35,6 +35,7 @@ button {
   border-radius: 5px;
   background-color: var(--curry-color);
   color: var(--white-color);
+  cursor: pointer;
 }
 
 button:active {

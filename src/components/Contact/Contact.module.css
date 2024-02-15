@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/best-signature-font');
+
 * {
     font-family: var(--ff-primary);
     font-size: 20px;
@@ -75,6 +77,10 @@ a>img:hover,
     font-size: 30px;
 }
 
+.quote-contact>footer>p>i {
+    font-family: 'Best Signature Font', sans-serif;
+}
+
 .quote-contact>footer {
     align-self: flex-end;
     margin-top: 1.5%;
@@ -87,6 +93,7 @@ a>img:hover,
 h2 {
     color: var(--tuscan-color);
     font-weight: bold;
+    font-size: 25px;
 }
 
 .h2-contact {
@@ -123,7 +130,11 @@ h2 {
 
 input,
 textarea {
-    padding-left: 4px;
+    padding-left: 1%;
+}
+
+textarea {
+    padding-top: 1%;
 }
 
 .right-contact div.contact-item {

@@ -63,9 +63,9 @@ img[alt='Signature'] {
     line-height: 26px;
 }
 
-.info-container>button {
+.info-container>a>button {
     position: relative;
-    left: 25.5%;
+    left: 50%;
     top: 4%;
 }
 
@@ -108,6 +108,7 @@ h1 {
 h2 {
     color: var(--tuscan-color);
     font-weight: bold;
+    font-size: 25px;
 }
 
 .upcoming-container {
@@ -138,7 +139,7 @@ span {
     font-weight: normal;
 }
 
-.upcoming-container>button,
+.upcoming-container>a,
 .upcoming-container>h2 {
     align-self: center;
 }
@@ -147,7 +148,7 @@ span {
     padding: 55px 0;
 }
 
-.upcoming-container>button {
+.upcoming-container>a {
     margin-top: 1.5%;
     margin-bottom: 2.5%;
 }
@@ -185,22 +186,53 @@ section {
 }
 
 section>h2 {
-    padding: 3% 0;
+    padding: 3% 0 2% 0;
 }
 
 .iframe-videos {
     display: flex;
-    flex-direction: row;
     width: 100%;
-    height: 500px;
+    height: 600px;
     align-items: center;
-    justify-content: center;
-    gap: 25px;
+    gap: 1.5%;
+    padding-left: 4%;
+    padding-right: 4%;
+    overflow: hidden;
 }
 
 iframe {
-    width: 40%;
+    min-width: 860px;
     height: 100%;
+}
+
+.button-container {
+    min-width: 40%;
+    height: 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--midnight-color);
+    color: var(--white-color);
+    cursor: pointer;
+    margin-top: 1%;
+    gap: 2px;
+}
+
+.button-container>button {
+    min-width: 33.3%;
+    height: 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--midnight-color);
+    color: var(--white-color);
+    cursor: pointer;
+}
+
+.button-container>button:hover {
+    background-color: var(--curry-color);
+}
+
+.button-container>button.selectedButton {
+    background-color: var(--curry-color);
 }
 
 .images-container {
