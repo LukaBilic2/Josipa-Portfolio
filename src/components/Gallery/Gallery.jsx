@@ -74,6 +74,7 @@ const Gallery = () => {
     setIsScrolling(false);
     wrapper.style.cursor = 'grab';
   };
+  
   return (
     <div>
       <header className={styles['gallery-home-header']}>

@@ -10,6 +10,7 @@ import {
   image3,
   image4,
   image7,
+  mobileButton,
 } from '../../services';
 import { Link, NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -31,31 +32,72 @@ const Home = () => {
     setCurrentSetIndex(index);
   };
 
+  function toggleNavigation() {
+    const navigation = document.querySelector(`.${styles.navigation}`);
+    navigation.classList.toggle(styles.active);
+    const mobileNav = document.querySelector(`.${styles['mobile-li']}`);
+    mobileNav.classList.toggle(styles.active);
+    const mobileIcons = document.querySelector(`.${styles['icons-mobile']}`);
+    mobileIcons.classList.toggle(styles.active);
+    const signature = document.querySelector(`.${styles['signature-mob-slide']}`);
+    signature.classList.toggle(styles.active);
+    const footerSlide = document.querySelector(`.${styles['footer-slide']}`);
+    footerSlide.classList.toggle(styles.active);
+  }
+
   return (
     <div className="sve placeholder">
       <header className={styles['main-home-header']}>
         <div className={styles['home-background-image']}></div>
         <div className={styles['home-header']}>
-          <img src={Signature} alt="Signature" />
+          <img src={Signature} alt="Signature1" className={styles['signature-mob']} />
+          <img src={Signature} alt="SignatureMob1" className={styles['signature-mob-slide']} />
 
           <nav>
-            <ul className={styles.navigation}>
-              <NavLink to="/">
-                <li className={styles['nav-li']}>Home</li>
-              </NavLink>{' '}
-              <NavLink to="/about">
-                <li className={styles['nav-li']}>About</li>
-              </NavLink>{' '}
-              <NavLink to="/gallery">
-                <li className={styles['nav-li']}>Gallery</li>
-              </NavLink>
-              <NavLink to="/agenda">
-                <li className={styles['nav-li']}>Agenda</li>
-              </NavLink>{' '}
-              <NavLink to="/contact">
-                <li className={styles['nav-li']}>Contact</li>
-              </NavLink>
+            <button className={styles['nav-toggle']} onClick={toggleNavigation}>
+              <span className={styles.line}></span>
+              <span className={styles.line}></span>
+              <span className={styles.line}></span>
+            </button>
+
+            <ul className={styles['navigation']}>
+              <button className={`${styles['button-nav-mobile']}`} onClick={toggleNavigation}>
+                <span className={styles.line}></span>
+                <span className={styles.line}></span>
+                <span className={styles.line}></span>
+              </button>
+
+              <div className={`${styles['mobile-li']} ${styles['navigation']}`}>
+                <NavLink to="/">
+                  <li className={styles['nav-li']}>Home</li>
+                </NavLink>{' '}
+                <NavLink to="/about">
+                  <li className={styles['nav-li']}>About</li>
+                </NavLink>{' '}
+                <NavLink to="/gallery">
+                  <li className={styles['nav-li']}>Gallery</li>
+                </NavLink>
+                <NavLink to="/agenda">
+                  <li className={styles['nav-li']}>Agenda</li>
+                </NavLink>{' '}
+                <NavLink to="/contact">
+                  <li className={styles['nav-li']}>Contact</li>
+                </NavLink>
+              </div>
             </ul>
+
+            <div className={`${styles['icons-mobile']}`}>
+              <a href="https://www.facebook.com/JosipicaB" target="blank">
+                <img src={facebookIcon} alt="Facebook" />
+              </a>
+              <a href="https://www.instagram.com/josipa___bilic/" target="blank">
+                <img src={instagramIcon} alt="Instagram" />
+              </a>
+              <a href="https://www.youtube.com/@josipabilicsoprano/featured" target="blank">
+                <img src={youtubeIcon} alt="Youtube" />
+              </a>
+            </div>
+            <p className={styles['footer-slide']}>All rights reserved @ 2024</p>
           </nav>
         </div>
 
@@ -96,7 +138,7 @@ const Home = () => {
             <hr />
             <li className={styles['list-element']}>
               <div className={styles['date-and-place']}>
-                <img src={kazaliste} alt="image" />
+                <img src={kazaliste} alt="image" className={styles['concert-image']} />
                 <p>
                   03
                   <br />
@@ -111,7 +153,7 @@ const Home = () => {
             <hr />
             <li className={styles['list-element']}>
               <div className={styles['date-and-place']}>
-                <img src={kazaliste} alt="image" />
+                <img src={kazaliste} alt="image" className={styles['concert-image']} />
                 <p>
                   03
                   <br />
@@ -126,7 +168,7 @@ const Home = () => {
             <hr />
           </ul>
           <Link to="/agenda">
-            <button>See all</button>
+            <button className={styles['agendaButton']}>See all</button>
           </Link>
         </div>
         <blockquote className={styles['quote-home']}>
@@ -174,7 +216,7 @@ const Home = () => {
         </section>
 
         <section>
-          <h2>GALLERY</h2>
+          <h2 className={styles['h2-images']}>GALLERY</h2>
           <div className={styles['images-container']}>
             <div className={styles['left-images-container']}>
               <img className={styles['image-1']} src={image1} alt="image1" />
@@ -186,8 +228,8 @@ const Home = () => {
               <img className={styles['image-2']} src={image2} alt="image2" />
             </div>
           </div>
-          <Link to="/gallery">
-            <button>See all</button>
+          <Link to="/gallery" className={styles['gallery-button-a']}>
+            <button className={styles['gallery-button']}>See all</button>
           </Link>
         </section>
       </main>
@@ -207,7 +249,7 @@ const Home = () => {
             </a>
           </div>
         </div>
-        <p>All rights reservef @ 2024</p>
+        <p>All rights reserved @ 2024</p>
       </footer>
     </div>
   );
