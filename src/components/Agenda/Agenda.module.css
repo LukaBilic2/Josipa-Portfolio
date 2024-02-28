@@ -308,7 +308,8 @@ button.nav-toggle {
         gap: 3%;
     }
 
-    .schedule-button {
+    .schedule-button,
+    .schedule-button>a {
         font-size: 16px;
     }
 

@@ -50,7 +50,8 @@ span {
         font-size: 13px;
     }
 
-    .schedule-button {
+    .schedule-button,
+    .schedule-button>a {
         font-size: 10px;
         padding: 1%;
     }
@@ -64,6 +65,7 @@ span {
         font-size: 10px;
     }
 
+    .schedule-button>a,
     .schedule-button {
         font-size: 8px;
         padding: 1%;
