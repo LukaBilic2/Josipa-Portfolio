@@ -1,0 +1,118 @@
+@media only screen and (max-width: 480px) {
+
+  .navigation {
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    /* Initially hide the menu off-screen */
+    min-width: 100%;
+    min-height: 100%;
+    background-color: var(--midnight-color);
+    transition: left 0.4s ease;
+    z-index: 20;
+    padding-right: 0;
+  }
+
+  .signature-mob {
+    position: absolute;
+    top: 30%;
+    left: 65%;
+  }
+
+  .footer-slide {
+    display: block;
+    left: -100%;
+    transition: left 0.4s ease;
+    z-index: 22;
+    position: absolute;
+    top: 91%;
+    font-size: 15px;
+  }
+
+  .footer-slide.active {
+    left: 32%;
+    transition: left 0.4s ease;
+    z-index: 22;
+    position: fixed;
+  }
+
+  .signature-mob-slide {
+    display: block;
+    position: absolute;
+    top: 3%;
+    left: -100%;
+    transition: left 0.4s ease;
+    z-index: 21;
+  }
+
+  .signature-mob-slide.active {
+    display: block;
+    transition: left 0.4s ease;
+    left: 6%;
+    z-index: 21;
+    position: fixed;
+  }
+
+  .icons-mobile.active {
+    left: 37%;
+    transition: left 0.4s ease;
+    position: fixed;
+  }
+
+  .navigation.active {
+    display: flex;
+    left: 0;
+    z-index: 20;
+    min-width: 100%;
+    min-height: 100%;
+    position: fixed;
+
+    .line {
+      width: 100%;
+    }
+  }
+
+  button.nav-toggle {
+    display: block;
+    min-width: 25px;
+    height: 25px;
+    background-color: transparent;
+    position: absolute;
+    top: 3%;
+    right: 0;
+    left: 90%;
+    /* Show the menu toggle button */
+  }
+
+  .nav-li {
+    padding: 10px;
+    margin-bottom: 15%;
+  }
+
+  .mobile-li {
+    margin-top: 35%;
+    padding-right: 50%;
+  }
+
+  button.button-nav-mobile {
+    display: block;
+    min-width: 25px;
+    height: 25px;
+    background-color: transparent;
+    margin-top: 5%;
+    margin-left: 85%;
+  }
+
+  .icons-mobile {
+    display: flex !important;
+    align-items: center;
+    position: absolute;
+    top: 85%;
+    padding: 0;
+    z-index: 20;
+    gap: 30%;
+    left: -100%;
+    transition: left 0.4s ease;
+  }
+}

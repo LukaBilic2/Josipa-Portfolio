@@ -46,3 +46,12 @@ nav .active {
   background-color: var(--curry-color);
   border-radius: 5px;
 }
+
+.hidden {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.show {
+  opacity: 1;
+}

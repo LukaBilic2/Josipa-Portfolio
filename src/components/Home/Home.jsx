@@ -4,33 +4,89 @@ import {
   facebookIcon,
   youtubeIcon,
   instagramIcon,
-  kazaliste,
   image1,
   image2,
   image3,
   image4,
   image7,
-  mobileButton,
+  leftArrow,
+  rightArrow,
 } from '../../services';
 import { Link, NavLink } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const Home = () => {
+  const elementRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        } else {
+          entry.target.classList.remove('show');
+        }
+      });
+    });
+
+    const elements = elementRefs.current;
+    if (elements.length > 0) {
+      elements.forEach((element) => {
+        if (element) {
+          observer.observe(element);
+        }
+      });
+    }
+
+    return () => {
+      elements.forEach((element) => {
+        if (element) {
+          observer.unobserve(element);
+        }
+      });
+    };
+  }, []);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   const videoSets = [
-    ['https://www.youtube.com/embed/KckM9MPGcMc', 'https://www.youtube.com/embed/XAtG4f0cfSc'],
-    ['https://www.youtube.com/embed/w43VLr58s3Y', 'https://www.youtube.com/embed/KVNuwG3LgkY'],
-    ['https://www.youtube.com/embed/rthci3XOfEQ', 'https://www.youtube.com/embed/nV3_A-BoO-c'],
+    ['https://www.youtube.com/embed/KckM9MPGcMc'],
+    ['https://www.youtube.com/embed/XAtG4f0cfSc'],
+    ['https://www.youtube.com/embed/w43VLr58s3Y'],
+    ['https://www.youtube.com/embed/KVNuwG3LgkY'],
+    ['https://www.youtube.com/embed/rthci3XOfEQ'],
+    ['https://www.youtube.com/embed/nV3_A-BoO-c'],
   ];
 
   const [currentSetIndex, setCurrentSetIndex] = useState(0);
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 480);
+  const [showNavigationButtons] = useState(false);
 
   const handleSetChange = (index) => {
     setCurrentSetIndex(index);
   };
+
+  const handlePreviousVideo = () => {
+    setCurrentSetIndex((prevIndex) => (prevIndex === 0 ? videoSets.length - 1 : prevIndex - 1));
+  };
+
+  const handleNextVideo = () => {
+    setCurrentSetIndex((prevIndex) => (prevIndex === videoSets.length - 1 ? 0 : prevIndex + 1));
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 480);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   function toggleNavigation() {
     const navigation = document.querySelector(`.${styles.navigation}`);
@@ -47,7 +103,7 @@ const Home = () => {
 
   return (
     <div className="sve placeholder">
-      <header className={styles['main-home-header']}>
+      <header className={`${styles['main-home-header']}`}>
         <div className={styles['home-background-image']}></div>
         <div className={styles['home-header']}>
           <img src={Signature} alt="Signature1" className={styles['signature-mob']} />
@@ -132,46 +188,62 @@ const Home = () => {
       </header>
 
       <main className={styles['main-home']}>
-        <div className={styles['upcoming-container']}>
+        <div className={`${styles['upcoming-container']} hidden`} ref={(el) => (elementRefs.current[1] = el)}>
           <h2>UPCOMING PERFORMANCES</h2>
           <ul>
             <hr />
+
             <li className={styles['list-element']}>
               <div className={styles['date-and-place']}>
-                <img src={kazaliste} alt="image" className={styles['concert-image']} />
                 <p>
-                  03
+                  09
                   <br />
-                  April
+                  March
                 </p>
               </div>
               <p>
-                Name of the event <br />
-                <span>Zagreb, Croatia</span>
+                Despina - Cosi fan tutte (Mozart) <br />
+                <span>Croatian National Theatre in Zagreb</span>
               </p>
+              <button className={styles['schedule-button']}>
+                <a
+                  href="https://www.hnk.hr/en/opera/plays/cos%C3%AC-fan-tutte/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Tickets
+                </a>
+              </button>
             </li>
+
             <hr />
             <li className={styles['list-element']}>
               <div className={styles['date-and-place']}>
-                <img src={kazaliste} alt="image" className={styles['concert-image']} />
                 <p>
-                  03
+                  14
                   <br />
-                  April
+                  March
                 </p>
               </div>
               <p>
-                Name of the event <br />
-                <span>Zagreb, Croatia</span>
+                Jelena- Nikola Šubić Zrinjski (Ivan pl. Zajc)
+                <br />
+                <span>Croatian National Theatre in Zagreb</span>
               </p>
+              <button className={styles['schedule-button']}>
+                <a href="https://www.hnk.hr/hr/prodaja/predstava/2351/" target="_blank" rel="noopener noreferrer">
+                  Tickets
+                </a>
+              </button>
             </li>
+
             <hr />
           </ul>
           <Link to="/agenda">
             <button className={styles['agendaButton']}>See all</button>
           </Link>
         </div>
-        <blockquote className={styles['quote-home']}>
+        <blockquote className={`${styles['quote-home']} hidden`} ref={(el) => (elementRefs.current[2] = el)}>
           <p>
             <em>
               &ldquo;The beauty of her voice is unmistakable, paired with its excellent preparation, musicality, obvious
@@ -187,35 +259,72 @@ const Home = () => {
           </footer>
         </blockquote>
 
-        <section className={styles['performance-section']}>
+        <section className={`${styles['performance-section']} hidden`} ref={(el) => (elementRefs.current[3] = el)}>
           <h2>PERFORMANCES</h2>
           <div className={styles['iframe-videos']}>
-            {videoSets[currentSetIndex].map((videoSrc, index) => (
+            {isSmallScreen ? (
               <iframe
-                key={index}
                 className="youtube-iframe"
                 width="1250"
                 height="703"
-                src={videoSrc}
-                title={`Video ${index}`}
+                src={videoSets[currentSetIndex][0]}
+                title={`Video ${currentSetIndex}`}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               ></iframe>
-            ))}
+            ) : (
+              videoSets[currentSetIndex * 2] && (
+                <>
+                  <iframe
+                    className="youtube-iframe"
+                    width="625"
+                    height="351"
+                    src={videoSets[currentSetIndex * 2][0]}
+                    title={`Video ${currentSetIndex * 2}`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
+                  {videoSets[currentSetIndex * 2 + 1] && (
+                    <iframe
+                      className="youtube-iframe"
+                      width="625"
+                      height="351"
+                      src={videoSets[currentSetIndex * 2 + 1][0]}
+                      title={`Video ${currentSetIndex * 2 + 1}`}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
+                  )}
+                </>
+              )
+            )}
           </div>
 
-          <div className={styles['button-container']}>
-            {videoSets.map((_, index) => (
-              <button
-                className={index === currentSetIndex ? styles['selectedButton'] : ''}
-                key={index}
-                onClick={() => handleSetChange(index)}
-              ></button>
-            ))}
-          </div>
+          {isSmallScreen && (
+            <div className={styles['mobile-button-container']}>
+              <button className={styles['mobile-button-arrow']} onClick={handlePreviousVideo}>
+                <img src={leftArrow} alt="button1" />
+              </button>
+              <button className={styles['mobile-button-arrow']} onClick={handleNextVideo}>
+                <img src={rightArrow} alt="button2" />
+              </button>
+            </div>
+          )}
+
+          {!isSmallScreen && !showNavigationButtons && (
+            <div className={styles['button-container']}>
+              {videoSets.slice(0, Math.ceil(videoSets.length / 2)).map((_, index) => (
+                <button
+                  className={index === currentSetIndex ? styles['selectedButton'] : ''}
+                  key={index}
+                  onClick={() => handleSetChange(index)}
+                ></button>
+              ))}
+            </div>
+          )}
         </section>
 
-        <section>
+        <section className={`hidden`} ref={(el) => (elementRefs.current[4] = el)}>
           <h2 className={styles['h2-images']}>GALLERY</h2>
           <div className={styles['images-container']}>
             <div className={styles['left-images-container']}>
@@ -234,7 +343,7 @@ const Home = () => {
         </section>
       </main>
 
-      <footer className={styles['home-footer']}>
+      <footer className={`${styles['home-footer']} hidden`} ref={(el) => (elementRefs.current[5] = el)}>
         <div>
           <img src={Signature} alt="Signature" />
           <div className={styles['footer-icons']}>

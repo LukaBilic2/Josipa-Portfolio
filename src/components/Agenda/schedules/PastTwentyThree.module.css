@@ -1,0 +1,38 @@
+.list-element {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    text-align: center;
+    justify-content: space-between;
+    margin-right: 5%;
+}
+
+.date-and-place {
+    display: flex;
+    align-items: center;
+    margin-left: 5%;
+}
+
+li>div>p,
+li>p {
+    color: var(--tuscan-color);
+    font-weight: bold;
+}
+
+span {
+    font-weight: normal;
+}
+
+.schedule-button {
+    min-width: 5%;
+    height: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--curry-color);
+    color: var(--white-color);
+    cursor: pointer;
+}
+
+.schedule-button:hover {
+    color: var(--black-color);
+}

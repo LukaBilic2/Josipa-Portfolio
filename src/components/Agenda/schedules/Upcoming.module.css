@@ -1,0 +1,80 @@
+.list-element {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    text-align: center;
+    justify-content: space-between;
+    margin-right: 5%;
+}
+
+.date-and-place {
+    display: flex;
+    align-items: center;
+    margin-left: 5%;
+}
+
+li>div>p,
+li>p {
+    color: var(--tuscan-color);
+    font-weight: bold;
+}
+
+span {
+    font-weight: normal;
+}
+
+.list-element:nth-of-type(10) .date-and-place {
+    margin-left: 3%;
+}
+
+.schedule-button {
+    min-width: 5%;
+    height: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--curry-color);
+    color: var(--white-color);
+    cursor: pointer;
+}
+
+.schedule-button>a:hover,
+.schedule-button:hover {
+    color: var(--black-color);
+}
+
+@media only screen and (max-width: 480px) {
+
+    .list-element>p,
+    .date-and-place>p,
+    span {
+        font-size: 13px;
+    }
+
+    .schedule-button {
+        font-size: 10px;
+        padding: 1%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+
+    .list-element>p,
+    .date-and-place>p,
+    span {
+        font-size: 10px;
+    }
+
+    .schedule-button {
+        font-size: 8px;
+        padding: 1%;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+
+    .list-element>p,
+    .date-and-place>p,
+    span {
+        font-size: 9px;
+    }
+}

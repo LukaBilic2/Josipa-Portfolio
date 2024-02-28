@@ -32,7 +32,7 @@ img[alt='Signature'] {
     z-index: -2;
 }
 
-.navigation {
+.agenda-navigation {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -40,7 +40,7 @@ img[alt='Signature'] {
     list-style: none;
 }
 
-.about-icons {
+.agenda-icons {
     display: flex;
     justify-content: end;
     align-items: center;
@@ -60,51 +60,47 @@ h2 {
     flex-direction: column;
 }
 
-.list-element {
+.schedule {
     display: flex;
+    justify-content: center;
     align-items: center;
-    padding: 10px 0;
-    text-align: center;
+    padding-bottom: 2%;
+    gap: 2%;
 }
 
-.date-and-place {
-    display: flex;
-    width: 20%;
-    align-items: center;
-    justify-content: space-evenly;
+.schedule-button {
+    min-width: 4%;
+    height: 100%;
+    background-color: transparent;
+    color: var(--black-color);
+    cursor: pointer;
+    padding: 0.4%;
 }
 
-li>div>p {
-    color: var(--tuscan-color);
-    font-weight: bold;
+.schedule-button:hover {
+    background-color: var(--curry-color);
+    color: var(--white-color);
+    transition: background-color 0.2s linear;
 }
 
-li>p {
-    color: var(--midnight-color);
-    font-weight: bold;
+.schedule-button:active {
+    border: 0;
+    color: var(--black-color);
 }
 
-span {
-    font-weight: normal;
+.selected {
+    background-color: var(--curry-color);
+    color: var(--white-color);
 }
 
-.upcoming-container>button,
 .upcoming-container>h2 {
     align-self: center;
 }
 
 .upcoming-container>h2 {
-    padding: 55px 0;
+    padding: 3.3% 0;
 }
 
-.upcoming-container>button {
-    margin-top: 1.5%;
-    margin-bottom: 2.5%;
-}
-
-.list-element>p {
-    flex-grow: 0.72;
-}
 
 .home-footer {
     background-color: rgba(33, 49, 65, 255);
@@ -151,4 +147,193 @@ a>img:hover,
 
 .nav-li {
     padding: 3px;
+}
+
+button.button-nav-mobile,
+.footer-slide,
+.icons-mobile,
+button.nav-toggle {
+    display: none;
+}
+
+.line {
+    display: block;
+    width: 50%;
+    height: 2px;
+    background-color: var(--white-color);
+    margin-bottom: 7px;
+}
+
+@media only screen and (max-width: 480px) {
+
+    .agenda-icons {
+        display: none;
+        position: absolute;
+    }
+
+    .agenda-navigation {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        /* Initially hide the menu off-screen */
+        min-width: 80%;
+        min-height: 100%;
+        background-color: var(--midnight-color);
+        transition: right 0.4s ease;
+        z-index: 20;
+        padding-right: 0;
+    }
+
+    .agenda-navigation.active {
+        display: flex;
+        right: 0;
+        z-index: 20;
+        min-width: 80%;
+        min-height: 100%;
+        position: fixed;
+
+        .line {
+            width: 100%;
+        }
+    }
+
+    .footer-slide {
+        display: block;
+        left: -100%;
+        transition: left 0.4s ease;
+        z-index: 22;
+        position: absolute;
+        top: 91%;
+        font-size: 15px;
+    }
+
+    .footer-slide.active {
+        left: 43%;
+        transition: left 0.4s ease;
+        z-index: 22;
+        position: fixed;
+    }
+
+    div.home-header>.signature-mob-slide {
+        display: block;
+        position: absolute;
+        top: 3%;
+        left: -100%;
+        transition: left 0.4s ease;
+        z-index: 21;
+    }
+
+    div.home-header>.signature-mob-slide.active {
+        display: block;
+        transition: left 0.4s ease;
+        left: 28%;
+        z-index: 21;
+        position: fixed;
+    }
+
+    .icons-mobile.active {
+        left: 50%;
+        transition: left 0.4s ease;
+        position: fixed;
+    }
+
+    button.nav-toggle {
+        display: block;
+        min-width: 25px;
+        height: 25px;
+        background-color: transparent;
+        position: absolute;
+        top: 3%;
+        right: 0;
+        left: 90%;
+        /* Show the menu toggle button */
+    }
+
+    .nav-li {
+        padding: 10px;
+        margin-bottom: 15%;
+    }
+
+    .mobile-li {
+        margin-top: 35%;
+        padding-right: 50%;
+    }
+
+    button.button-nav-mobile {
+        display: block;
+        min-width: 25px;
+        height: 25px;
+        background-color: transparent;
+        margin-top: 5%;
+        margin-left: 85%;
+    }
+
+    .icons-mobile {
+        display: flex !important;
+        align-items: center;
+        position: absolute;
+        top: 85%;
+        padding: 0;
+        z-index: 20;
+        gap: 30%;
+        left: -100%;
+        transition: left 0.4s ease;
+    }
+
+    .agenda-home-header {
+        height: 40vh;
+        color: var(--white-color);
+    }
+
+    .home-header {
+        padding: 0;
+        height: 2%;
+    }
+
+    .agenda-background-image {
+        background-repeat: no-repeat;
+        width: 100%;
+        min-height: 100%;
+        position: relative;
+    }
+
+    div.upcoming-container>h2 {
+        font-size: 20px;
+        padding: 9% 0;
+    }
+
+    .schedule {
+        padding-bottom: 5%;
+        gap: 3%;
+    }
+
+    .schedule-button {
+        font-size: 16px;
+    }
+
+    .home-footer>p {
+        font-size: 13px;
+    }
+
+    .home-footer>div>img {
+        padding-left: 0;
+    }
+
+    .home-footer>div {
+        padding-top: 8%;
+        padding-right: 5%;
+        padding-bottom: 3%;
+    }
+
+}
+
+@media only screen and (max-width: 400px) {
+    .list-element>p {
+        font-size: 16px;
+    }
+
+    .date-and-place>p {
+        font-size: 16px;
+    }
 }

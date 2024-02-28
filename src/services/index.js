@@ -56,5 +56,9 @@ export { default as image24Gallery } from '../images/Gallery/image24-gallery.avi
 export { default as image25Gallery } from '../images/Gallery/image25-gallery.avif';
 export { default as image26Gallery } from '../images/Gallery/image26-gallery.avif';
 export { default as mobileButton } from '../components/Reusables/MobileButton.jsx';
+export { default as leftArrow } from '../images/left-arrow.webp';
+export { default as rightArrow } from '../images/right-arrow.webp';
+export { default as notes } from '../images/Agenda/idemo1.jpg';
+// export { default as } from '';
 // export { default as } from '';
 // export { default as } from '';

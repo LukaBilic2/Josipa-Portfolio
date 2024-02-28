@@ -35,6 +35,37 @@ import { NavLink } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 
 const Gallery = () => {
+  const elementRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        } else {
+          entry.target.classList.remove('show');
+        }
+      });
+    });
+
+    const elements = elementRefs.current;
+    if (elements.length > 0) {
+      elements.forEach((element) => {
+        if (element) {
+          observer.observe(element);
+        }
+      });
+    }
+
+    return () => {
+      elements.forEach((element) => {
+        if (element) {
+          observer.unobserve(element);
+        }
+      });
+    };
+  }, []);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -43,6 +74,28 @@ const Gallery = () => {
   const [startX, setStartX] = useState(null);
   const [scrollLeft, setScrollLeft] = useState(null);
   const wrapperRefs = useRef([]);
+  const [touchStartX, setTouchStartX] = useState(null);
+  const [setTouchMoveX] = useState(null);
+
+  const handleTouchStart = (index, e) => {
+    setTouchStartX(e.touches[0].clientX);
+    setScrollLeft(wrapperRefs.current[index].scrollLeft);
+    wrapperRefs.current[index].style.cursor = 'grabbing';
+  };
+
+  const handleTouchMove = (index, e) => {
+    if (!touchStartX) return;
+    const currentX = e.touches[0].clientX;
+    const diff = touchStartX - currentX;
+    wrapperRefs.current[index].scrollLeft = scrollLeft + diff;
+    setTouchMoveX(currentX);
+  };
+
+  const handleTouchEnd = (index) => {
+    wrapperRefs.current[index].style.cursor = 'grab';
+    setTouchStartX(null);
+    setTouchMoveX(null);
+  };
 
   const startScrolling = (index, e) => {
     setIsScrolling(true);
@@ -74,34 +127,75 @@ const Gallery = () => {
     setIsScrolling(false);
     wrapper.style.cursor = 'grab';
   };
-  
+
+  function toggleNavigation() {
+    const navigation = document.querySelector(`.${styles['gallery-navigation']}`);
+    navigation.classList.toggle(styles.active);
+    const mobileNav = document.querySelector(`.${styles['mobile-li']}`);
+    mobileNav.classList.toggle(styles.active);
+    const mobileIcons = document.querySelector(`.${styles['icons-mobile']}`);
+    mobileIcons.classList.toggle(styles.active);
+    const signature = document.querySelector(`.${styles['signature-mob-slide']}`);
+    signature.classList.toggle(styles.active);
+    const footerSlide = document.querySelector(`.${styles['footer-slide']}`);
+    footerSlide.classList.toggle(styles.active);
+  }
+
   return (
     <div>
       <header className={styles['gallery-home-header']}>
         <div className={styles['gallery-background-image']}></div>
         <div className={styles['home-header']}>
-          <img src={Signature} alt="Signature" />
+          <img src={Signature} alt="Signature" className={styles['signature-mob-slide']} />
 
           <nav>
-            <ul className={styles.navigation}>
-              <NavLink to="/">
-                <li className={styles['nav-li']}>Home</li>
-              </NavLink>
-              <NavLink to="/about">
-                <li className={styles['nav-li']}>About</li>
-              </NavLink>
-              <NavLink to="/gallery">
-                <li className={styles['nav-li']}>Gallery</li>
-              </NavLink>
-              <NavLink to="/agenda">
-                <li className={styles['nav-li']}>Agenda</li>
-              </NavLink>
-              <NavLink to="/contact">
-                <li className={styles['nav-li']}>Contact</li>
-              </NavLink>
+            <button className={styles['nav-toggle']} onClick={toggleNavigation}>
+              <span className={styles.line}></span>
+              <span className={styles.line}></span>
+              <span className={styles.line}></span>
+            </button>
+
+            <ul className={styles['gallery-navigation']}>
+              <button className={`${styles['button-nav-mobile']}`} onClick={toggleNavigation}>
+                <span className={styles.line}></span>
+                <span className={styles.line}></span>
+                <span className={styles.line}></span>
+              </button>
+
+              <div className={`${styles['mobile-li']} ${styles['gallery-navigation']}`}>
+                <NavLink to="/">
+                  <li className={styles['nav-li']}>Home</li>
+                </NavLink>
+                <NavLink to="/about">
+                  <li className={styles['nav-li']}>About</li>
+                </NavLink>
+                <NavLink to="/gallery">
+                  <li className={styles['nav-li']}>Gallery</li>
+                </NavLink>
+                <NavLink to="/agenda">
+                  <li className={styles['nav-li']}>Agenda</li>
+                </NavLink>
+                <NavLink to="/contact">
+                  <li className={styles['nav-li']}>Contact</li>
+                </NavLink>
+              </div>
             </ul>
           </nav>
         </div>
+
+        <div className={`${styles['icons-mobile']}`}>
+          <a href="https://www.facebook.com/JosipicaB" target="blank">
+            <img src={facebookIcon} alt="Facebook" />
+          </a>
+          <a href="https://www.instagram.com/josipa___bilic/" target="blank">
+            <img src={instagramIcon} alt="Instagram" />
+          </a>
+          <a href="https://www.youtube.com/@josipabilicsoprano/featured" target="blank">
+            <img src={youtubeIcon} alt="Youtube" />
+          </a>
+        </div>
+        <p className={styles['footer-slide']}>All rights reserved @ 2024</p>
+
         <div className={styles['p-main-background']}>
           <p>
             Johan Strauss II: Die Fledermaus (Adele) <br />
@@ -109,7 +203,7 @@ const Gallery = () => {
           </p>
         </div>
 
-        <div className={styles['about-icons']}>
+        <div className={styles['gallery-icons']}>
           <a href="https://www.facebook.com/JosipicaB" target="blank">
             <img src={facebookIcon} alt="Facebook" />
           </a>
@@ -123,9 +217,11 @@ const Gallery = () => {
       </header>
 
       <main>
-        <h2 className={styles['gallery-h2']}>Gallery</h2>
+        <h2 className={`${styles['gallery-h2']} hidden`} ref={(el) => (elementRefs.current[1] = el)}>
+          Gallery
+        </h2>
 
-        <div className={styles['wrapper1']}>
+        <div className={`${styles['wrapper1']} hidden`} ref={(el) => (elementRefs.current[2] = el)}>
           <div
             className={styles['images-1']}
             ref={(ref) => (wrapperRefs.current[0] = ref)}
@@ -133,6 +229,9 @@ const Gallery = () => {
             onMouseUp={() => stopScrolling(0)}
             onMouseMove={(e) => handleMouseMove(0, e)}
             onMouseLeave={(e) => handleMouseLeave(0, e)}
+            onTouchStart={(e) => handleTouchStart(0, e)}
+            onTouchMove={(e) => handleTouchMove(0, e)}
+            onTouchEnd={() => handleTouchEnd(0)}
           >
             <img src={image1Gallery} alt="image1" />
             <img src={image2Gallery} alt="image2" />
@@ -149,7 +248,7 @@ const Gallery = () => {
           </div>
         </div>
 
-        <div className={styles['color-container']}>
+        <div className={`${styles['color-container']} hidden`} ref={(el) => (elementRefs.current[3] = el)}>
           <div
             className={styles['images-1']}
             ref={(ref) => (wrapperRefs.current[1] = ref)}
@@ -157,6 +256,9 @@ const Gallery = () => {
             onMouseUp={() => stopScrolling(1)}
             onMouseMove={(e) => handleMouseMove(1, e)}
             onMouseLeave={(e) => handleMouseLeave(1, e)}
+            onTouchStart={(e) => handleTouchStart(1, e)}
+            onTouchMove={(e) => handleTouchMove(1, e)}
+            onTouchEnd={() => handleTouchEnd(1)}
           >
             <img src={image4Gallery} alt="image1" loading="lazy" />
             <img src={image5Gallery} alt="image2" loading="lazy" />
@@ -172,7 +274,7 @@ const Gallery = () => {
           </div>
         </div>
 
-        <div className={styles['wrapper1']}>
+        <div className={`${styles['wrapper1']} hidden`} ref={(el) => (elementRefs.current[4] = el)}>
           <div
             className={styles['images-1']}
             ref={(ref) => (wrapperRefs.current[2] = ref)}
@@ -180,6 +282,9 @@ const Gallery = () => {
             onMouseUp={() => stopScrolling(2)}
             onMouseMove={(e) => handleMouseMove(2, e)}
             onMouseLeave={(e) => handleMouseLeave(2, e)}
+            onTouchStart={(e) => handleTouchStart(2, e)}
+            onTouchMove={(e) => handleTouchMove(2, e)}
+            onTouchEnd={() => handleTouchEnd(2)}
           >
             <img src={image7Gallery} alt="image1" loading="lazy" />
             <img src={image8Gallery} alt="image2" loading="lazy" />
@@ -195,7 +300,7 @@ const Gallery = () => {
           </div>
         </div>
 
-        <div className={styles['color-container']}>
+        <div className={`${styles['color-container']} hidden`} ref={(el) => (elementRefs.current[5] = el)}>
           <div
             className={styles['images-1']}
             ref={(ref) => (wrapperRefs.current[3] = ref)}
@@ -203,6 +308,9 @@ const Gallery = () => {
             onMouseUp={() => stopScrolling(3)}
             onMouseMove={(e) => handleMouseMove(3, e)}
             onMouseLeave={(e) => handleMouseLeave(3, e)}
+            onTouchStart={(e) => handleTouchStart(3, e)}
+            onTouchMove={(e) => handleTouchMove(3, e)}
+            onTouchEnd={() => handleTouchEnd(3)}
           >
             <img src={image10Gallery} alt="image1" loading="lazy" />
             <img src={image11Gallery} alt="image2" loading="lazy" />
@@ -218,8 +326,18 @@ const Gallery = () => {
           </div>
         </div>
 
-        <div className={styles['wrapper1']}>
-          <div className={styles['images-2']}>
+        <div className={`${styles['wrapper1']} hidden`} ref={(el) => (elementRefs.current[6] = el)}>
+          <div
+            className={styles['images-2']}
+            ref={(ref) => (wrapperRefs.current[4] = ref)}
+            onMouseDown={(e) => startScrolling(4, e)}
+            onMouseUp={() => stopScrolling(4)}
+            onMouseMove={(e) => handleMouseMove(4, e)}
+            onMouseLeave={(e) => handleMouseLeave(4, e)}
+            onTouchStart={(e) => handleTouchStart(4, e)}
+            onTouchMove={(e) => handleTouchMove(4, e)}
+            onTouchEnd={() => handleTouchEnd(4)}
+          >
             <img src={image13Gallery} alt="image13" loading="lazy" />
             <img src={image14Gallery} alt="image14" loading="lazy" />
           </div>
@@ -233,19 +351,22 @@ const Gallery = () => {
           </div>
         </div>
 
-        <div className={styles['big-image']}>
+        <div className={`${styles['big-image']} hidden`} ref={(el) => (elementRefs.current[7] = el)}>
           <p>14th Opera Selecta Festival, 2022</p>
           <img src={image15Gallery} alt="image15" />
         </div>
 
-        <div className={styles['wrapper1']}>
+        <div className={`${styles['wrapper1']} hidden`} ref={(el) => (elementRefs.current[8] = el)}>
           <div
             className={styles['images-1']}
-            ref={(ref) => (wrapperRefs.current[4] = ref)}
-            onMouseDown={(e) => startScrolling(4, e)}
-            onMouseUp={() => stopScrolling(4)}
-            onMouseMove={(e) => handleMouseMove(4, e)}
-            onMouseLeave={(e) => handleMouseLeave(4, e)}
+            ref={(ref) => (wrapperRefs.current[5] = ref)}
+            onMouseDown={(e) => startScrolling(5, e)}
+            onMouseUp={() => stopScrolling(5)}
+            onMouseMove={(e) => handleMouseMove(5, e)}
+            onMouseLeave={(e) => handleMouseLeave(5, e)}
+            onTouchStart={(e) => handleTouchStart(5, e)}
+            onTouchMove={(e) => handleTouchMove(5, e)}
+            onTouchEnd={() => handleTouchEnd(5)}
           >
             <img src={image16Gallery} alt="image16" loading="lazy" />
             <img src={image17Gallery} alt="image17" loading="lazy" />
@@ -261,21 +382,24 @@ const Gallery = () => {
           </div>
         </div>
 
-        <div className={styles['color-container']}>
+        <div className={`${styles['color-container']} hidden`} ref={(el) => (elementRefs.current[9] = el)}>
           <div
             className={styles['images-1']}
-            ref={(ref) => (wrapperRefs.current[5] = ref)}
-            onMouseDown={(e) => startScrolling(5, e)}
-            onMouseUp={() => stopScrolling(5)}
-            onMouseMove={(e) => handleMouseMove(5, e)}
-            onMouseLeave={(e) => handleMouseLeave(5, e)}
+            ref={(ref) => (wrapperRefs.current[6] = ref)}
+            onMouseDown={(e) => startScrolling(6, e)}
+            onMouseUp={() => stopScrolling(6)}
+            onMouseMove={(e) => handleMouseMove(6, e)}
+            onMouseLeave={(e) => handleMouseLeave(6, e)}
+            onTouchStart={(e) => handleTouchStart(6, e)}
+            onTouchMove={(e) => handleTouchMove(6, e)}
+            onTouchEnd={() => handleTouchEnd(6)}
           >
             <img src={image19Gallery} alt="image19" loading="lazy" />
             <img src={image20Gallery} alt="image20" loading="lazy" />
             <img src={image21Gallery} alt="image21" loading="lazy" />
           </div>
 
-          <div className={styles['images-1-p']}>
+          <div className={`${styles['images-1-p']} hidden`} ref={(el) => (elementRefs.current[10] = el)}>
             <p className={styles['p-2']}>
               63d International Childern Festival in Šibenik
               <br />
@@ -284,8 +408,18 @@ const Gallery = () => {
           </div>
         </div>
 
-        <div className={styles['wrapper1']}>
-          <div className={styles['images-2']}>
+        <div className={`${styles['wrapper1']} hidden`} ref={(el) => (elementRefs.current[11] = el)}>
+          <div
+            className={styles['images-2']}
+            ref={(ref) => (wrapperRefs.current[7] = ref)}
+            onMouseDown={(e) => startScrolling(7, e)}
+            onMouseUp={() => stopScrolling(7)}
+            onMouseMove={(e) => handleMouseMove(7, e)}
+            onMouseLeave={(e) => handleMouseLeave(7, e)}
+            onTouchStart={(e) => handleTouchStart(7, e)}
+            onTouchMove={(e) => handleTouchMove(7, e)}
+            onTouchEnd={() => handleTouchEnd(7)}
+          >
             <img src={image22Gallery} alt="image22" loading="lazy" />
             <img src={image23Gallery} alt="image23" loading="lazy" />
           </div>
@@ -299,7 +433,7 @@ const Gallery = () => {
           </div>
         </div>
 
-        <div className={styles['big-image2']}>
+        <div className={`${styles['big-image2']} hidden`} ref={(el) => (elementRefs.current[12] = el)}>
           <p>
             Aleksandar Švabić and Zrinka Posavec: The Bald Soprano <br />
             (Chamber Opera inspired by Eugène Ionesco’s drama), Zagreb, 2021
@@ -307,8 +441,18 @@ const Gallery = () => {
           <img src={image24Gallery} alt="image24" loading="lazy" />
         </div>
 
-        <div className={styles['wrapper1']}>
-          <div className={styles['images-2']}>
+        <div className={`${styles['wrapper1']} hidden`} ref={(el) => (elementRefs.current[13] = el)}>
+          <div
+            className={styles['images-2']}
+            ref={(ref) => (wrapperRefs.current[8] = ref)}
+            onMouseDown={(e) => startScrolling(8, e)}
+            onMouseUp={() => stopScrolling(8)}
+            onMouseMove={(e) => handleMouseMove(8, e)}
+            onMouseLeave={(e) => handleMouseLeave(8, e)}
+            onTouchStart={(e) => handleTouchStart(8, e)}
+            onTouchMove={(e) => handleTouchMove(8, e)}
+            onTouchEnd={() => handleTouchEnd(8)}
+          >
             <img src={image25Gallery} alt="image25" loading="lazy" />
             <img src={image26Gallery} alt="image26" loading="lazy" />
           </div>
@@ -323,7 +467,7 @@ const Gallery = () => {
         </div>
       </main>
 
-      <footer className={styles['gallery-footer']}>
+      <footer className={`${styles['gallery-footer']} hidden`} ref={(el) => (elementRefs.current[14] = el)}>
         <div>
           <img src={Signature} alt="Signature" />
           <div className={styles['footer-icons']}>

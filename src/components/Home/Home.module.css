@@ -46,6 +46,21 @@
     position: relative;
     padding-top: 13%;
     padding-right: 6%;
+    animation-name: slideFromLeft;
+    animation-duration: 3.5s;
+    animation-delay: 0.1s;
+    animation-fill-mode: forwards;
+    transform: translateX(-100%);
+}
+
+@keyframes slideFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 .info-container {
@@ -121,13 +136,29 @@ h2 {
     align-items: center;
     padding: 10px 0;
     text-align: center;
+    justify-content: space-between;
+    margin-right: 5%;
+}
+
+.schedule-button {
+    min-width: 5%;
+    height: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--curry-color);
+    color: var(--white-color);
+    cursor: pointer;
+}
+
+.schedule-button:hover,
+.schedule-button>a:hover {
+    color: var(--black-color);
 }
 
 .date-and-place {
     display: flex;
-    width: 20%;
     align-items: center;
-    justify-content: space-evenly;
+    margin-left: 5%;
 }
 
 li>div>p {
@@ -192,6 +223,7 @@ section>h2 {
 .iframe-videos {
     display: flex;
     width: 100%;
+    justify-content: center;
     height: 600px;
     align-items: center;
     gap: 1.5%;
@@ -201,7 +233,7 @@ section>h2 {
 }
 
 iframe {
-    max-width: 860px;
+    width: 800px;
     height: 100%;
 }
 
@@ -348,16 +380,29 @@ button.nav-toggle,
 
     .navigation {
         flex-direction: column;
-        position: absolute;
+        position: fixed;
         top: 0;
-        left: -100%;
+        right: -100%;
         /* Initially hide the menu off-screen */
-        min-width: 100%;
+        min-width: 80%;
         min-height: 100%;
         background-color: var(--midnight-color);
-        transition: left 0.4s ease;
+        transition: right 0.4s ease;
         z-index: 20;
         padding-right: 0;
+    }
+
+    .navigation.active {
+        display: flex;
+        right: 0;
+        z-index: 20;
+        min-width: 80%;
+        min-height: 100%;
+        position: fixed;
+
+        .line {
+            width: 100%;
+        }
     }
 
     .signature-mob {
@@ -377,7 +422,7 @@ button.nav-toggle,
     }
 
     .footer-slide.active {
-        left: 32%;
+        left: 43%;
         transition: left 0.4s ease;
         z-index: 22;
         position: fixed;
@@ -395,28 +440,15 @@ button.nav-toggle,
     .signature-mob-slide.active {
         display: block;
         transition: left 0.4s ease;
-        left: 6%;
+        left: 28%;
         z-index: 21;
         position: fixed;
     }
 
     .icons-mobile.active {
-        left: 37%;
+        left: 50%;
         transition: left 0.4s ease;
         position: fixed;
-    }
-
-    .navigation.active {
-        display: flex;
-        left: 0;
-        z-index: 20;
-        min-width: 100%;
-        min-height: 100%;
-        position: fixed;
-
-        .line {
-            width: 100%;
-        }
     }
 
     button.nav-toggle {
@@ -521,6 +553,8 @@ button.nav-toggle,
     .upcoming-container>h2 {
         font-size: 20px;
         text-transform: uppercase;
+        padding-top: 20%;
+        padding-bottom: 10%;
     }
 
     .main-home {
@@ -559,7 +593,7 @@ button.nav-toggle,
 
     .performance-section>h2 {
         padding-top: 8%;
-        padding-bottom: 3%;
+        padding-bottom: 8%;
     }
 
     .h2-images {
@@ -568,6 +602,29 @@ button.nav-toggle,
 
     .iframe-videos {
         height: 40vh;
+    }
+
+    .mobile-button-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 50%;
+    }
+
+    .mobile-button-arrow {
+        min-width: 100px;
+        height: 65px;
+        border: none;
+        border-radius: 0;
+        background-color: transparent;
+        color: var(--black-color);
+        cursor: pointer;
+    }
+
+    .mobile-button-arrow>img {
+        width: 60%;
+        height: 100%;
     }
 
     .images-container {
@@ -597,6 +654,17 @@ button.nav-toggle,
         padding-right: 5%;
         padding-bottom: 3%;
     }
+
+    .list-element>p,
+    .date-and-place>p,
+    span {
+        font-size: 13px;
+    }
+
+    .schedule-button {
+        font-size: 10px;
+        padding: 1%;
+    }
 }
 
 @media only screen and (max-width: 455px) {
@@ -613,11 +681,43 @@ button.nav-toggle,
     .signature-mob {
         left: 60%;
     }
+
+    .list-element>p,
+    .date-and-place>p,
+    span {
+        font-size: 10px;
+    }
+
+    .schedule-button {
+        font-size: 8px;
+        padding: 1%;
+    }
+
+    .mobile-button-arrow {
+        min-width: 70px;
+        height: 45px;
+        border: none;
+        border-radius: 0;
+        background-color: transparent;
+        color: var(--black-color);
+        cursor: pointer;
+    }
+
+    .mobile-button-arrow>img {
+        width: 60%;
+        height: 100%;
+    }
 }
 
 @media only screen and (max-width: 340px) {
     .signature-mob {
         left: 55%;
+    }
+
+    .list-element>p,
+    .date-and-place>p,
+    span {
+        font-size: 9px;
     }
 }
 

@@ -23,18 +23,53 @@ import { NavLink } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 
 const About = () => {
+  const elementRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        } else {
+          entry.target.classList.remove('show');
+        }
+      });
+    });
+
+    const elements = elementRefs.current;
+    if (elements.length > 0) {
+      elements.forEach((element) => {
+        if (element) {
+          observer.observe(element);
+        }
+      });
+    }
+
+    return () => {
+      elements.forEach((element) => {
+        if (element) {
+          observer.unobserve(element);
+        }
+      });
+    };
+  }, []);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   const [currentIndexTop, setCurrentIndexTop] = useState(0);
   const [currentIndexBottom, setCurrentIndexBottom] = useState(0);
+  const [currentIndexMiddle, setCurrentIndexMiddle] = useState(0);
   const intervalRef = useRef(null);
   const totalSlidesTop = 4;
   const totalSlidesBottom = 3;
+  const totalSlidesMiddle = 2;
 
   useEffect(() => {
     const slidesTop = document.querySelectorAll(`.${styles.slideTop}`);
     const slidesBottom = document.querySelectorAll(`.${styles.slideBottom}`);
+    const slidesMiddle = document.querySelectorAll(`.${styles.slideMiddle}`);
 
     const showSlide = (index, slides) => {
       slides.forEach((slide, i) => {
@@ -45,15 +80,17 @@ const About = () => {
     const nextSlide = () => {
       setCurrentIndexTop((prevIndex) => (prevIndex + 1) % totalSlidesTop);
       setCurrentIndexBottom((prevIndex) => (prevIndex + 1) % totalSlidesBottom);
+      setCurrentIndexMiddle((prevIndex) => (prevIndex + 1) % totalSlidesMiddle);
     };
 
     showSlide(currentIndexTop, slidesTop);
     showSlide(currentIndexBottom, slidesBottom);
+    showSlide(currentIndexMiddle, slidesMiddle);
 
     intervalRef.current = setInterval(nextSlide, 9000);
 
     return () => clearInterval(intervalRef.current);
-  }, [currentIndexTop, currentIndexBottom]);
+  }, [currentIndexTop, currentIndexMiddle, currentIndexBottom]);
 
   const handleTopButtonClick = (index) => {
     setCurrentIndexTop(index);
@@ -63,33 +100,138 @@ const About = () => {
     setCurrentIndexBottom(index);
   };
 
+  const handleMiddleButtonClick = (index) => {
+    setCurrentIndexMiddle(index);
+  };
+
+  function toggleNavigation() {
+    const navigation = document.querySelector(`.${styles.navigation}`);
+    navigation.classList.toggle(styles.active);
+    const mobileNav = document.querySelector(`.${styles['mobile-li']}`);
+    mobileNav.classList.toggle(styles.active);
+    const mobileIcons = document.querySelector(`.${styles['icons-mobile']}`);
+    mobileIcons.classList.toggle(styles.active);
+    const signature = document.querySelector(`.${styles['signature-mob-slide']}`);
+    signature.classList.toggle(styles.active);
+    const footerSlide = document.querySelector(`.${styles['footer-slide']}`);
+    footerSlide.classList.toggle(styles.active);
+  }
+
+  const imageWrapperRef = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startPosition, setStartPosition] = useState(0);
+  const [currentTranslate, setCurrentTranslate] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 480);
+    };
+
+    handleResize(); // Check initial width
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const startDrag = (event) => {
+    if (isMobile) {
+      setIsDragging(true);
+      setStartPosition(getPositionX(event));
+      setCurrentTranslate(getTranslateX());
+    }
+  };
+
+  const endDrag = () => {
+    setIsDragging(false);
+  };
+
+  const drag = (event) => {
+    if (isMobile && isDragging) {
+      const currentPosition = getPositionX(event);
+      const distance = currentPosition - startPosition;
+      const containerWidth = imageWrapperRef.current.offsetWidth;
+      const imageWrapperWidth = imageWrapperRef.current.scrollWidth;
+      const maxTranslate = 0;
+      const minTranslate = containerWidth - imageWrapperWidth;
+      let newTranslate = currentTranslate + distance;
+
+      if (newTranslate > maxTranslate) {
+        newTranslate = maxTranslate;
+      } else if (newTranslate < minTranslate) {
+        newTranslate = minTranslate;
+      }
+
+      imageWrapperRef.current.style.transform = `translateX(${newTranslate}px)`;
+    }
+  };
+
+  const getPositionX = (event) => {
+    return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+  };
+
+  const getTranslateX = () => {
+    const style = window.getComputedStyle(imageWrapperRef.current);
+    const transform = style.getPropertyValue('transform');
+    const matrix = new DOMMatrix(transform);
+    return matrix.m41;
+  };
+
   return (
     <div>
       <header className={styles['about-home-header']}>
         <div className={styles['about-background-image']}></div>
         <div className={styles['home-header']}>
-          <img src={Signature} alt="Signature" />
+          <img src={Signature} alt="Signature" className={styles['signature-mob-slide']} />
 
           <nav>
+            <button className={styles['nav-toggle']} onClick={toggleNavigation}>
+              <span className={styles.line}></span>
+              <span className={styles.line}></span>
+              <span className={styles.line}></span>
+            </button>
+
             <ul className={styles.navigation}>
-              <NavLink to="/">
-                <li className={styles['nav-li']}>Home</li>
-              </NavLink>
-              <NavLink to="/about">
-                <li className={styles['nav-li']}>About</li>
-              </NavLink>
-              <NavLink to="/gallery">
-                <li className={styles['nav-li']}>Gallery</li>
-              </NavLink>
-              <NavLink to="/agenda">
-                <li className={styles['nav-li']}>Agenda</li>
-              </NavLink>
-              <NavLink to="/contact">
-                <li className={styles['nav-li']}>Contact</li>
-              </NavLink>
+              <button className={`${styles['button-nav-mobile']}`} onClick={toggleNavigation}>
+                <span className={styles.line}></span>
+                <span className={styles.line}></span>
+                <span className={styles.line}></span>
+              </button>
+              <div className={`${styles['mobile-li']} ${styles['navigation']}`}>
+                <NavLink to="/">
+                  <li className={styles['nav-li']}>Home</li>
+                </NavLink>
+                <NavLink to="/about">
+                  <li className={styles['nav-li']}>About</li>
+                </NavLink>
+                <NavLink to="/gallery">
+                  <li className={styles['nav-li']}>Gallery</li>
+                </NavLink>
+                <NavLink to="/agenda">
+                  <li className={styles['nav-li']}>Agenda</li>
+                </NavLink>
+                <NavLink to="/contact">
+                  <li className={styles['nav-li']}>Contact</li>
+                </NavLink>
+              </div>
             </ul>
           </nav>
         </div>
+
+        <div className={`${styles['icons-mobile']}`}>
+          <a href="https://www.facebook.com/JosipicaB" target="blank">
+            <img src={facebookIcon} alt="Facebook" />
+          </a>
+          <a href="https://www.instagram.com/josipa___bilic/" target="blank">
+            <img src={instagramIcon} alt="Instagram" />
+          </a>
+          <a href="https://www.youtube.com/@josipabilicsoprano/featured" target="blank">
+            <img src={youtubeIcon} alt="Youtube" />
+          </a>
+        </div>
+        <p className={styles['footer-slide']}>All rights reserved @ 2024</p>
 
         <div className={styles['about-icons']}>
           <a href="https://www.facebook.com/JosipicaB" target="blank">
@@ -105,7 +247,7 @@ const About = () => {
       </header>
 
       <main>
-        <div className={styles['bio-container']}>
+        <div className={`${styles['bio-container']} hidden`} ref={(el) => (elementRefs.current[1] = el)}>
           <p className={styles['short-bio']}>
             Born in 1997 to a family of musicians, Josipa embarked on her musical studies at the age of 6, in addition
             to taking various dance classes and acting lessons. Her impressive biography starts with obtaining a
@@ -115,7 +257,7 @@ const About = () => {
           <h2 className={styles['hihglists-h2']}>CARERR HIGHLIGTS</h2>
         </div>
 
-        <div className={styles['slider']}>
+        <div className={`${styles['slider']} hidden`} ref={(el) => (elementRefs.current[2] = el)}>
           <div className={styles['slideTop']}>
             <img src={slide4} alt="slider4" loading="lazy" />
             <div className={styles['content']}>
@@ -159,7 +301,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className={styles['buttons-container']}>
+        <div className={`${styles['buttons-container']} hidden`} ref={(el) => (elementRefs.current[3] = el)}>
           {[...Array(totalSlidesTop).keys()].map((index) => (
             <button
               key={index}
@@ -170,20 +312,14 @@ const About = () => {
           ))}
         </div>
 
-        <h2 className={styles['project-h2']}>LATEST PROJECTS</h2>
-        <div className={styles['project-container']}>
-          <div className={styles['project-item-left']}>
-            <img src={about1} alt="about1" loading="lazy" />
-            <p>
-              She continues to perfect her baroque repertory and has had the opportunity to sing with distinguished
-              ensembles such as Le Concert de l&apos;Hostel Dieu, the Zagreb Soloists, Croatian Baroque Ensemble,
-              Symphony Orchestra of Croatian Radio-television, Dubrovnik Symphony Orchestra, Varaždin Chamber Orchestra.
-            </p>
-            <img src={about3} alt="about3" loading="lazy" />
-          </div>
+        <h2 className={`${styles['project-h2']} hidden`} ref={(el) => (elementRefs.current[4] = el)}>
+          LATEST PROJECTS
+        </h2>
 
-          <div className={styles['project-item-right']}>
-            <p>
+        <div className={`${styles['project-container']} hidden`} ref={(el) => (elementRefs.current[5] = el)}>
+          <div className={styles['project-container-box']}>
+            <img src={about1} alt="about1" loading="lazy" />
+            <p className={styles['row-1-p']}>
               In 2023 she won the prestigious Froville International Baroque Singing Competition as well as a
               professional recording special prize with I Gemelli ensemble.
               <br /> For her debut at the International Varaždin Baroque Festival with Camerata Garestin ensemble she
@@ -191,20 +327,47 @@ const About = () => {
               <br /> In 2024 Season she will have the opportunity to debut at the Insbruck Festwochen Baroque Feastival
               in Handel’s Arianna in Creta as Alceste.
             </p>
-            <img src={about2} alt="about2" loading="lazy" />
-            <p>
+          </div>
+
+          <div className={styles['project-container-box']}>
+            <p className={styles['row-2-p']}>
+              She continues to perfect her baroque repertory and has had the opportunity to sing with distinguished
+              ensembles such as Le Concert de l&apos;Hostel Dieu, the Zagreb Soloists, Croatian Baroque Ensemble,
+              Symphony Orchestra of Croatian Radio-television, Dubrovnik Symphony Orchestra, Varaždin Chamber Orchestra.
+            </p>
+            <img src={about2} alt="about3" loading="lazy" />
+          </div>
+
+          <div className={styles['project-container-box']}>
+            <img src={about3} alt="about2" loading="lazy" />
+            <p className={styles['row-3-p']}>
               Equally successful on the concert podium she performed Gustav Mahlers 4th Symphony, Mozart, Haydn and
               Beethoven concert arias, the soprano solo in Bach’s Markus Passion, Pergolesi’s Stabat Mater, Fauré’s
               Requiem, Mozarts Requiem and Krӧnungsmesse, Rossini’s Petite Messe Solennelle and Stabat Mater.
             </p>
           </div>
         </div>
-        <div className={styles['beginnings-blue-background']}>
-          <h2 className={styles['project-h2']}>EARLY BEGINNINGS</h2>
 
-          <div className={styles['beginnings-container']}>
-            <img src={image3} alt="beginning1" loading="lazy" />
-            <img src={beginning2} alt="beginning2" loading="lazy" />
+        <div className={`${styles['beginnings-blue-background']} hidden`} ref={(el) => (elementRefs.current[6] = el)}>
+          <h2 className={`${styles['project-h2']} hidden`} ref={(el) => (elementRefs.current[7] = el)}>
+            EARLY BEGINNINGS
+          </h2>
+
+          <div className={`${styles['beginnings-container']} hidden`} ref={(el) => (elementRefs.current[8] = el)}>
+            <div
+              className={styles['beginnings-wrapper']}
+              ref={imageWrapperRef}
+              onMouseDown={startDrag}
+              onMouseUp={endDrag}
+              onMouseLeave={endDrag}
+              onMouseMove={drag}
+              onTouchStart={startDrag}
+              onTouchEnd={endDrag}
+              onTouchMove={drag}
+            >
+              <img src={image3} alt="beginning1" loading="lazy" />
+              <img src={beginning2} alt="beginning2" loading="lazy" />
+            </div>
             <p>
               During her studies, she particularly drew attention in student Opera productions of Massenet s Cendrillon
               as the main heroine (2021), in Mozart’s Idomeneo as Ilia (2020), as well as in Mozart’s Cosi fan tutté as
@@ -212,25 +375,68 @@ const About = () => {
             </p>
           </div>
 
-          <div className={styles['beginnings-container2']}>
-            <img src={beginning3} alt="beginning3" loading="lazy" />
-            <img src={beginning4} alt="beginning4" loading="lazy" />
+          {!isMobile && (
+            <div className={`${styles['beginnings-container2']} hidden`} ref={(el) => (elementRefs.current[9] = el)}>
+              <img src={beginning3} alt="beginning3" loading="lazy" />
+              <img src={beginning4} alt="beginning4" loading="lazy" />
 
-            <div className={styles['paragraphs-container']}>
-              <p className={styles['paragraph-beg-1']}>
-                In 2020 she received prestigious Croatian Actor Award for the best female role in Opera - Young Artists
-                under 30 for her performance as Gretel (Humperdinck: Hansel and Gretel).
-              </p>
-              <p className={styles['paragraph-beg-2']}>
-                Before finishing musical studies in her native city Josipa has won numerous International and National
-                Competitions: József Simándy (2018 and 2021), Zoltán Kodály Award - ISA (2019), Lions grand prix (2017),
-                Lav Mirski (2016), Vera Kovač Vitkai (2015), Croatian National Competition HDGPP (2017 and 2019).
-              </p>
+              <div className={styles['paragraphs-container']}>
+                <p className={styles['paragraph-beg-1']}>
+                  In 2020 she received prestigious Croatian Actor Award for the best female role in Opera - Young
+                  Artists under 30 for her performance as Gretel (Humperdinck: Hansel and Gretel).
+                </p>
+                <p className={styles['paragraph-beg-2']}>
+                  Before finishing musical studies in her native city Josipa has won numerous International and National
+                  Competitions: József Simándy (2018 and 2021), Zoltán Kodály Award - ISA (2019), Lions grand prix
+                  (2017), Lav Mirski (2016), Vera Kovač Vitkai (2015), Croatian National Competition HDGPP (2017 and
+                  2019).
+                </p>
+              </div>
             </div>
-          </div>
+          )}
+
+          {isMobile && (
+            <div className={`${styles['slider']}`}>
+              <div className={styles['slideMiddle']}>
+                <img src={beginning3} alt="beginning3" loading="lazy" />
+                <div className={styles['content']}>
+                  <p>
+                    In 2020 she received prestigious Croatian Actor Award for the best female role in Opera - Young
+                    Artists under 30 for her performance as Gretel (Humperdinck: Hansel and Gretel).
+                  </p>
+                </div>
+              </div>
+
+              <div className={styles['slideMiddle']}>
+                <img src={beginning4} alt="beginning4" loading="lazy" />
+                <div className={styles['content']}>
+                  <p>
+                    Before finishing musical studies in her native city Josipa has won numerous International and
+                    National Competitions: József Simándy (2018 and 2021), Zoltán Kodály Award - ISA (2019), Lions grand
+                    prix (2017), Lav Mirski (2016), Vera Kovač Vitkai (2015), Croatian National Competition HDGPP (2017
+                    and 2019).
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
+          {isMobile && (
+            <div className={`${styles['buttons-container']} ${styles['buttons-container-bottom']}`}>
+              {[...Array(totalSlidesMiddle).keys()].map((index) => (
+                <button
+                  key={index}
+                  className={styles['slider-buttons']}
+                  style={{
+                    backgroundColor: currentIndexMiddle === index ? 'var(--curry-color)' : 'var(--white-color)',
+                  }}
+                  onClick={() => handleMiddleButtonClick(index)}
+                ></button>
+              ))}
+            </div>
+          )}
         </div>
 
-        <div className={styles['slider']}>
+        <div className={`${styles['slider']} hidden`} ref={(el) => (elementRefs.current[12] = el)}>
           <div className={styles['slideBottom']}>
             <img src={slide9} alt="slider9" loading="lazy" />
             <div className={styles['content']}>
@@ -249,8 +455,8 @@ const About = () => {
                 She has already collaborated with renowned conductors Dawid Runtz, Marius Burkert, Hansjörg Albrecht,
                 David Danzmayr, Martin Yates, Valentin Egel, Pier Giorgio Morandi, Marcello Mottadelli, Ivan Repušić,
                 Srba Dinić, Gyüdi Sándor, Josip Šego, Ivan Josip Skender, Pavle Zajcev, and directors Arnaud Bernard,
-                Hugo de Ana, Mathias Behrends, Sharon Mohar, Krešimir Dolenčić , Dora Ruždjak Podolski, Saša Anočić,
-                Petra Radin and Aleksandar Švabić.
+                Hugo de Ana, Alessio Pizzech, Mathias Behrends, Sharon Mohar, Krešimir Dolenčić , Dora Ruždjak Podolski,
+                Saša Anočić, Ivan Leo Lemo, Petra Radin and Aleksandar Švabić.
               </p>
             </div>
           </div>
@@ -268,7 +474,10 @@ const About = () => {
           </div>
         </div>
 
-        <div className={styles['buttons-container']}>
+        <div
+          className={`${styles['buttons-container']} ${styles['buttons-container-bottom2']} hidden`}
+          ref={(el) => (elementRefs.current[13] = el)}
+        >
           {[...Array(totalSlidesBottom).keys()].map((index) => (
             <button
               key={index}
@@ -280,7 +489,7 @@ const About = () => {
         </div>
       </main>
 
-      <footer className={styles['about-footer']}>
+      <footer className={`${styles['about-footer']} hidden`} ref={(el) => (elementRefs.current[14] = el)}>
         <div>
           <img src={Signature} alt="Signature" />
           <div className={styles['footer-icons']}>
