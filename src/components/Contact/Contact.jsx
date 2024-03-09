@@ -1,5 +1,5 @@
 import styles from './Contact.module.css';
-import { Signature, facebookIcon, instagramIcon, youtubeIcon, pdf } from '../../services';
+import { facebookIcon, instagramIcon, youtubeIcon, pdf } from '../../services';
 import { NavLink } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
 
@@ -57,7 +57,7 @@ const Contact = () => {
       <header className={styles['contact-home-header']}>
         <div className={styles['contact-background-image']}></div>
         <div className={styles['contact-header']}>
-          <img src={Signature} alt="Signature" className={styles['signature-mob-slide']} />
+          <p className={styles['signature-mob-slide']}>Josipa Bilić</p>
 
           <nav>
             <button className={styles['nav-toggle']} onClick={toggleNavigation}>
@@ -121,15 +121,9 @@ const Contact = () => {
         </blockquote>
 
         <div className={styles['contact-icons']}>
-          <a href="https://www.facebook.com/JosipicaB" target="blank">
-            <img src={facebookIcon} alt="Facebook" />
-          </a>
-          <a href="https://www.instagram.com/josipa___bilic/" target="blank">
-            <img src={instagramIcon} alt="Instagram" />
-          </a>
-          <a href="https://www.youtube.com/@josipabilicsoprano/featured" target="blank">
-            <img src={youtubeIcon} alt="Youtube" />
-          </a>
+          <a href="https://www.facebook.com/JosipicaB" className={`fa fa-facebook`} target="blank"></a>
+          <a href="https://www.instagram.com/josipa___bilic/" className={`fa fa-instagram`} target="blank"></a>
+          <a href="https://www.youtube.com/@josipabilicsoprano/featured" className={`fa fa-youtube`} target="blank"></a>
         </div>
       </header>
 
@@ -185,7 +179,7 @@ const Contact = () => {
           ></textarea>
 
           <div className={styles['contact-item']}>
-            <span id="cv-message">Kindly access my resume by clicking the following link:</span>
+            <span id="cv-message">Access Josipa&apos;s resume by clicking the following link:</span>
             <a className={styles['pdf-a']} id="cv" href={pdf} target="_blank" rel="noreferrer">
               Open CV
             </a>
@@ -196,17 +190,15 @@ const Contact = () => {
 
       <footer className={`${styles['contact-footer']} hidden`} ref={(el) => (elementRefs.current[3] = el)}>
         <div>
-          <img src={Signature} alt="Signature" />
-          <div className={styles['contact-footer-icons']}>
-            <a href="https://www.facebook.com/JosipicaB" target="blank">
-              <img src={facebookIcon} alt="Facebook" />
-            </a>
-            <a href="https://www.instagram.com/josipa___bilic/" target="blank">
-              <img src={instagramIcon} alt="Instagram" />
-            </a>
-            <a href="https://www.youtube.com/@josipabilicsoprano/featured" target="blank">
-              <img src={youtubeIcon} alt="Youtube" />
-            </a>
+          <p className={styles['signature-mob-footer']}>Josipa Bilić</p>
+          <div className={styles['footer-icons']}>
+            <a href="https://www.facebook.com/JosipicaB" className={`fa fa-facebook`} target="blank"></a>
+            <a href="https://www.instagram.com/josipa___bilic/" className={`fa fa-instagram`} target="blank"></a>
+            <a
+              href="https://www.youtube.com/@josipabilicsoprano/featured"
+              className={`fa fa-youtube`}
+              target="blank"
+            ></a>
           </div>
         </div>
         <p>All rights reservef @ 2024</p>

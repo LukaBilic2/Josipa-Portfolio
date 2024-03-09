@@ -46,11 +46,32 @@ const Upcoming = () => {
       </li>
 
       <hr />
+      <li className={styles['list-element']}>
+        <div className={styles['date-and-place']}>
+          <p>
+            24
+            <br />
+            March
+          </p>
+        </div>
+        <p>
+          Concert with Trio Ripos
+          <br />
+          <span>Vršilnica Zaprešić - Croatia </span>
+        </p>
+        <button className={styles['schedule-button']}>
+          <a target="_blank" rel="noopener noreferrer">
+            Pending
+          </a>
+        </button>
+      </li>
+
+      <hr />
 
       <li className={styles['list-element']}>
         <div className={styles['date-and-place']}>
           <p>
-            06, 10
+            06, 11
             <br />
             April
           </p>

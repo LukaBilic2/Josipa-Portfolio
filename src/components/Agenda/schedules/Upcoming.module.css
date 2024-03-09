@@ -44,20 +44,40 @@ span {
 
 @media only screen and (max-width: 480px) {
 
+    .list-element {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 25px 0;
+        text-align: center;
+        justify-content: space-between;
+        margin-right: 0%;
+        gap: 20px;
+    }
+
     .list-element>p,
-    .date-and-place>p,
     span {
-        font-size: 13px;
+        font-size: 16px;
+    }
+
+    .date-and-place>p {
+        font-size: 20px;
+    }
+
+    .date-and-place {
+        display: flex;
+        align-items: center;
+        margin-left: 0%;
     }
 
     .schedule-button,
     .schedule-button>a {
-        font-size: 10px;
+        font-size: 16px;
         padding: 1%;
     }
 }
 
-@media only screen and (max-width: 400px) {
+/* @media only screen and (max-width: 400px) {
 
     .list-element>p,
     .date-and-place>p,
@@ -79,4 +99,4 @@ span {
     span {
         font-size: 9px;
     }
-}
+} */

@@ -8,10 +8,13 @@
     color: var(--white-color);
 }
 
-img[alt='Signature'] {
+.signature-mob-slide {
     position: relative;
     left: 30px;
     top: 5px;
+    font-family: "Great Vibes", cursive;
+    font-size: 33px;
+    color: var(--white-color);
 }
 
 .home-header {
@@ -44,9 +47,10 @@ img[alt='Signature'] {
     display: flex;
     justify-content: end;
     align-items: center;
-    padding-right: 4%;
-    gap: 5px;
+    padding-right: 3%;
+    gap: 20px;
     margin-top: 30%;
+    font-size: 25px;
 }
 
 h2 {
@@ -129,8 +133,17 @@ h2 {
 .footer-icons {
     display: flex;
     align-items: center;
-    padding-right: 3%;
-    gap: 5px;
+    padding-right: 8%;
+    gap: 45%;
+    font-size: 25px;
+}
+
+.footer-icons>a:hover {
+    background-color: var(--curry-color);
+}
+
+.footer-icons>a {
+    padding: 8%;
 }
 
 main {
@@ -138,15 +151,28 @@ main {
     background-color: white;
 }
 
-a>img:hover,
+.agenda-icons>a:hover,
 .nav-li:hover {
     background-color: var(--curry-color);
     border-radius: 5px;
     cursor: pointer;
 }
 
+.agenda-icons>a {
+    padding: 0.4%;
+}
+
 .nav-li {
     padding: 3px;
+}
+
+.signature-mob-footer {
+    position: relative;
+    left: 4%;
+    top: 5px;
+    font-family: "Great Vibes", cursive;
+    font-size: 33px;
+    color: var(--white-color);
 }
 
 button.button-nav-mobile,
@@ -222,6 +248,7 @@ button.nav-toggle {
         left: -100%;
         transition: left 0.4s ease;
         z-index: 21;
+        font-size: 25px;
     }
 
     div.home-header>.signature-mob-slide.active {
@@ -325,6 +352,31 @@ button.nav-toggle {
         padding-top: 8%;
         padding-right: 5%;
         padding-bottom: 3%;
+    }
+
+    .signature-mob-slide {
+        font-size: 23px;
+    }
+
+    .footer-icons {
+        display: flex;
+        align-items: center;
+        padding-right: 10%;
+        gap: 13%;
+        font-size: 25px;
+    }
+
+    .footer-icons>a {
+        padding: 8%;
+    }
+
+    .signature-mob-footer {
+        position: relative;
+        left: 30px;
+        top: 5px;
+        font-family: "Great Vibes", cursive;
+        font-size: 23px;
+        color: var(--white-color);
     }
 
 }

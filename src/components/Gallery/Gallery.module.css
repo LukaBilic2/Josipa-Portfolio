@@ -8,10 +8,22 @@
     color: var(--white-color);
 }
 
-img[alt='Signature'] {
+.signature-mob-slide {
     position: relative;
     left: 30px;
     top: 5px;
+    font-family: "Great Vibes", cursive;
+    font-size: 33px;
+    color: var(--white-color);
+}
+
+.signature-mob-footer {
+    position: relative;
+    left: 4%;
+    top: 5px;
+    font-family: "Great Vibes", cursive;
+    font-size: 33px;
+    color: var(--white-color);
 }
 
 .home-header {
@@ -39,7 +51,7 @@ img[alt='Signature'] {
     list-style: none;
 }
 
-a>img:hover,
+.gallery-icons>a:hover,
 .nav-li:hover {
     background-color: var(--curry-color);
     border-radius: 5px;
@@ -50,13 +62,18 @@ a>img:hover,
     padding: 3px;
 }
 
+.gallery-icons>a {
+    padding: 0.4%;
+}
+
 .gallery-icons {
     display: flex;
     justify-content: end;
     align-items: center;
-    padding-right: 4%;
-    gap: 5px;
+    padding-right: 3%;
+    gap: 10px;
     margin-top: 1%;
+    font-size: 25px;
 }
 
 .p-main-background {
@@ -207,8 +224,17 @@ div.big-image2>p {
 .footer-icons {
     display: flex;
     align-items: center;
-    padding-right: 3%;
-    gap: 5px;
+    padding-right: 8%;
+    gap: 45%;
+    font-size: 25px;
+}
+
+.footer-icons>a:hover {
+    background-color: var(--curry-color);
+}
+
+.footer-icons>a {
+    padding: 8%;
 }
 
 button.button-nav-mobile,
@@ -240,7 +266,7 @@ button.nav-toggle {
         padding-left: 3%;
         width: 100%;
         color: var(--white-color);
-        top: 32%;
+        top: 35%;
         position: absolute;
     }
 
@@ -304,6 +330,7 @@ button.nav-toggle {
         left: -100%;
         transition: left 0.4s ease;
         z-index: 21;
+        font-size: 25px;
     }
 
     div.home-header>.signature-mob-slide.active {
@@ -500,5 +527,30 @@ button.nav-toggle {
         padding-top: 8%;
         padding-right: 5%;
         padding-bottom: 3%;
+    }
+
+    .signature-mob-slide {
+        font-size: 23px;
+    }
+
+    .signature-mob-footer {
+        position: relative;
+        left: 30px;
+        top: 5px;
+        font-family: "Great Vibes", cursive;
+        font-size: 23px;
+        color: var(--white-color);
+    }
+
+    .footer-icons {
+        display: flex;
+        align-items: center;
+        padding-right: 11%;
+        gap: 13%;
+        font-size: 25px;
+    }
+
+    .footer-icons>a {
+        padding: 8%;
     }
 }

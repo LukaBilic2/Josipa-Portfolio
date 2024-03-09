@@ -12,6 +12,18 @@
     position: relative;
     left: 30px;
     top: 5px;
+    font-family: "Great Vibes", cursive;
+    font-size: 33px;
+    color: var(--white-color);
+}
+
+.signature-mob-footer {
+    position: relative;
+    left: 4%;
+    top: 5px;
+    font-family: "Great Vibes", cursive;
+    font-size: 33px;
+    color: var(--white-color);
 }
 
 .home-header {
@@ -88,16 +100,21 @@
     display: flex;
     justify-content: end;
     align-items: center;
-    padding-right: 6.5%;
-    gap: 5px;
+    padding-right: 3%;
+    gap: 10px;
     padding-top: 70px;
+    font-size: 25px;
 }
 
-a>img:hover,
+.icons>a:hover,
 .nav-li:hover {
     background-color: var(--curry-color);
     border-radius: 5px;
     cursor: pointer;
+}
+
+.icons>a {
+    padding: 0.4%;
 }
 
 .nav-li {
@@ -352,8 +369,17 @@ iframe {
 .footer-icons {
     display: flex;
     align-items: center;
-    padding-right: 3%;
-    gap: 5px;
+    padding-right: 8%;
+    gap: 30%;
+    font-size: 25px;
+}
+
+.footer-icons>a {
+    padding: 8%;
+}
+
+.footer-icons>a:hover {
+    background-color: var(--curry-color);
 }
 
 .main-home {
@@ -409,6 +435,16 @@ button.nav-toggle,
         position: absolute;
         top: 30%;
         left: 65%;
+        font-size: 25px;
+    }
+
+    .signature-mob-footer {
+        position: relative;
+        left: 30px;
+        top: 5px;
+        font-family: "Great Vibes", cursive;
+        font-size: 23px;
+        color: var(--white-color);
     }
 
     .footer-slide {
@@ -435,13 +471,16 @@ button.nav-toggle,
         left: -100%;
         transition: left 0.4s ease;
         z-index: 21;
+        font-family: "Great Vibes", cursive;
+        color: var(--white-color);
+        font-size: 25px;
     }
 
     .signature-mob-slide.active {
         display: block;
         transition: left 0.4s ease;
         left: 28%;
-        z-index: 21;
+        z-index: 100;
         position: fixed;
     }
 
@@ -495,13 +534,21 @@ button.nav-toggle,
     }
 
     .info-wrapper {
+        background-color: var(--midnight-color);
         justify-content: center;
         padding: 0;
         margin-top: 0%;
+        animation-name: none;
+        animation-duration: 3.5s;
+        animation-delay: 0.1s;
+        animation-fill-mode: forwards;
+        transform: translateX(0);
     }
 
     .info-container {
         width: 100%;
+        height: 100%;
+        padding-bottom: 12%;
     }
 
     .info-container>a {
@@ -517,15 +564,21 @@ button.nav-toggle,
     }
 
     .info-container>h1 {
-        color: var(--tuscan-color);
+        color: var(--white-color);
         font-size: 20px;
         text-transform: uppercase;
+        padding-top: 2%;
     }
 
     .info-container>p {
         font-size: 14px;
-        color: var(--black-color);
+        color: var(--white-color);
         padding: 0 5.5%;
+        animation-name: slideFromLeft;
+        animation-duration: 3.5s;
+        animation-delay: 0.1s;
+        animation-fill-mode: forwards;
+        transform: translateX(-100%);
     }
 
     .icons {
@@ -540,7 +593,7 @@ button.nav-toggle,
 
     .home-header {
         padding: 0;
-        height: 2%;
+        height: 0%;
     }
 
     .home-background-image {
@@ -655,16 +708,46 @@ button.nav-toggle,
         padding-bottom: 3%;
     }
 
-    .list-element>p,
-    .date-and-place>p,
-    span {
-        font-size: 13px;
+    .list-element {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 25px 0;
+        text-align: center;
+        justify-content: space-between;
+        margin-right: 0%;
+        gap: 20px;
     }
 
-    .schedule-button>a,
-    .schedule-button {
-        font-size: 10px;
+    .list-element>p,
+    span {
+        font-size: 16px;
+    }
+
+    .date-and-place>p {
+        font-size: 20px;
+    }
+
+    .date-and-place {
+        margin-left: 0%;
+    }
+
+    .schedule-button,
+    .schedule-button>a {
+        font-size: 16px;
         padding: 1%;
+    }
+
+    .footer-icons {
+        display: flex;
+        align-items: center;
+        padding-right: 10%;
+        gap: 13%;
+        font-size: 25px;
+    }
+
+    .footer-icons>a {
+        padding: 8%;
     }
 }
 
@@ -681,18 +764,6 @@ button.nav-toggle,
 
     .signature-mob {
         left: 60%;
-    }
-
-    .list-element>p,
-    .date-and-place>p,
-    span {
-        font-size: 10px;
-    }
-
-    .schedule-button>a,
-    .schedule-button {
-        font-size: 8px;
-        padding: 1%;
     }
 
     .mobile-button-arrow {
@@ -716,11 +787,6 @@ button.nav-toggle,
         left: 55%;
     }
 
-    .list-element>p,
-    .date-and-place>p,
-    span {
-        font-size: 9px;
-    }
 }
 
 @media only screen and (max-width: 325px) {

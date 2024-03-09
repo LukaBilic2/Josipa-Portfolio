@@ -1,6 +1,5 @@
 import styles from './Gallery.module.css';
 import {
-  Signature,
   facebookIcon,
   image10Gallery,
   image11Gallery,
@@ -29,6 +28,9 @@ import {
   image8Gallery,
   image9Gallery,
   instagramIcon,
+  newSlider1,
+  newSlider2,
+  newSlider3,
   youtubeIcon,
 } from '../../services';
 import { NavLink } from 'react-router-dom';
@@ -87,7 +89,9 @@ const Gallery = () => {
     if (!touchStartX) return;
     const currentX = e.touches[0].clientX;
     const diff = touchStartX - currentX;
-    wrapperRefs.current[index].scrollLeft = scrollLeft + diff;
+    const sensitivityFactor = 1.5;
+    const scrollDistance = diff * sensitivityFactor;
+    wrapperRefs.current[index].scrollLeft = scrollLeft + scrollDistance;
     setTouchMoveX(currentX);
   };
 
@@ -146,7 +150,7 @@ const Gallery = () => {
       <header className={styles['gallery-home-header']}>
         <div className={styles['gallery-background-image']}></div>
         <div className={styles['home-header']}>
-          <img src={Signature} alt="Signature" className={styles['signature-mob-slide']} />
+          <p className={styles['signature-mob-slide']}>Josipa Bilić</p>
 
           <nav>
             <button className={styles['nav-toggle']} onClick={toggleNavigation}>
@@ -204,15 +208,9 @@ const Gallery = () => {
         </div>
 
         <div className={styles['gallery-icons']}>
-          <a href="https://www.facebook.com/JosipicaB" target="blank">
-            <img src={facebookIcon} alt="Facebook" />
-          </a>
-          <a href="https://www.instagram.com/josipa___bilic/" target="blank">
-            <img src={instagramIcon} alt="Instagram" />
-          </a>
-          <a href="https://www.youtube.com/@josipabilicsoprano/featured" target="blank">
-            <img src={youtubeIcon} alt="Youtube" />
-          </a>
+          <a href="https://www.facebook.com/JosipicaB" className={`fa fa-facebook`} target="blank"></a>
+          <a href="https://www.instagram.com/josipa___bilic/" className={`fa fa-instagram`} target="blank"></a>
+          <a href="https://www.youtube.com/@josipabilicsoprano/featured" className={`fa fa-youtube`} target="blank"></a>
         </div>
       </header>
 
@@ -220,6 +218,30 @@ const Gallery = () => {
         <h2 className={`${styles['gallery-h2']} hidden`} ref={(el) => (elementRefs.current[1] = el)}>
           Gallery
         </h2>
+
+        <div className={`${styles['wrapper1']} hidden`} ref={(el) => (elementRefs.current[15] = el)}>
+          <div
+            className={styles['images-1']}
+            ref={(ref) => (wrapperRefs.current[9] = ref)}
+            onMouseDown={(e) => startScrolling(9, e)}
+            onMouseUp={() => stopScrolling(9)}
+            onMouseMove={(e) => handleMouseMove(9, e)}
+            onMouseLeave={(e) => handleMouseLeave(9, e)}
+            onTouchStart={(e) => handleTouchStart(9, e)}
+            onTouchMove={(e) => handleTouchMove(9, e)}
+            onTouchEnd={() => handleTouchEnd(9)}
+          >
+            <img src={newSlider1} alt="image1" />
+            <img src={newSlider2} alt="image2" />
+            <img src={newSlider3} alt="image3" />
+          </div>
+
+          <div className={styles['images-1-p']}>
+            <p className={styles['p-1']}>
+              Wolfgang Amadeus Mozart: Così fan tutte (Despina) Croatian National Theatre in Zagreb, 2024
+            </p>
+          </div>
+        </div>
 
         <div className={`${styles['wrapper1']} hidden`} ref={(el) => (elementRefs.current[2] = el)}>
           <div
@@ -344,7 +366,7 @@ const Gallery = () => {
 
           <div className={styles['images-1-p']}>
             <p className={styles['p-1']}>
-              Emmerich Kálmán Gräfin Mariza
+              Emmerich Kálmán: Gräfin Mariza
               <br />
               Komedija Theatre Zagreb, 2022
             </p>
@@ -469,17 +491,15 @@ const Gallery = () => {
 
       <footer className={`${styles['gallery-footer']} hidden`} ref={(el) => (elementRefs.current[14] = el)}>
         <div>
-          <img src={Signature} alt="Signature" />
+          <p className={styles['signature-mob-footer']}>Josipa Bilić</p>
           <div className={styles['footer-icons']}>
-            <a href="https://www.facebook.com/JosipicaB" target="blank">
-              <img src={facebookIcon} alt="Facebook" />
-            </a>
-            <a href="https://www.instagram.com/josipa___bilic/" target="blank">
-              <img src={instagramIcon} alt="Instagram" />
-            </a>
-            <a href="https://www.youtube.com/@josipabilicsoprano/featured" target="blank">
-              <img src={youtubeIcon} alt="Youtube" />
-            </a>
+            <a href="https://www.facebook.com/JosipicaB" className={`fa fa-facebook`} target="blank"></a>
+            <a href="https://www.instagram.com/josipa___bilic/" className={`fa fa-instagram`} target="blank"></a>
+            <a
+              href="https://www.youtube.com/@josipabilicsoprano/featured"
+              className={`fa fa-youtube`}
+              target="blank"
+            ></a>
           </div>
         </div>
         <p>All rights reservef @ 2024</p>

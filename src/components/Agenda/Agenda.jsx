@@ -1,5 +1,5 @@
 import styles from './Agenda.module.css';
-import { Signature, facebookIcon, instagramIcon, youtubeIcon } from '../../services';
+import { facebookIcon, instagramIcon, youtubeIcon } from '../../services';
 import { NavLink } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import Upcoming from './schedules/Upcoming.jsx';
@@ -74,7 +74,7 @@ const Agenda = () => {
       <header className={styles['agenda-home-header']}>
         <div className={styles['agenda-background-image']}></div>
         <div className={styles['home-header']}>
-          <img src={Signature} alt="Signature" className={styles['signature-mob-slide']} />
+          <p className={styles['signature-mob-slide']}>Josipa Bilić</p>
 
           <nav>
             <button className={styles['nav-toggle']} onClick={toggleNavigation}>
@@ -125,15 +125,9 @@ const Agenda = () => {
         <p className={styles['footer-slide']}>All rights reserved @ 2024</p>
 
         <div className={styles['agenda-icons']}>
-          <a href="https://www.facebook.com/JosipicaB" target="blank">
-            <img src={facebookIcon} alt="Facebook" />
-          </a>
-          <a href="https://www.instagram.com/josipa___bilic/" target="blank">
-            <img src={instagramIcon} alt="Instagram" />
-          </a>
-          <a href="https://www.youtube.com/@josipabilicsoprano/featured" target="blank">
-            <img src={youtubeIcon} alt="Youtube" />
-          </a>
+          <a href="https://www.facebook.com/JosipicaB" className={`fa fa-facebook`} target="blank"></a>
+          <a href="https://www.instagram.com/josipa___bilic/" className={`fa fa-instagram`} target="blank"></a>
+          <a href="https://www.youtube.com/@josipabilicsoprano/featured" className={`fa fa-youtube`} target="blank"></a>
         </div>
       </header>
 
@@ -173,17 +167,15 @@ const Agenda = () => {
 
       <footer className={`${styles['home-footer']} hidden`} ref={(el) => (elementRefs.current[2] = el)}>
         <div>
-          <img src={Signature} alt="Signature" />
+          <p className={styles['signature-mob-footer']}>Josipa Bilić</p>
           <div className={styles['footer-icons']}>
-            <a href="https://www.facebook.com/JosipicaB" target="blank">
-              <img src={facebookIcon} alt="Facebook" />
-            </a>
-            <a href="https://www.instagram.com/josipa___bilic/" target="blank">
-              <img src={instagramIcon} alt="Instagram" />
-            </a>
-            <a href="https://www.youtube.com/@josipabilicsoprano/featured" target="blank">
-              <img src={youtubeIcon} alt="Youtube" />
-            </a>
+            <a href="https://www.facebook.com/JosipicaB" className={`fa fa-facebook`} target="blank"></a>
+            <a href="https://www.instagram.com/josipa___bilic/" className={`fa fa-instagram`} target="blank"></a>
+            <a
+              href="https://www.youtube.com/@josipabilicsoprano/featured"
+              className={`fa fa-youtube`}
+              target="blank"
+            ></a>
           </div>
         </div>
         <p>All rights reservef @ 2024</p>

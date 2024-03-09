@@ -55,10 +55,16 @@ export { default as image23Gallery } from '../images/Gallery/image23-gallery.avi
 export { default as image24Gallery } from '../images/Gallery/image24-gallery.avif';
 export { default as image25Gallery } from '../images/Gallery/image25-gallery.avif';
 export { default as image26Gallery } from '../images/Gallery/image26-gallery.avif';
+export { default as newSlider1 } from '../images/Gallery/newslider1.avif';
+export { default as newSlider2 } from '../images/Gallery/newslider2.avif';
+export { default as newSlider3 } from '../images/Gallery/newslider3.avif';
 export { default as mobileButton } from '../components/Reusables/MobileButton.jsx';
 export { default as leftArrow } from '../images/left-arrow.webp';
 export { default as rightArrow } from '../images/right-arrow.webp';
 export { default as notes } from '../images/Agenda/idemo1.jpg';
+export { default as newContactBackground } from '../images/contact/contact-background2.avif';
+export { default as newContactBackground2 } from '../images/contact/contact-background3.avif';
+
 // export { default as } from '';
 // export { default as } from '';
 // export { default as } from '';

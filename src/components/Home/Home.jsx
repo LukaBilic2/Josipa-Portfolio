@@ -1,6 +1,5 @@
 import styles from './Home.module.css';
 import {
-  Signature,
   facebookIcon,
   youtubeIcon,
   instagramIcon,
@@ -52,12 +51,12 @@ const Home = () => {
   }, []);
 
   const videoSets = [
-    ['https://www.youtube.com/embed/KckM9MPGcMc'],
     ['https://www.youtube.com/embed/XAtG4f0cfSc'],
-    ['https://www.youtube.com/embed/w43VLr58s3Y'],
-    ['https://www.youtube.com/embed/KVNuwG3LgkY'],
-    ['https://www.youtube.com/embed/rthci3XOfEQ'],
-    ['https://www.youtube.com/embed/nV3_A-BoO-c'],
+    ['https://www.youtube.com/embed/KckM9MPGcMc'],
+    ['https://www.youtube.com/embed/d05YPDjJUvs'],
+    ['https://www.youtube.com/embed/-PFDkqpyvtk'],
+    ['https://www.youtube.com/embed/oPO2mkE1ycg'],
+    ['https://www.youtube.com/embed/Znz42JeuyBQ'],
   ];
 
   const [currentSetIndex, setCurrentSetIndex] = useState(0);
@@ -106,8 +105,8 @@ const Home = () => {
       <header className={`${styles['main-home-header']}`}>
         <div className={styles['home-background-image']}></div>
         <div className={styles['home-header']}>
-          <img src={Signature} alt="Signature1" className={styles['signature-mob']} />
-          <img src={Signature} alt="SignatureMob1" className={styles['signature-mob-slide']} />
+          <p className={styles['signature-mob']}>Josipa Bilić</p>
+          <p className={styles['signature-mob-slide']}>Josipa Bilić</p>
 
           <nav>
             <button className={styles['nav-toggle']} onClick={toggleNavigation}>
@@ -165,7 +164,7 @@ const Home = () => {
               One of the most sought-after young Croatian musicians, soprano Josipa Bilić is carefully building her
               career based on a bedrock of high professionalism and a refined source of her interpretation. Her voice is
               distinguished by wondrous ethereal luminosity and disciplined technical virtuosity displayed in her upper
-              rangister.
+              register.
             </p>
             <br />
             <Link to="/about">
@@ -175,15 +174,9 @@ const Home = () => {
         </div>
 
         <div className={styles.icons}>
-          <a href="https://www.facebook.com/JosipicaB" target="blank">
-            <img src={facebookIcon} alt="Facebook" />
-          </a>
-          <a href="https://www.instagram.com/josipa___bilic/" target="blank">
-            <img src={instagramIcon} alt="Instagram" />
-          </a>
-          <a href="https://www.youtube.com/@josipabilicsoprano/featured" target="blank">
-            <img src={youtubeIcon} alt="Youtube" />
-          </a>
+          <a href="https://www.facebook.com/JosipicaB" className={`fa fa-facebook`} target="blank"></a>
+          <a href="https://www.instagram.com/josipa___bilic/" className={`fa fa-instagram`} target="blank"></a>
+          <a href="https://www.youtube.com/@josipabilicsoprano/featured" className={`fa fa-youtube`} target="blank"></a>
         </div>
       </header>
 
@@ -345,17 +338,15 @@ const Home = () => {
 
       <footer className={`${styles['home-footer']} hidden`} ref={(el) => (elementRefs.current[5] = el)}>
         <div>
-          <img src={Signature} alt="Signature" />
+          <p className={styles['signature-mob-footer']}>Josipa Bilić</p>
           <div className={styles['footer-icons']}>
-            <a href="https://www.facebook.com/JosipicaB" target="blank">
-              <img src={facebookIcon} alt="Facebook" />
-            </a>
-            <a href="https://www.instagram.com/josipa___bilic/" target="blank">
-              <img src={instagramIcon} alt="Instagram" />
-            </a>
-            <a href="https://www.youtube.com/@josipabilicsoprano/featured" target="blank">
-              <img src={youtubeIcon} alt="Youtube" />
-            </a>
+            <a href="https://www.facebook.com/JosipicaB" className={`fa fa-facebook`} target="blank"></a>
+            <a href="https://www.instagram.com/josipa___bilic/" className={`fa fa-instagram`} target="blank"></a>
+            <a
+              href="https://www.youtube.com/@josipabilicsoprano/featured"
+              className={`fa fa-youtube`}
+              target="blank"
+            ></a>
           </div>
         </div>
         <p>All rights reserved @ 2024</p>
