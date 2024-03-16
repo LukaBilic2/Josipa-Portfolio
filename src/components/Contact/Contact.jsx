@@ -65,6 +65,7 @@ const Contact = () => {
       .then(
         () => {
           console.log('SUCCESS!');
+          alert('Message has been sent!');
         },
         (error) => {
           console.log('FAILED...', error.text);
