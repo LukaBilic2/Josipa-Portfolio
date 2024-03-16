@@ -23,7 +23,7 @@ span {
     font-weight: normal;
 }
 
-.list-element:nth-of-type(10) .date-and-place {
+.list-element:nth-of-type(9) .date-and-place {
     margin-left: 3%;
 }
 

@@ -189,42 +189,43 @@ const Home = () => {
             <li className={styles['list-element']}>
               <div className={styles['date-and-place']}>
                 <p>
-                  09
+                  24
                   <br />
                   March
                 </p>
               </div>
               <p>
-                Despina - Cosi fan tutte (Mozart) <br />
-                <span>Croatian National Theatre in Zagreb</span>
+                Concert with Trio Ripos
+                <br />
+                <span>Vršilnica Zaprešić - Croatia </span>
               </p>
               <button className={styles['schedule-button']}>
-                <a
-                  href="https://www.hnk.hr/en/opera/plays/cos%C3%AC-fan-tutte/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Tickets
+                <a target="_blank" rel="noopener noreferrer">
+                  Pending
                 </a>
               </button>
             </li>
 
             <hr />
+
             <li className={styles['list-element']}>
               <div className={styles['date-and-place']}>
                 <p>
-                  14
+                  06, 11
                   <br />
-                  March
+                  April
                 </p>
               </div>
               <p>
-                Jelena- Nikola Šubić Zrinjski (Ivan pl. Zajc)
-                <br />
+                Pamina - The Magic Flute (Mozart) <br />
                 <span>Croatian National Theatre in Zagreb</span>
               </p>
               <button className={styles['schedule-button']}>
-                <a href="https://www.hnk.hr/hr/prodaja/predstava/2351/" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://www.hnk.hr/hr/opera/predstave/%C4%8Darobna-frula/#06.04.18.00"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Tickets
                 </a>
               </button>

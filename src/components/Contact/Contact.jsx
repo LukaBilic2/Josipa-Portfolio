@@ -2,6 +2,7 @@ import styles from './Contact.module.css';
 import { facebookIcon, instagramIcon, youtubeIcon, pdf } from '../../services';
 import { NavLink } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const elementRefs = useRef([]);
@@ -51,6 +52,25 @@ const Contact = () => {
     const footerSlide = document.querySelector(`.${styles['footer-slide']}`);
     footerSlide.classList.toggle(styles.active);
   }
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_ieon8kq', 'template_y8746sm', form.current, {
+        publicKey: 'zauEORATTOVSZ1M3d',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        }
+      );
+  };
 
   return (
     <div>
@@ -132,12 +152,19 @@ const Contact = () => {
           CONTACT
         </h2>
 
-        <form className={`${styles['contact-container']} hidden`} ref={(el) => (elementRefs.current[2] = el)}>
+        <form
+          ref={(el) => {
+            form.current = el;
+            elementRefs.current[2] = el;
+          }}
+          className={`${styles['contact-container']} hidden`}
+          onSubmit={sendEmail}
+        >
           <input
             className={styles['contact-item']}
             type="text"
-            id="name"
-            name="name"
+            id="from_name"
+            name="from_name"
             placeholder="Your name"
             required
           />
@@ -145,8 +172,8 @@ const Contact = () => {
           <input
             className={styles['contact-item']}
             type="text"
-            id="lastname"
-            name="lastname"
+            id="from_lastname"
+            name="from_lastname"
             placeholder="Your last name"
             required
           />
@@ -154,8 +181,8 @@ const Contact = () => {
           <input
             className={styles['contact-item']}
             type="text"
-            id="email"
-            name="email"
+            id="from_email"
+            name="from_email"
             placeholder="Your email"
             required
           />
@@ -163,8 +190,8 @@ const Contact = () => {
           <input
             className={styles['contact-item']}
             type="text"
-            id="message-title"
-            name="message-title"
+            id="messageTitle"
+            name="messageTitle"
             placeholder="Message title"
             required
           />
@@ -179,11 +206,14 @@ const Contact = () => {
           ></textarea>
 
           <div className={styles['contact-item']}>
+            <button type="submit" value="Send">
+              Send
+            </button>
+
             <span id="cv-message">Access Josipa&apos;s resume by clicking the following link:</span>
             <a className={styles['pdf-a']} id="cv" href={pdf} target="_blank" rel="noreferrer">
               Open CV
             </a>
-            <button type="submit">Send</button>
           </div>
         </form>
       </main>
