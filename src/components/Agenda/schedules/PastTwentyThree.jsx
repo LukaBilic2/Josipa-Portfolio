@@ -16,7 +16,7 @@ const PastTwentyThree = () => {
           Adele – Die Fledermaus (Strauss) <br />
           <span>Croatian National Theatre in Zagreb</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
       <li className={styles['list-element']}>
@@ -32,7 +32,7 @@ const PastTwentyThree = () => {
           <br />
           <span>Croatian National Theatre in Varaždin</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
       <li className={styles['list-element']}>
@@ -48,7 +48,7 @@ const PastTwentyThree = () => {
           <br />
           <span>Zagreb City Theatre Komedija</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
       <li className={styles['list-element']}>
@@ -64,7 +64,7 @@ const PastTwentyThree = () => {
           <br />
           <span>Croatian National Theatre in Zagreb</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
       <li className={styles['list-element']}>
@@ -80,7 +80,7 @@ const PastTwentyThree = () => {
           <br />
           <span>Croatian National Theatre in Zagreb</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
 
@@ -97,7 +97,7 @@ const PastTwentyThree = () => {
           <br />
           <span>Croatian National Theatre in Zagreb</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
 
@@ -114,7 +114,7 @@ const PastTwentyThree = () => {
           <br />
           <span>Passion Heritage Festival</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
 
@@ -131,7 +131,7 @@ const PastTwentyThree = () => {
           <br />
           <span>Vatroslav Lisinski Hallin Zagreb, Croatia</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
 
@@ -148,7 +148,7 @@ const PastTwentyThree = () => {
           <br />
           <span>Sarajevo Cathedral, Bosnia and Herzegovina</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
 
@@ -165,7 +165,7 @@ const PastTwentyThree = () => {
           <br />
           <span>Satirical Theatre Kerempuh, Croatia</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
 
@@ -182,7 +182,7 @@ const PastTwentyThree = () => {
           <br />
           <span>Pula, Croatia</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
 
@@ -199,7 +199,7 @@ const PastTwentyThree = () => {
           <br />
           <span>Croatian National Theatre in Zagreb</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
 
@@ -216,7 +216,7 @@ const PastTwentyThree = () => {
           <br />
           <span>Zagreb, Croatia</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
 
@@ -233,7 +233,7 @@ const PastTwentyThree = () => {
           <br />
           <span>Dubrovnik Rector&apos;s palace, Croatia</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
 
@@ -250,7 +250,7 @@ const PastTwentyThree = () => {
           <br />
           <span>Croatian National Theatre in Zagreb</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
 
@@ -267,7 +267,7 @@ const PastTwentyThree = () => {
           <br />
           <span>Stupnik, Croatia</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
 
@@ -284,7 +284,7 @@ const PastTwentyThree = () => {
           <br />
           <span>Rathauspark Deutschlandsberg</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
 
@@ -302,7 +302,7 @@ const PastTwentyThree = () => {
           <br />
           <span>Dubrovnik, Croatia</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
 
@@ -319,7 +319,7 @@ const PastTwentyThree = () => {
           <br />
           <span>Samobor, Croatia</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
 
@@ -336,7 +336,7 @@ const PastTwentyThree = () => {
           <br />
           <span>Varaždin, croatia</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
 
@@ -353,7 +353,7 @@ const PastTwentyThree = () => {
           <br />
           <span>Zvonimir Bajsić Studio Hall, Croatia</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
 
@@ -370,7 +370,7 @@ const PastTwentyThree = () => {
           <br />
           <span>Vatroslav Lisinski Hall, Croatia</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
 
@@ -387,7 +387,7 @@ const PastTwentyThree = () => {
           <br />
           <span>Dani rane glazbe u Rijeci, Croatia</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
 
@@ -404,7 +404,7 @@ const PastTwentyThree = () => {
           <br />
           <span>Manhattan, New York (USA)</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
 
@@ -421,7 +421,7 @@ const PastTwentyThree = () => {
           <br />
           <span>Croatian National Theatre</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
 
@@ -438,7 +438,7 @@ const PastTwentyThree = () => {
           <br />
           <span>Vatroslav Lisinski Hall, Croatia</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
     </ul>

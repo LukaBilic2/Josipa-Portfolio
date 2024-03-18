@@ -15,7 +15,7 @@ const PastTwentyTwo = () => {
           History <br />
           <span>X</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
       <li className={styles['list-element']}>
@@ -30,7 +30,7 @@ const PastTwentyTwo = () => {
           <br />
           <span>X</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
       <li className={styles['list-element']}>
@@ -45,7 +45,7 @@ const PastTwentyTwo = () => {
           <br />
           <span>X</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
       <li className={styles['list-element']}>
@@ -60,7 +60,7 @@ const PastTwentyTwo = () => {
           <br />
           <span>X</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
       <li className={styles['list-element']}>
@@ -75,7 +75,7 @@ const PastTwentyTwo = () => {
           <br />
           <span>X</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
     </ul>

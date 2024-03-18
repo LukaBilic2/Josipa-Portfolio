@@ -19,7 +19,7 @@ const PastTwentyFour = () => {
         </p>
         <button className={styles['schedule-button']}>
           <a href="https://www.hnk.hr/en/opera/plays/cos%C3%AC-fan-tutte/" target="_blank" rel="noopener noreferrer">
-            Tickets
+            Sold
           </a>
         </button>
       </li>
@@ -40,7 +40,7 @@ const PastTwentyFour = () => {
         </p>
         <button className={styles['schedule-button']}>
           <a href="https://www.hnk.hr/hr/prodaja/predstava/2351/" target="_blank" rel="noopener noreferrer">
-            Tickets
+            Sold
           </a>
         </button>
       </li>
@@ -56,7 +56,7 @@ const PastTwentyFour = () => {
           History <br />
           <span>X</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
       <li className={styles['list-element']}>
@@ -71,7 +71,7 @@ const PastTwentyFour = () => {
           <br />
           <span>X</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
       <li className={styles['list-element']}>
@@ -86,7 +86,7 @@ const PastTwentyFour = () => {
           <br />
           <span>X</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
       <li className={styles['list-element']}>
@@ -101,7 +101,7 @@ const PastTwentyFour = () => {
           <br />
           <span>X</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
       <li className={styles['list-element']}>
@@ -116,7 +116,7 @@ const PastTwentyFour = () => {
           <br />
           <span>X</span>
         </p>
-        <button className={styles['schedule-button']}>Tickets</button>
+        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
     </ul>

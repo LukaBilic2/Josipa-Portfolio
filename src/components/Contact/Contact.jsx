@@ -68,7 +68,8 @@ const Contact = () => {
           alert('Message has been sent!');
         },
         (error) => {
-          console.log('FAILED...', error.text);
+          console.log('FAILED...', error.response?.data || 'Unknown error');
+          alert('Failed to send email. Please try again later..');
         }
       );
   };
