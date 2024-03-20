@@ -24,6 +24,7 @@ span {
 }
 
 .schedule-button {
+    opacity: 0;
     min-width: 5%;
     height: 100%;
     border: none;
@@ -35,4 +36,44 @@ span {
 
 .schedule-button:hover {
     color: var(--black-color);
+}
+
+@media only screen and (max-width: 480px) {
+
+    .schedule-button {
+        display: none;
+    }
+
+    .list-element {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 25px 0;
+        text-align: center;
+        justify-content: space-between;
+        margin-right: 0%;
+        gap: 20px;
+    }
+
+    .list-element>p,
+    span {
+        font-size: 16px;
+    }
+
+    .date-and-place>p {
+        font-size: 20px;
+    }
+
+    .date-and-place {
+        display: flex;
+        align-items: center;
+        margin-left: 0%;
+    }
+
+    .schedule-button,
+    .schedule-button>a {
+        font-size: 16px;
+        padding: 1%;
+        display: none;
+    }
 }

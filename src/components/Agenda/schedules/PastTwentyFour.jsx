@@ -4,6 +4,55 @@ const PastTwentyFour = () => {
   return (
     <ul>
       <hr />
+      <li className={styles['list-element']}>
+        <div className={styles['date-and-place']}>
+          <p>
+            4
+            <br />
+            January
+          </p>
+        </div>
+        <p>
+          Adele - Die Fledermaus (Strauss)
+          <br />
+          <span>Croatian National Theatre in Zagreb</span>
+        </p>
+        <button className={styles['schedule-button']}>Sold</button>
+      </li>
+      <hr />
+      <li className={styles['list-element']}>
+        <div className={styles['date-and-place']}>
+          <p>
+            30
+            <br />
+            January
+          </p>
+        </div>
+        <p>
+          Tesla - full circle
+          <br />
+          <span>Nikola Tesla Museum in Zagreb</span>
+        </p>
+        <button className={styles['schedule-button']}>Sold</button>
+      </li>
+      <hr />
+      <li className={styles['list-element']}>
+        <div className={styles['date-and-place']}>
+          <p>
+            10, 14
+            <br />
+            February
+          </p>
+        </div>
+        <p>
+          Despina - Cosi fan tutte (Mozart)
+          <br />
+          <span>Croatian National Theatre in Zagreb</span>
+        </p>
+        <button className={styles['schedule-button']}>Sold</button>
+      </li>
+
+      <hr />
 
       <li className={styles['list-element']}>
         <div className={styles['date-and-place']}>
@@ -43,80 +92,6 @@ const PastTwentyFour = () => {
             Sold
           </a>
         </button>
-      </li>
-      <hr />
-      <li className={styles['list-element']}>
-        <div className={styles['date-and-place']}>
-          <p>
-            TBD
-            <br />
-          </p>
-        </div>
-        <p>
-          History <br />
-          <span>X</span>
-        </p>
-        <button className={styles['schedule-button']}>Sold</button>
-      </li>
-      <hr />
-      <li className={styles['list-element']}>
-        <div className={styles['date-and-place']}>
-          <p>
-            TBD
-            <br />
-          </p>
-        </div>
-        <p>
-          History
-          <br />
-          <span>X</span>
-        </p>
-        <button className={styles['schedule-button']}>Sold</button>
-      </li>
-      <hr />
-      <li className={styles['list-element']}>
-        <div className={styles['date-and-place']}>
-          <p>
-            TBD
-            <br />
-          </p>
-        </div>
-        <p>
-          History
-          <br />
-          <span>X</span>
-        </p>
-        <button className={styles['schedule-button']}>Sold</button>
-      </li>
-      <hr />
-      <li className={styles['list-element']}>
-        <div className={styles['date-and-place']}>
-          <p>
-            TBD
-            <br />
-          </p>
-        </div>
-        <p>
-          History
-          <br />
-          <span>X</span>
-        </p>
-        <button className={styles['schedule-button']}>Sold</button>
-      </li>
-      <hr />
-      <li className={styles['list-element']}>
-        <div className={styles['date-and-place']}>
-          <p>
-            TBD
-            <br />
-          </p>
-        </div>
-        <p>
-          History
-          <br />
-          <span>X</span>
-        </p>
-        <button className={styles['schedule-button']}>Sold</button>
       </li>
       <hr />
     </ul>

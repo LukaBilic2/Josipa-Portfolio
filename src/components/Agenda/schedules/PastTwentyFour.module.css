@@ -28,6 +28,7 @@ span {
 } */
 
 .schedule-button {
+    opacity: 0;
     min-width: 5%;
     height: 100%;
     border: none;
@@ -72,6 +73,7 @@ span {
 
     .schedule-button,
     .schedule-button>a {
+        display: none;
         font-size: 16px;
         padding: 1%;
     }

@@ -4,7 +4,7 @@ const Upcoming = () => {
   return (
     <ul>
       <hr />
-      
+
       <li className={styles['list-element']}>
         <div className={styles['date-and-place']}>
           <p>
@@ -19,8 +19,8 @@ const Upcoming = () => {
           <span>Vršilnica Zaprešić - Croatia </span>
         </p>
         <button className={styles['schedule-button']}>
-          <a target="_blank" rel="noopener noreferrer">
-            Pending
+          <a href="https://www.pouz.hr/trio-ripos-josipa-bilic/" target="_blank" rel="noopener noreferrer">
+            Tickets
           </a>
         </button>
       </li>
@@ -90,7 +90,11 @@ const Upcoming = () => {
           <br />
           <span>Kulturhaus Obere Stube am Rhein - Switzerland</span>
         </p>
-        <button className={styles['schedule-button']}>Pending</button>
+        <button className={styles['schedule-button']}>
+          <a href="https://www.bachfest.ch/programm" target="_blank" rel="noopener noreferrer">
+            Tickets
+          </a>
+        </button>
       </li>
 
       <hr />
