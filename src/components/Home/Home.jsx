@@ -68,11 +68,15 @@ const Home = () => {
   };
 
   const handlePreviousVideo = () => {
-    setCurrentSetIndex((prevIndex) => (prevIndex === 0 ? videoSets.length - 1 : prevIndex - 1));
+    setCurrentSetIndex((prevIndex) =>
+      prevIndex === 0 ? videoSets.length - 1 : prevIndex - 1
+    );
   };
 
   const handleNextVideo = () => {
-    setCurrentSetIndex((prevIndex) => (prevIndex === videoSets.length - 1 ? 0 : prevIndex + 1));
+    setCurrentSetIndex((prevIndex) =>
+      prevIndex === videoSets.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
   useEffect(() => {
@@ -94,7 +98,9 @@ const Home = () => {
     mobileNav.classList.toggle(styles.active);
     const mobileIcons = document.querySelector(`.${styles['icons-mobile']}`);
     mobileIcons.classList.toggle(styles.active);
-    const signature = document.querySelector(`.${styles['signature-mob-slide']}`);
+    const signature = document.querySelector(
+      `.${styles['signature-mob-slide']}`
+    );
     signature.classList.toggle(styles.active);
     const footerSlide = document.querySelector(`.${styles['footer-slide']}`);
     footerSlide.classList.toggle(styles.active);
@@ -116,7 +122,10 @@ const Home = () => {
             </button>
 
             <ul className={styles['navigation']}>
-              <button className={`${styles['button-nav-mobile']}`} onClick={toggleNavigation}>
+              <button
+                className={`${styles['button-nav-mobile']}`}
+                onClick={toggleNavigation}
+              >
                 <span className={styles.line}></span>
                 <span className={styles.line}></span>
                 <span className={styles.line}></span>
@@ -145,10 +154,16 @@ const Home = () => {
               <a href="https://www.facebook.com/JosipicaB" target="blank">
                 <img src={facebookIcon} alt="Facebook" />
               </a>
-              <a href="https://www.instagram.com/josipa___bilic/" target="blank">
+              <a
+                href="https://www.instagram.com/josipa___bilic/"
+                target="blank"
+              >
                 <img src={instagramIcon} alt="Instagram" />
               </a>
-              <a href="https://www.youtube.com/@josipabilicsoprano/featured" target="blank">
+              <a
+                href="https://www.youtube.com/@josipabilicsoprano/featured"
+                target="blank"
+              >
                 <img src={youtubeIcon} alt="Youtube" />
               </a>
             </div>
@@ -161,10 +176,12 @@ const Home = () => {
             <h1>Croatian Soprano</h1>
             <br />
             <p>
-              One of the most sought-after young Croatian musicians, soprano Josipa Bilić is carefully building her
-              career based on a bedrock of high professionalism and a refined source of her interpretation. Her voice is
-              distinguished by wondrous ethereal luminosity and disciplined technical virtuosity displayed in her upper
-              register.
+              One of the most sought-after young Croatian musicians, soprano
+              Josipa Bilić is carefully building her career based on a bedrock
+              of high professionalism and a refined source of her
+              interpretation. Her voice is distinguished by wondrous ethereal
+              luminosity and disciplined technical virtuosity displayed in her
+              upper register.
             </p>
             <br />
             <Link to="/about">
@@ -174,38 +191,31 @@ const Home = () => {
         </div>
 
         <div className={styles.icons}>
-          <a href="https://www.facebook.com/JosipicaB" className={`fa fa-facebook`} target="blank"></a>
-          <a href="https://www.instagram.com/josipa___bilic/" className={`fa fa-instagram`} target="blank"></a>
-          <a href="https://www.youtube.com/@josipabilicsoprano/featured" className={`fa fa-youtube`} target="blank"></a>
+          <a
+            href="https://www.facebook.com/JosipicaB"
+            className={`fa fa-facebook`}
+            target="blank"
+          ></a>
+          <a
+            href="https://www.instagram.com/josipa___bilic/"
+            className={`fa fa-instagram`}
+            target="blank"
+          ></a>
+          <a
+            href="https://www.youtube.com/@josipabilicsoprano/featured"
+            className={`fa fa-youtube`}
+            target="blank"
+          ></a>
         </div>
       </header>
 
       <main className={styles['main-home']}>
-        <div className={`${styles['upcoming-container']} hidden`} ref={(el) => (elementRefs.current[1] = el)}>
+        <div
+          className={`${styles['upcoming-container']} hidden`}
+          ref={(el) => (elementRefs.current[1] = el)}
+        >
           <h2>UPCOMING PERFORMANCES</h2>
           <ul>
-            <hr />
-
-            <li className={styles['list-element']}>
-              <div className={styles['date-and-place']}>
-                <p>
-                  24
-                  <br />
-                  March
-                </p>
-              </div>
-              <p>
-                Concert with Trio Ripos
-                <br />
-                <span>Vršilnica Zaprešić - Croatia </span>
-              </p>
-              <button className={styles['schedule-button']}>
-                <a target="_blank" rel="noopener noreferrer">
-                  Pending
-                </a>
-              </button>
-            </li>
-
             <hr />
 
             <li className={styles['list-element']}>
@@ -232,18 +242,49 @@ const Home = () => {
             </li>
 
             <hr />
+
+            <li className={styles['list-element']}>
+              <div className={styles['date-and-place']}>
+                <p>
+                  21
+                  <br />
+                  April
+                </p>
+              </div>
+              <p>
+                Maria Bellcanta - Hillary the Witch goes to the Opera (Lund){' '}
+                <br />
+                <span>Croatian National Theatre in Zagreb</span>
+              </p>
+              <button className={styles['schedule-button']}>
+                <a
+                  href="https://www.hnk.hr/hr/opera/predstave/vje%C5%A1tica-hillary-ide-u-operu/#21.04.11.00"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Tickets
+                </a>
+              </button>
+            </li>
+
+            <hr />
           </ul>
           <Link to="/agenda">
             <button className={styles['agendaButton']}>See all</button>
           </Link>
         </div>
-        <blockquote className={`${styles['quote-home']} hidden`} ref={(el) => (elementRefs.current[2] = el)}>
+        <blockquote
+          className={`${styles['quote-home']} hidden`}
+          ref={(el) => (elementRefs.current[2] = el)}
+        >
           <p>
             <em>
-              &ldquo;The beauty of her voice is unmistakable, paired with its excellent preparation, musicality, obvious
-              ease in singing across a wide tonal range, different tempos, and rich dynamic nuances. Her impeccable
-              breath control and crystal-clear pronunciation leave the listener with the impression of a mature and
-              seasoned musical interpretation.&ldquo;
+              &ldquo;The beauty of her voice is unmistakable, paired with its
+              excellent preparation, musicality, obvious ease in singing across
+              a wide tonal range, different tempos, and rich dynamic nuances.
+              Her impeccable breath control and crystal-clear pronunciation
+              leave the listener with the impression of a mature and seasoned
+              musical interpretation.&ldquo;
             </em>
           </p>
           <footer>
@@ -253,7 +294,10 @@ const Home = () => {
           </footer>
         </blockquote>
 
-        <section className={`${styles['performance-section']} hidden`} ref={(el) => (elementRefs.current[3] = el)}>
+        <section
+          className={`${styles['performance-section']} hidden`}
+          ref={(el) => (elementRefs.current[3] = el)}
+        >
           <h2>PERFORMANCES</h2>
           <div className={styles['iframe-videos']}>
             {isSmallScreen ? (
@@ -296,10 +340,16 @@ const Home = () => {
 
           {isSmallScreen && (
             <div className={styles['mobile-button-container']}>
-              <button className={styles['mobile-button-arrow']} onClick={handlePreviousVideo}>
+              <button
+                className={styles['mobile-button-arrow']}
+                onClick={handlePreviousVideo}
+              >
                 <img src={leftArrow} alt="button1" />
               </button>
-              <button className={styles['mobile-button-arrow']} onClick={handleNextVideo}>
+              <button
+                className={styles['mobile-button-arrow']}
+                onClick={handleNextVideo}
+              >
                 <img src={rightArrow} alt="button2" />
               </button>
             </div>
@@ -307,18 +357,25 @@ const Home = () => {
 
           {!isSmallScreen && !showNavigationButtons && (
             <div className={styles['button-container']}>
-              {videoSets.slice(0, Math.ceil(videoSets.length / 2)).map((_, index) => (
-                <button
-                  className={index === currentSetIndex ? styles['selectedButton'] : ''}
-                  key={index}
-                  onClick={() => handleSetChange(index)}
-                ></button>
-              ))}
+              {videoSets
+                .slice(0, Math.ceil(videoSets.length / 2))
+                .map((_, index) => (
+                  <button
+                    className={
+                      index === currentSetIndex ? styles['selectedButton'] : ''
+                    }
+                    key={index}
+                    onClick={() => handleSetChange(index)}
+                  ></button>
+                ))}
             </div>
           )}
         </section>
 
-        <section className={`hidden`} ref={(el) => (elementRefs.current[4] = el)}>
+        <section
+          className={`hidden`}
+          ref={(el) => (elementRefs.current[4] = el)}
+        >
           <h2 className={styles['h2-images']}>GALLERY</h2>
           <div className={styles['images-container']}>
             <div className={styles['left-images-container']}>
@@ -337,12 +394,23 @@ const Home = () => {
         </section>
       </main>
 
-      <footer className={`${styles['home-footer']} hidden`} ref={(el) => (elementRefs.current[5] = el)}>
+      <footer
+        className={`${styles['home-footer']} hidden`}
+        ref={(el) => (elementRefs.current[5] = el)}
+      >
         <div>
           <p className={styles['signature-mob-footer']}>Josipa Bilić</p>
           <div className={styles['footer-icons']}>
-            <a href="https://www.facebook.com/JosipicaB" className={`fa fa-facebook`} target="blank"></a>
-            <a href="https://www.instagram.com/josipa___bilic/" className={`fa fa-instagram`} target="blank"></a>
+            <a
+              href="https://www.facebook.com/JosipicaB"
+              className={`fa fa-facebook`}
+              target="blank"
+            ></a>
+            <a
+              href="https://www.instagram.com/josipa___bilic/"
+              className={`fa fa-instagram`}
+              target="blank"
+            ></a>
             <a
               href="https://www.youtube.com/@josipabilicsoprano/featured"
               className={`fa fa-youtube`}

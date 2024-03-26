@@ -67,7 +67,11 @@ const PastTwentyFour = () => {
           <span>Croatian National Theatre in Zagreb</span>
         </p>
         <button className={styles['schedule-button']}>
-          <a href="https://www.hnk.hr/en/opera/plays/cos%C3%AC-fan-tutte/" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.hnk.hr/en/opera/plays/cos%C3%AC-fan-tutte/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Sold
           </a>
         </button>
@@ -88,8 +92,37 @@ const PastTwentyFour = () => {
           <span>Croatian National Theatre in Zagreb</span>
         </p>
         <button className={styles['schedule-button']}>
-          <a href="https://www.hnk.hr/hr/prodaja/predstava/2351/" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.hnk.hr/hr/prodaja/predstava/2351/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Sold
+          </a>
+        </button>
+      </li>
+      <hr />
+
+      <li className={styles['list-element']}>
+        <div className={styles['date-and-place']}>
+          <p>
+            24
+            <br />
+            March
+          </p>
+        </div>
+        <p>
+          Concert with Trio Ripos
+          <br />
+          <span>Vršilnica Zaprešić - Croatia </span>
+        </p>
+        <button className={styles['schedule-button']}>
+          <a
+            href="https://www.pouz.hr/trio-ripos-josipa-bilic/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Tickets
           </a>
         </button>
       </li>
