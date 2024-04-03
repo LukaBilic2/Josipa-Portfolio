@@ -28,7 +28,7 @@ const PastTwentyTwo = () => {
           </p>
         </div>
         <p>
-          Amora - Orfeo ed Euridice (Gluck)
+          Amore - Orfeo ed Euridice (Gluck)
           <br />
           <span>Croatian National Theatre in Zagreb</span>
         </p>

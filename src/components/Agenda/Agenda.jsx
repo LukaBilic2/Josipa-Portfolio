@@ -57,13 +57,17 @@ const Agenda = () => {
   };
 
   function toggleNavigation() {
-    const navigation = document.querySelector(`.${styles['agenda-navigation']}`);
+    const navigation = document.querySelector(
+      `.${styles['agenda-navigation']}`
+    );
     navigation.classList.toggle(styles.active);
     const mobileNav = document.querySelector(`.${styles['mobile-li']}`);
     mobileNav.classList.toggle(styles.active);
     const mobileIcons = document.querySelector(`.${styles['icons-mobile']}`);
     mobileIcons.classList.toggle(styles.active);
-    const signature = document.querySelector(`.${styles['signature-mob-slide']}`);
+    const signature = document.querySelector(
+      `.${styles['signature-mob-slide']}`
+    );
     signature.classList.toggle(styles.active);
     const footerSlide = document.querySelector(`.${styles['footer-slide']}`);
     footerSlide.classList.toggle(styles.active);
@@ -84,13 +88,18 @@ const Agenda = () => {
             </button>
 
             <ul className={styles['agenda-navigation']}>
-              <button className={`${styles['button-nav-mobile']}`} onClick={toggleNavigation}>
+              <button
+                className={`${styles['button-nav-mobile']}`}
+                onClick={toggleNavigation}
+              >
                 <span className={styles.line}></span>
                 <span className={styles.line}></span>
                 <span className={styles.line}></span>
               </button>
 
-              <div className={`${styles['mobile-li']} ${styles['agenda-navigation']}`}>
+              <div
+                className={`${styles['mobile-li']} ${styles['agenda-navigation']}`}
+              >
                 <NavLink to="/">
                   <li className={styles['nav-li']}>Home</li>
                 </NavLink>
@@ -118,45 +127,71 @@ const Agenda = () => {
           <a href="https://www.instagram.com/josipa___bilic/" target="blank">
             <img src={instagramIcon} alt="Instagram" />
           </a>
-          <a href="https://www.youtube.com/@josipabilicsoprano/featured" target="blank">
+          <a
+            href="https://www.youtube.com/@josipabilicsoprano/featured"
+            target="blank"
+          >
             <img src={youtubeIcon} alt="Youtube" />
           </a>
         </div>
         <p className={styles['footer-slide']}>All rights reserved @ 2024</p>
 
         <div className={styles['agenda-icons']}>
-          <a href="https://www.facebook.com/JosipicaB" className={`fa fa-facebook`} target="blank"></a>
-          <a href="https://www.instagram.com/josipa___bilic/" className={`fa fa-instagram`} target="blank"></a>
-          <a href="https://www.youtube.com/@josipabilicsoprano/featured" className={`fa fa-youtube`} target="blank"></a>
+          <a
+            href="https://www.facebook.com/JosipicaB"
+            className={`fa fa-facebook`}
+            target="blank"
+          ></a>
+          <a
+            href="https://www.instagram.com/josipa___bilic/"
+            className={`fa fa-instagram`}
+            target="blank"
+          ></a>
+          <a
+            href="https://www.youtube.com/@josipabilicsoprano/featured"
+            className={`fa fa-youtube`}
+            target="blank"
+          ></a>
         </div>
       </header>
 
       <main>
-        <div className={`${styles['upcoming-container']} hidden`} ref={(el) => (elementRefs.current[1] = el)}>
+        <div
+          className={`${styles['upcoming-container']} hidden`}
+          ref={(el) => (elementRefs.current[1] = el)}
+        >
           <h2>UPCOMING PERFORMANCES</h2>
 
           <div className={styles['schedule']}>
             <button
               onClick={() => handleButtonClick(1)}
-              className={`${styles['schedule-button']} ${activeButton === 1 ? styles.selected : ''}`}
+              className={`${styles['schedule-button']} ${
+                activeButton === 1 ? styles.selected : ''
+              }`}
             >
               Upcoming Performances
             </button>
             <button
               onClick={() => handleButtonClick(2)}
-              className={`${styles['schedule-button']} ${activeButton === 2 ? styles.selected : ''}`}
+              className={`${styles['schedule-button']} ${
+                activeButton === 2 ? styles.selected : ''
+              }`}
             >
               2024
             </button>
             <button
               onClick={() => handleButtonClick(3)}
-              className={`${styles['schedule-button']} ${activeButton === 3 ? styles.selected : ''}`}
+              className={`${styles['schedule-button']} ${
+                activeButton === 3 ? styles.selected : ''
+              }`}
             >
               2023
             </button>
             <button
               onClick={() => handleButtonClick(4)}
-              className={`${styles['schedule-button']} ${activeButton === 4 ? styles.selected : ''}`}
+              className={`${styles['schedule-button']} ${
+                activeButton === 4 ? styles.selected : ''
+              }`}
             >
               2022
             </button>
@@ -165,12 +200,23 @@ const Agenda = () => {
         </div>
       </main>
 
-      <footer className={`${styles['home-footer']} hidden`} ref={(el) => (elementRefs.current[2] = el)}>
+      <footer
+        className={`${styles['home-footer']} hidden`}
+        ref={(el) => (elementRefs.current[2] = el)}
+      >
         <div>
           <p className={styles['signature-mob-footer']}>Josipa Bilić</p>
           <div className={styles['footer-icons']}>
-            <a href="https://www.facebook.com/JosipicaB" className={`fa fa-facebook`} target="blank"></a>
-            <a href="https://www.instagram.com/josipa___bilic/" className={`fa fa-instagram`} target="blank"></a>
+            <a
+              href="https://www.facebook.com/JosipicaB"
+              className={`fa fa-facebook`}
+              target="blank"
+            ></a>
+            <a
+              href="https://www.instagram.com/josipa___bilic/"
+              className={`fa fa-instagram`}
+              target="blank"
+            ></a>
             <a
               href="https://www.youtube.com/@josipabilicsoprano/featured"
               className={`fa fa-youtube`}
@@ -178,7 +224,7 @@ const Agenda = () => {
             ></a>
           </div>
         </div>
-        <p>All rights reservef @ 2024</p>
+        <p>All rights reserved @ 2024</p>
       </footer>
     </div>
   );

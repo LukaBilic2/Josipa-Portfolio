@@ -41,13 +41,17 @@ const Contact = () => {
   }, []);
 
   function toggleNavigation() {
-    const navigation = document.querySelector(`.${styles['contact-navigation']}`);
+    const navigation = document.querySelector(
+      `.${styles['contact-navigation']}`
+    );
     navigation.classList.toggle(styles.active);
     const mobileNav = document.querySelector(`.${styles['mobile-li']}`);
     mobileNav.classList.toggle(styles.active);
     const mobileIcons = document.querySelector(`.${styles['icons-mobile']}`);
     mobileIcons.classList.toggle(styles.active);
-    const signature = document.querySelector(`.${styles['signature-mob-slide']}`);
+    const signature = document.querySelector(
+      `.${styles['signature-mob-slide']}`
+    );
     signature.classList.toggle(styles.active);
     const footerSlide = document.querySelector(`.${styles['footer-slide']}`);
     footerSlide.classList.toggle(styles.active);
@@ -89,12 +93,17 @@ const Contact = () => {
             </button>
 
             <ul className={styles['contact-navigation']}>
-              <button className={`${styles['button-nav-mobile']}`} onClick={toggleNavigation}>
+              <button
+                className={`${styles['button-nav-mobile']}`}
+                onClick={toggleNavigation}
+              >
                 <span className={styles.line}></span>
                 <span className={styles.line}></span>
                 <span className={styles.line}></span>
               </button>
-              <div className={`${styles['mobile-li']} ${styles['contact-navigation']}`}>
+              <div
+                className={`${styles['mobile-li']} ${styles['contact-navigation']}`}
+              >
                 <NavLink to="/">
                   <li className={styles['nav-li']}>Home</li>
                 </NavLink>
@@ -122,7 +131,10 @@ const Contact = () => {
           <a href="https://www.instagram.com/josipa___bilic/" target="blank">
             <img src={instagramIcon} alt="Instagram" />
           </a>
-          <a href="https://www.youtube.com/@josipabilicsoprano/featured" target="blank">
+          <a
+            href="https://www.youtube.com/@josipabilicsoprano/featured"
+            target="blank"
+          >
             <img src={youtubeIcon} alt="Youtube" />
           </a>
         </div>
@@ -131,8 +143,9 @@ const Contact = () => {
         <blockquote className={styles['quote-contact']}>
           <p>
             <em>
-              &ldquo;An artist&apos;s life is an adruous rocky road, yet if I had a chance to do it all again, there is
-              no other road I would rather take&ldquo;
+              &ldquo;An artist&apos;s life is an adruous rocky road, yet if I
+              had a chance to do it all again, there is no other road I would
+              rather take&ldquo;
             </em>
           </p>
           <footer>
@@ -143,14 +156,29 @@ const Contact = () => {
         </blockquote>
 
         <div className={styles['contact-icons']}>
-          <a href="https://www.facebook.com/JosipicaB" className={`fa fa-facebook`} target="blank"></a>
-          <a href="https://www.instagram.com/josipa___bilic/" className={`fa fa-instagram`} target="blank"></a>
-          <a href="https://www.youtube.com/@josipabilicsoprano/featured" className={`fa fa-youtube`} target="blank"></a>
+          <a
+            href="https://www.facebook.com/JosipicaB"
+            className={`fa fa-facebook`}
+            target="blank"
+          ></a>
+          <a
+            href="https://www.instagram.com/josipa___bilic/"
+            className={`fa fa-instagram`}
+            target="blank"
+          ></a>
+          <a
+            href="https://www.youtube.com/@josipabilicsoprano/featured"
+            className={`fa fa-youtube`}
+            target="blank"
+          ></a>
         </div>
       </header>
 
       <main className={styles['main-contact']}>
-        <h2 className={`${styles['h2-contact']} hidden`} ref={(el) => (elementRefs.current[1] = el)}>
+        <h2
+          className={`${styles['h2-contact']} hidden`}
+          ref={(el) => (elementRefs.current[1] = el)}
+        >
           CONTACT
         </h2>
 
@@ -212,20 +240,39 @@ const Contact = () => {
               Send
             </button>
 
-            <span id="cv-message">Access Josipa&apos;s resume by clicking the following link:</span>
-            <a className={styles['pdf-a']} id="cv" href={pdf} target="_blank" rel="noreferrer">
+            <span id="cv-message">
+              Access Josipa&apos;s resume by clicking the following link:
+            </span>
+            <a
+              className={styles['pdf-a']}
+              id="cv"
+              href={pdf}
+              target="_blank"
+              rel="noreferrer"
+            >
               Open CV
             </a>
           </div>
         </form>
       </main>
 
-      <footer className={`${styles['contact-footer']} hidden`} ref={(el) => (elementRefs.current[3] = el)}>
+      <footer
+        className={`${styles['contact-footer']} hidden`}
+        ref={(el) => (elementRefs.current[3] = el)}
+      >
         <div>
           <p className={styles['signature-mob-footer']}>Josipa Bilić</p>
           <div className={styles['footer-icons']}>
-            <a href="https://www.facebook.com/JosipicaB" className={`fa fa-facebook`} target="blank"></a>
-            <a href="https://www.instagram.com/josipa___bilic/" className={`fa fa-instagram`} target="blank"></a>
+            <a
+              href="https://www.facebook.com/JosipicaB"
+              className={`fa fa-facebook`}
+              target="blank"
+            ></a>
+            <a
+              href="https://www.instagram.com/josipa___bilic/"
+              className={`fa fa-instagram`}
+              target="blank"
+            ></a>
             <a
               href="https://www.youtube.com/@josipabilicsoprano/featured"
               className={`fa fa-youtube`}
@@ -233,7 +280,7 @@ const Contact = () => {
             ></a>
           </div>
         </div>
-        <p>All rights reservef @ 2024</p>
+        <p>All rights reserved @ 2024</p>
       </footer>
     </div>
   );

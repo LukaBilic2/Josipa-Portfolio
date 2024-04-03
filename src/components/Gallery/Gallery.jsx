@@ -133,13 +133,17 @@ const Gallery = () => {
   };
 
   function toggleNavigation() {
-    const navigation = document.querySelector(`.${styles['gallery-navigation']}`);
+    const navigation = document.querySelector(
+      `.${styles['gallery-navigation']}`
+    );
     navigation.classList.toggle(styles.active);
     const mobileNav = document.querySelector(`.${styles['mobile-li']}`);
     mobileNav.classList.toggle(styles.active);
     const mobileIcons = document.querySelector(`.${styles['icons-mobile']}`);
     mobileIcons.classList.toggle(styles.active);
-    const signature = document.querySelector(`.${styles['signature-mob-slide']}`);
+    const signature = document.querySelector(
+      `.${styles['signature-mob-slide']}`
+    );
     signature.classList.toggle(styles.active);
     const footerSlide = document.querySelector(`.${styles['footer-slide']}`);
     footerSlide.classList.toggle(styles.active);
@@ -160,13 +164,18 @@ const Gallery = () => {
             </button>
 
             <ul className={styles['gallery-navigation']}>
-              <button className={`${styles['button-nav-mobile']}`} onClick={toggleNavigation}>
+              <button
+                className={`${styles['button-nav-mobile']}`}
+                onClick={toggleNavigation}
+              >
                 <span className={styles.line}></span>
                 <span className={styles.line}></span>
                 <span className={styles.line}></span>
               </button>
 
-              <div className={`${styles['mobile-li']} ${styles['gallery-navigation']}`}>
+              <div
+                className={`${styles['mobile-li']} ${styles['gallery-navigation']}`}
+              >
                 <NavLink to="/">
                   <li className={styles['nav-li']}>Home</li>
                 </NavLink>
@@ -194,7 +203,10 @@ const Gallery = () => {
           <a href="https://www.instagram.com/josipa___bilic/" target="blank">
             <img src={instagramIcon} alt="Instagram" />
           </a>
-          <a href="https://www.youtube.com/@josipabilicsoprano/featured" target="blank">
+          <a
+            href="https://www.youtube.com/@josipabilicsoprano/featured"
+            target="blank"
+          >
             <img src={youtubeIcon} alt="Youtube" />
           </a>
         </div>
@@ -208,18 +220,36 @@ const Gallery = () => {
         </div>
 
         <div className={styles['gallery-icons']}>
-          <a href="https://www.facebook.com/JosipicaB" className={`fa fa-facebook`} target="blank"></a>
-          <a href="https://www.instagram.com/josipa___bilic/" className={`fa fa-instagram`} target="blank"></a>
-          <a href="https://www.youtube.com/@josipabilicsoprano/featured" className={`fa fa-youtube`} target="blank"></a>
+          <a
+            href="https://www.facebook.com/JosipicaB"
+            className={`fa fa-facebook`}
+            target="blank"
+          ></a>
+          <a
+            href="https://www.instagram.com/josipa___bilic/"
+            className={`fa fa-instagram`}
+            target="blank"
+          ></a>
+          <a
+            href="https://www.youtube.com/@josipabilicsoprano/featured"
+            className={`fa fa-youtube`}
+            target="blank"
+          ></a>
         </div>
       </header>
 
       <main>
-        <h2 className={`${styles['gallery-h2']} hidden`} ref={(el) => (elementRefs.current[1] = el)}>
+        <h2
+          className={`${styles['gallery-h2']} hidden`}
+          ref={(el) => (elementRefs.current[1] = el)}
+        >
           Gallery
         </h2>
 
-        <div className={`${styles['wrapper1']} hidden`} ref={(el) => (elementRefs.current[15] = el)}>
+        <div
+          className={`${styles['wrapper1']} hidden`}
+          ref={(el) => (elementRefs.current[15] = el)}
+        >
           <div
             className={styles['images-1']}
             ref={(ref) => (wrapperRefs.current[9] = ref)}
@@ -238,12 +268,16 @@ const Gallery = () => {
 
           <div className={styles['images-1-p']}>
             <p className={styles['p-1']}>
-              Wolfgang Amadeus Mozart: Così fan tutte (Despina) Croatian National Theatre in Zagreb, 2024
+              Wolfgang Amadeus Mozart: Così fan tutte (Despina) Croatian
+              National Theatre in Zagreb, 2024
             </p>
           </div>
         </div>
 
-        <div className={`${styles['wrapper1']} hidden`} ref={(el) => (elementRefs.current[2] = el)}>
+        <div
+          className={`${styles['wrapper1']} hidden`}
+          ref={(el) => (elementRefs.current[2] = el)}
+        >
           <div
             className={styles['images-1']}
             ref={(ref) => (wrapperRefs.current[0] = ref)}
@@ -270,7 +304,10 @@ const Gallery = () => {
           </div>
         </div>
 
-        <div className={`${styles['color-container']} hidden`} ref={(el) => (elementRefs.current[3] = el)}>
+        <div
+          className={`${styles['color-container']} hidden`}
+          ref={(el) => (elementRefs.current[3] = el)}
+        >
           <div
             className={styles['images-1']}
             ref={(ref) => (wrapperRefs.current[1] = ref)}
@@ -296,7 +333,10 @@ const Gallery = () => {
           </div>
         </div>
 
-        <div className={`${styles['wrapper1']} hidden`} ref={(el) => (elementRefs.current[4] = el)}>
+        <div
+          className={`${styles['wrapper1']} hidden`}
+          ref={(el) => (elementRefs.current[4] = el)}
+        >
           <div
             className={styles['images-1']}
             ref={(ref) => (wrapperRefs.current[2] = ref)}
@@ -322,7 +362,10 @@ const Gallery = () => {
           </div>
         </div>
 
-        <div className={`${styles['color-container']} hidden`} ref={(el) => (elementRefs.current[5] = el)}>
+        <div
+          className={`${styles['color-container']} hidden`}
+          ref={(el) => (elementRefs.current[5] = el)}
+        >
           <div
             className={styles['images-1']}
             ref={(ref) => (wrapperRefs.current[3] = ref)}
@@ -348,7 +391,10 @@ const Gallery = () => {
           </div>
         </div>
 
-        <div className={`${styles['wrapper1']} hidden`} ref={(el) => (elementRefs.current[6] = el)}>
+        <div
+          className={`${styles['wrapper1']} hidden`}
+          ref={(el) => (elementRefs.current[6] = el)}
+        >
           <div
             className={styles['images-2']}
             ref={(ref) => (wrapperRefs.current[4] = ref)}
@@ -373,12 +419,18 @@ const Gallery = () => {
           </div>
         </div>
 
-        <div className={`${styles['big-image']} hidden`} ref={(el) => (elementRefs.current[7] = el)}>
+        <div
+          className={`${styles['big-image']} hidden`}
+          ref={(el) => (elementRefs.current[7] = el)}
+        >
           <p>14th Opera Selecta Festival, 2022</p>
           <img src={image15Gallery} alt="image15" />
         </div>
 
-        <div className={`${styles['wrapper1']} hidden`} ref={(el) => (elementRefs.current[8] = el)}>
+        <div
+          className={`${styles['wrapper1']} hidden`}
+          ref={(el) => (elementRefs.current[8] = el)}
+        >
           <div
             className={styles['images-1']}
             ref={(ref) => (wrapperRefs.current[5] = ref)}
@@ -404,7 +456,10 @@ const Gallery = () => {
           </div>
         </div>
 
-        <div className={`${styles['color-container']} hidden`} ref={(el) => (elementRefs.current[9] = el)}>
+        <div
+          className={`${styles['color-container']} hidden`}
+          ref={(el) => (elementRefs.current[9] = el)}
+        >
           <div
             className={styles['images-1']}
             ref={(ref) => (wrapperRefs.current[6] = ref)}
@@ -421,7 +476,10 @@ const Gallery = () => {
             <img src={image21Gallery} alt="image21" loading="lazy" />
           </div>
 
-          <div className={`${styles['images-1-p']} hidden`} ref={(el) => (elementRefs.current[10] = el)}>
+          <div
+            className={`${styles['images-1-p']} hidden`}
+            ref={(el) => (elementRefs.current[10] = el)}
+          >
             <p className={styles['p-2']}>
               63d International Childern Festival in Šibenik
               <br />
@@ -430,7 +488,10 @@ const Gallery = () => {
           </div>
         </div>
 
-        <div className={`${styles['wrapper1']} hidden`} ref={(el) => (elementRefs.current[11] = el)}>
+        <div
+          className={`${styles['wrapper1']} hidden`}
+          ref={(el) => (elementRefs.current[11] = el)}
+        >
           <div
             className={styles['images-2']}
             ref={(ref) => (wrapperRefs.current[7] = ref)}
@@ -455,7 +516,10 @@ const Gallery = () => {
           </div>
         </div>
 
-        <div className={`${styles['big-image2']} hidden`} ref={(el) => (elementRefs.current[12] = el)}>
+        <div
+          className={`${styles['big-image2']} hidden`}
+          ref={(el) => (elementRefs.current[12] = el)}
+        >
           <p>
             Aleksandar Švabić and Zrinka Posavec: The Bald Soprano <br />
             (Chamber Opera inspired by Eugène Ionesco’s drama), Zagreb, 2021
@@ -463,7 +527,10 @@ const Gallery = () => {
           <img src={image24Gallery} alt="image24" loading="lazy" />
         </div>
 
-        <div className={`${styles['wrapper1']} hidden`} ref={(el) => (elementRefs.current[13] = el)}>
+        <div
+          className={`${styles['wrapper1']} hidden`}
+          ref={(el) => (elementRefs.current[13] = el)}
+        >
           <div
             className={styles['images-2']}
             ref={(ref) => (wrapperRefs.current[8] = ref)}
@@ -489,12 +556,23 @@ const Gallery = () => {
         </div>
       </main>
 
-      <footer className={`${styles['gallery-footer']} hidden`} ref={(el) => (elementRefs.current[14] = el)}>
+      <footer
+        className={`${styles['gallery-footer']} hidden`}
+        ref={(el) => (elementRefs.current[14] = el)}
+      >
         <div>
           <p className={styles['signature-mob-footer']}>Josipa Bilić</p>
           <div className={styles['footer-icons']}>
-            <a href="https://www.facebook.com/JosipicaB" className={`fa fa-facebook`} target="blank"></a>
-            <a href="https://www.instagram.com/josipa___bilic/" className={`fa fa-instagram`} target="blank"></a>
+            <a
+              href="https://www.facebook.com/JosipicaB"
+              className={`fa fa-facebook`}
+              target="blank"
+            ></a>
+            <a
+              href="https://www.instagram.com/josipa___bilic/"
+              className={`fa fa-instagram`}
+              target="blank"
+            ></a>
             <a
               href="https://www.youtube.com/@josipabilicsoprano/featured"
               className={`fa fa-youtube`}
@@ -502,7 +580,7 @@ const Gallery = () => {
             ></a>
           </div>
         </div>
-        <p>All rights reservef @ 2024</p>
+        <p>All rights reserved @ 2024</p>
       </footer>
     </div>
   );

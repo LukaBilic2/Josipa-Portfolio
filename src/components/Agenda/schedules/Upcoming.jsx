@@ -3,8 +3,6 @@ import styles from './Upcoming.module.css';
 const Upcoming = () => {
   return (
     <ul>
-      
-
       <hr />
 
       <li className={styles['list-element']}>
@@ -66,33 +64,20 @@ const Upcoming = () => {
           </p>
         </div>
         <p>
-          Internationales Bachfest Schauffhausen - Music in the Guild House with Camerata Garestin
+          Internationales Bachfest Schauffhausen - Music in the Guild House with
+          Camerata Garestin
           <br />
           <span>Kulturhaus Obere Stube am Rhein - Switzerland</span>
         </p>
         <button className={styles['schedule-button']}>
-          <a href="https://www.bachfest.ch/programm" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.bachfest.ch/programm"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Tickets
           </a>
         </button>
-      </li>
-
-      <hr />
-
-      <li className={styles['list-element']}>
-        <div className={styles['date-and-place']}>
-          <p>
-            17
-            <br />
-            May
-          </p>
-        </div>
-        <p>
-          Tesla - full circle
-          <br />
-          <span>Pučko otvoreno učilište Ivanić-Grad - Croatia</span>
-        </p>
-        <button className={styles['schedule-button']}>Pending</button>
       </li>
 
       <hr />
@@ -162,7 +147,11 @@ const Upcoming = () => {
           <span>Innsbruck Festwochen - Austria</span>
         </p>
         <button className={styles['schedule-button']}>
-          <a href="https://www.altemusik.at/en/events/arianna" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.altemusik.at/en/events/arianna"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Tickets
           </a>
         </button>

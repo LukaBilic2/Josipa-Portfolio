@@ -31,7 +31,7 @@ const PastTwentyFour = () => {
         <p>
           Tesla - full circle
           <br />
-          <span>Nikola Tesla Museum in Zagreb</span>
+          <span>Nikola Tesla Museum in Zagreb - Croatia</span>
         </p>
         <button className={styles['schedule-button']}>Sold</button>
       </li>
