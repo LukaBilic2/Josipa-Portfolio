@@ -8,56 +8,6 @@ const Upcoming = () => {
       <li className={styles['list-element']}>
         <div className={styles['date-and-place']}>
           <p>
-            06, 11
-            <br />
-            April
-          </p>
-        </div>
-        <p>
-          Pamina - The Magic Flute (Mozart) <br />
-          <span>Croatian National Theatre in Zagreb</span>
-        </p>
-        <button className={styles['schedule-button']}>
-          <a
-            href="https://www.hnk.hr/hr/opera/predstave/%C4%8Darobna-frula/#06.04.18.00"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Tickets
-          </a>
-        </button>
-      </li>
-
-      <hr />
-
-      <li className={styles['list-element']}>
-        <div className={styles['date-and-place']}>
-          <p>
-            21
-            <br />
-            April
-          </p>
-        </div>
-        <p>
-          Maria Bellcanta - Hillary the Witch goes to the Opera (Lund) <br />
-          <span>Croatian National Theatre in Zagreb</span>
-        </p>
-        <button className={styles['schedule-button']}>
-          <a
-            href="https://www.hnk.hr/hr/opera/predstave/vje%C5%A1tica-hillary-ide-u-operu/#21.04.11.00"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Tickets
-          </a>
-        </button>
-      </li>
-
-      <hr />
-
-      <li className={styles['list-element']}>
-        <div className={styles['date-and-place']}>
-          <p>
             11
             <br />
             May

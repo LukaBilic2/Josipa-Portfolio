@@ -267,7 +267,7 @@ iframe {
 }
 
 .button-container>button {
-    min-width: 33.3%;
+    min-width: 25%;
     height: 20px;
     border: none;
     border-radius: 10px;

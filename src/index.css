@@ -8,7 +8,7 @@
   --curry-color: #825d1e;
   --nickel-color: #757272;
   /* Body font */
-  --ff-primary: "Book Antiqua", sans-serif;
+  --ff-primary: 'Book Antiqua', sans-serif;
   --title-size: 40px;
 }
 
@@ -23,6 +23,13 @@
 html,
 body {
   height: 100%;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 
 a {

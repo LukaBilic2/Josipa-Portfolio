@@ -51,6 +51,8 @@ const Home = () => {
   }, []);
 
   const videoSets = [
+    ['https://www.youtube.com/embed/jXU2gdKx0ss'],
+    ['https://www.youtube.com/embed/9agQvXsp0Ug'],
     ['https://www.youtube.com/embed/XAtG4f0cfSc'],
     ['https://www.youtube.com/embed/KckM9MPGcMc'],
     ['https://www.youtube.com/embed/d05YPDjJUvs'],
@@ -221,18 +223,20 @@ const Home = () => {
             <li className={styles['list-element']}>
               <div className={styles['date-and-place']}>
                 <p>
-                  06, 11
+                  11
                   <br />
-                  April
+                  May
                 </p>
               </div>
               <p>
-                Pamina - The Magic Flute (Mozart) <br />
-                <span>Croatian National Theatre in Zagreb</span>
+                Internationales Bachfest Schauffhausen - Music in the Guild
+                House with Camerata Garestin
+                <br />
+                <span>Kulturhaus Obere Stube am Rhein - Switzerland</span>
               </p>
               <button className={styles['schedule-button']}>
                 <a
-                  href="https://www.hnk.hr/hr/opera/predstave/%C4%8Darobna-frula/#06.04.18.00"
+                  href="https://www.bachfest.ch/programm"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -246,25 +250,16 @@ const Home = () => {
             <li className={styles['list-element']}>
               <div className={styles['date-and-place']}>
                 <p>
-                  21
+                  28
                   <br />
-                  April
+                  June
                 </p>
               </div>
               <p>
-                Maria Bellcanta - Hillary the Witch goes to the Opera (Lund){' '}
-                <br />
-                <span>Croatian National Theatre in Zagreb</span>
+                Recital <br />
+                <span>Crkva sv. Jeronima - Štrigova - Croatia</span>
               </p>
-              <button className={styles['schedule-button']}>
-                <a
-                  href="https://www.hnk.hr/hr/opera/predstave/vje%C5%A1tica-hillary-ide-u-operu/#21.04.11.00"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Tickets
-                </a>
-              </button>
+              <button className={styles['schedule-button']}>Pending</button>
             </li>
 
             <hr />
