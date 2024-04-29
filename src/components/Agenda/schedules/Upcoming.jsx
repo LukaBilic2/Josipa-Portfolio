@@ -108,6 +108,24 @@ const Upcoming = () => {
       </li>
 
       <hr />
+
+      <li className={styles['list-element']}>
+        <div className={styles['date-and-place']}>
+          <p>
+            4
+            <br />
+            May (2025)
+          </p>
+        </div>
+        <p>
+          Jelena- Nikola Šubić Zrinjski (Ivan pl. Zajc)
+          <br />
+          <span>Croatian National Theatre in Zagreb</span>
+        </p>
+        <button className={styles['schedule-button']}>Pending</button>
+      </li>
+
+      <hr />
     </ul>
   );
 };
