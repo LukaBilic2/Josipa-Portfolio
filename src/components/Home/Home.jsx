@@ -223,33 +223,6 @@ const Home = () => {
             <li className={styles['list-element']}>
               <div className={styles['date-and-place']}>
                 <p>
-                  11
-                  <br />
-                  May
-                </p>
-              </div>
-              <p>
-                Internationales Bachfest Schauffhausen - Music in the Guild
-                House with Camerata Garestin
-                <br />
-                <span>Kulturhaus Obere Stube am Rhein - Switzerland</span>
-              </p>
-              <button className={styles['schedule-button']}>
-                <a
-                  href="https://www.bachfest.ch/programm"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Tickets
-                </a>
-              </button>
-            </li>
-
-            <hr />
-
-            <li className={styles['list-element']}>
-              <div className={styles['date-and-place']}>
-                <p>
                   28
                   <br />
                   June
@@ -258,6 +231,22 @@ const Home = () => {
               <p>
                 Recital <br />
                 <span>Crkva sv. Jeronima - Štrigova - Croatia</span>
+              </p>
+              <button className={styles['schedule-button']}>Pending</button>
+            </li>
+            <hr />
+
+            <li className={styles['list-element']}>
+              <div className={styles['date-and-place']}>
+                <p>
+                  06
+                  <br />
+                  July
+                </p>
+              </div>
+              <p>
+                Susanna - Il segreto di Susanna (Wolf - Ferrari) <br />
+                <span>Croatian National Theatre in Zagreb</span>
               </p>
               <button className={styles['schedule-button']}>Pending</button>
             </li>

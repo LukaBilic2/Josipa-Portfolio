@@ -55,6 +55,9 @@ export { default as image23Gallery } from '../images/Gallery/image23-gallery.avi
 export { default as image24Gallery } from '../images/Gallery/image24-gallery.avif';
 export { default as image25Gallery } from '../images/Gallery/image25-gallery.avif';
 export { default as image26Gallery } from '../images/Gallery/image26-gallery.avif';
+export { default as image27Gallery } from '../images/Gallery/image27.avif';
+export { default as image28Gallery } from '../images/Gallery/image28.avif';
+export { default as image29Gallery } from '../images/Gallery/image29.avif';
 export { default as newSlider1 } from '../images/Gallery/newslider1.avif';
 export { default as newSlider2 } from '../images/Gallery/newslider2.avif';
 export { default as newSlider3 } from '../images/Gallery/newslider3.avif';

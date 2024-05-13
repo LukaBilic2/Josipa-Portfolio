@@ -8,33 +8,6 @@ const Upcoming = () => {
       <li className={styles['list-element']}>
         <div className={styles['date-and-place']}>
           <p>
-            11
-            <br />
-            May
-          </p>
-        </div>
-        <p>
-          Internationales Bachfest Schauffhausen - Music in the Guild House with
-          Camerata Garestin
-          <br />
-          <span>Kulturhaus Obere Stube am Rhein - Switzerland</span>
-        </p>
-        <button className={styles['schedule-button']}>
-          <a
-            href="https://www.bachfest.ch/programm"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Tickets
-          </a>
-        </button>
-      </li>
-
-      <hr />
-
-      <li className={styles['list-element']}>
-        <div className={styles['date-and-place']}>
-          <p>
             28
             <br />
             June
@@ -105,24 +78,6 @@ const Upcoming = () => {
             Tickets
           </a>
         </button>
-      </li>
-
-      <hr />
-
-      <li className={styles['list-element']}>
-        <div className={styles['date-and-place']}>
-          <p>
-            4
-            <br />
-            May (2025)
-          </p>
-        </div>
-        <p>
-          Jelena- Nikola Šubić Zrinjski (Ivan pl. Zajc)
-          <br />
-          <span>Croatian National Theatre in Zagreb</span>
-        </p>
-        <button className={styles['schedule-button']}>Pending</button>
       </li>
 
       <hr />
