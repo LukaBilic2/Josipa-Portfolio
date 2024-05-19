@@ -67,7 +67,6 @@ export { default as rightArrow } from '../images/right-arrow.webp';
 export { default as notes } from '../images/Agenda/idemo1.jpg';
 export { default as newContactBackground } from '../images/contact/contact-background2.avif';
 export { default as newContactBackground2 } from '../images/contact/contact-background3.avif';
-
-// export { default as } from '';
+export { default as image0 } from '../images/About/image0.avif';
 // export { default as } from '';
 // export { default as } from '';

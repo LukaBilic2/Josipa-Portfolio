@@ -17,6 +17,7 @@ import {
   slide8,
   slide9,
   slide10,
+  image0,
 } from '../../services';
 import { NavLink } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
@@ -361,23 +362,43 @@ const About = () => {
           ref={(el) => (elementRefs.current[5] = el)}
         >
           <div className={styles['project-container-box']}>
+            <p>
+              She is one of the 10 laureates of the 12th edition of{' '}
+              <b>Le Jardin des Voix</b>.<br />
+              This prestigious international <b>Les Arts Florrissants</b>{' '}
+              Academy allows new generations of singers to emerge as passionate
+              interpreters and advocates of the Baroque repertoire.
+              <br />
+              After three weeks’ intensive training in Thiré, they will perform
+              a concert directed by <b>William Christie</b> and{' '}
+              <b>Paul Agnew</b> that afterwards tours the globe.
+            </p>
+            <img
+              className={`${styles['newImage']}`}
+              src={image0}
+              alt="image0"
+              loading="lazy"
+            />
+          </div>
+
+          <div className={styles['project-container-box']}>
             <img src={about1} alt="about1" loading="lazy" />
             <p className={styles['row-1-p']}>
               In 2023 she won the prestigious &#x201E;Froville International
               Baroque Singing Competition&#x201C; as well as a professional
               recording special prize with <b>I Gemelli ensemble.</b>
-              <br /> For her debut at the &#x201E;International Varaždin Baroque
-              Festival&#x201C; with
-              <b> Camerata Garestin</b> ensemble she received Ivan Werner Award
-              for the highest Young Artist’s achievement.
+              <br /> For her debut at the &#x201E;
+              <b>International Varaždin Baroque Festival</b>&#x201C; with
+              Camerata Garestin ensemble she received Ivan Werner Award for the
+              highest Young Artist’s achievement.
               <br /> In 2024 Season she will have the opportunity to debut at
-              the &#x201E;Innsbruck Festwochen Baroque Feastival&#x201C; in
-              Handel’s <b>Arianna in Creta</b> as Alceste.
+              the &#x201E;<b>Innsbruck Festwochen Baroque Feastival</b>&#x201C;
+              in Handel’s Arianna in Creta as Alceste.
             </p>
           </div>
 
           <div className={styles['project-container-box']}>
-            <p className={styles['row-2-p']}>
+            <p>
               She continues to perfect her baroque repertory and has had the
               opportunity to sing with distinguished ensembles such as Le
               Concert de l&apos;Hostel Dieu, the Zagreb Soloists, Croatian
@@ -389,7 +410,7 @@ const About = () => {
 
           <div className={styles['project-container-box']}>
             <img src={about3} alt="about2" loading="lazy" />
-            <p className={styles['row-3-p']}>
+            <p>
               Equally successful on the concert podium, she performed Gustav
               Mahler&apos;s 4th Symphony, Mozart&apos;s, Haydn and Beethoven
               concert arias, the soprano solo in Bach’s Markus Passion,
