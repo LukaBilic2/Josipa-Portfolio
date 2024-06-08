@@ -212,16 +212,19 @@ const Gallery = () => {
           ref={(el) => (elementRefs.current[16] = el)}
         />
 
-        <Slider
-          imageOne={newSlider1}
-          imageTwo={newSlider2}
-          imageThree={newSlider3}
-          hidden
-          h3Text="Wolfgang Amadeus Mozart: Così fan tutte (Despina)"
-          LocationText="Croatian National Theatre in Zagreb, 2024"
-          takenBy="© Saša Novković"
-          ref={(el) => (elementRefs.current[15] = el)}
-        />
+        <div className={styles.blueBG}>
+          <Slider
+            imageOne={newSlider1}
+            imageTwo={newSlider2}
+            imageThree={newSlider3}
+            midnightBackground={true}
+            hidden
+            h3Text="Wolfgang Amadeus Mozart: Così fan tutte (Despina)"
+            LocationText="Croatian National Theatre in Zagreb, 2024"
+            takenBy="© Saša Novković"
+            ref={(el) => (elementRefs.current[15] = el)}
+          />
+        </div>
 
         <Slider
           imageOne={image1Gallery}

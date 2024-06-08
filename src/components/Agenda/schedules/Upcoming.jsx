@@ -25,7 +25,7 @@ const Upcoming = () => {
       <li className={styles['list-element']}>
         <div className={styles['date-and-place']}>
           <p>
-            06
+            05, 06
             <br />
             July
           </p>
@@ -34,7 +34,15 @@ const Upcoming = () => {
           Susanna - Il segreto di Susanna (Wolf - Ferrari) <br />
           <span>Croatian National Theatre in Zagreb</span>
         </p>
-        <button className={styles['schedule-button']}>Pending</button>
+        <button className={styles['schedule-button']}>
+          <a
+            href="https://www.hnk.hr/hr/opera/predstave/suzanina-tajna-stanac/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Tickets
+          </a>
+        </button>
       </li>
 
       <hr />
