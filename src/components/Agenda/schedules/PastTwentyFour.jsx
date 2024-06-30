@@ -219,7 +219,56 @@ const PastTwentyFour = () => {
           </a>
         </button>
       </li>
+      <hr />
 
+      <li className={styles['list-element']}>
+        <div className={styles['date-and-place']}>
+          <p>
+            22
+            <br />
+            June
+          </p>
+        </div>
+        <p>
+          Zagreb Classic Open Air Summer Festival with Croatian Radiotelevision
+          Symphony Orchestra <br />
+          <span>Zagreb - Croatia</span>
+        </p>
+        <button className={styles['schedule-button']}>
+          <a
+            href="https://www.infozagreb.hr/hr/dogadanja/zagreb-classic/filmska-klasika"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Free
+          </a>
+        </button>
+      </li>
+
+      <hr />
+
+      <li className={styles['list-element']}>
+        <div className={styles['date-and-place']}>
+          <p>
+            28
+            <br />
+            June
+          </p>
+        </div>
+        <p>
+          Recital <br />
+          <span>Crkva sv. Jeronima - Štrigova - Croatia</span>
+        </p>
+        <button className={styles['schedule-button']}>
+          <a
+            href="https://czk-cakovec.hr/koncert-crkva-sv-jeronima-strigova-28-lipnja-2024/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Tickets
+          </a>
+        </button>
+      </li>
       <hr />
     </ul>
   );
