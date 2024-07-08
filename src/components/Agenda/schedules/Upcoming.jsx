@@ -94,6 +94,32 @@ const Upcoming = () => {
       <li className={styles['list-element']}>
         <div className={styles['date-and-place']}>
           <p>
+            9
+            <br />
+            September
+          </p>
+        </div>
+        <p>
+          The Music Yards of the Zagreb Soloists
+          <br />
+          <span>Zagreb City Museum, Croatia</span>
+        </p>
+        <button className={styles['schedule-button']}>
+          <a
+            href="https://www.ulaznice.hr/web/event/12/4185"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Tickets
+          </a>
+        </button>
+      </li>
+
+      <hr />
+
+      <li className={styles['list-element']}>
+        <div className={styles['date-and-place']}>
+          <p>
             18
             <br />
             October
@@ -140,24 +166,6 @@ const Upcoming = () => {
             Tickets
           </a>
         </button>
-      </li>
-
-      <hr />
-
-      <li className={styles['list-element']}>
-        <div className={styles['date-and-place']}>
-          <p>
-            2, 4, 6
-            <br />
-            November
-          </p>
-        </div>
-        <p>
-          Yvette - La Rondine (Puccini)
-          <br />
-          <span>Croatian National Theatre in Zagreb</span>
-        </p>
-        <button className={styles['schedule-button']}>Pending</button>
       </li>
 
       <hr />

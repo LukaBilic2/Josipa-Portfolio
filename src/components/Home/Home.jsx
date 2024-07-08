@@ -58,7 +58,7 @@ const Home = () => {
     ['https://www.youtube.com/embed/d05YPDjJUvs'],
     ['https://www.youtube.com/embed/-PFDkqpyvtk'],
     ['https://www.youtube.com/embed/oPO2mkE1ycg'],
-    ['https://www.youtube.com/embed/Znz42JeuyBQ'],
+    ['https://www.youtube.com/embed/qwsrj4RwxrI'],
   ];
 
   const [currentSetIndex, setCurrentSetIndex] = useState(0);

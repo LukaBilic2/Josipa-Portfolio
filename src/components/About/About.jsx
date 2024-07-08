@@ -18,6 +18,7 @@ import {
   slide9,
   slide10,
   image0,
+  josipaNagradaSest,
 } from '../../services';
 import { NavLink } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
@@ -62,7 +63,7 @@ const About = () => {
   const [currentIndexBottom, setCurrentIndexBottom] = useState(0);
   const [currentIndexMiddle, setCurrentIndexMiddle] = useState(0);
   const intervalRef = useRef(null);
-  const totalSlidesTop = 4;
+  const totalSlidesTop = 5;
   const totalSlidesBottom = 3;
   const totalSlidesMiddle = 2;
 
@@ -275,13 +276,25 @@ const About = () => {
             where she graduated in 2021 with the highest honor Summa cum Laude
             in the class of prof. Lidija Horvat - Dunjko.
           </p>
-          <h2 className={styles['hihglists-h2']}>CARERR HIGHLIGTS</h2>
+          <h2 className={styles['hihglists-h2']}>CAREER HIGHLIGHTS</h2>
         </div>
 
         <div
           className={`${styles['slider']} hidden`}
           ref={(el) => (elementRefs.current[2] = el)}
         >
+          <div className={styles['slideTop']}>
+            <img src={josipaNagradaSest} alt="slider" loading="lazy" />
+            <div className={styles['content']}>
+              <p>
+                As a finalist at one of the world&apos;s leading singing
+                competitions, 9th Mirjam Helin Competition, Miss Bilić made her
+                debut at Musiikkitalo Concert Hall with Helsinki Philharmonic
+                Orchestra and Maestro Sir Mark Elder.
+              </p>
+            </div>
+          </div>
+
           <div className={styles['slideTop']}>
             <img src={slide4} alt="slider4" loading="lazy" />
             <div className={styles['content']}>
@@ -473,12 +486,14 @@ const About = () => {
                   her performance as Gretel (Humperdinck: Hansel and Gretel).
                 </p>
                 <p className={styles['paragraph-beg-2']}>
-                  Before finishing musical studies in her native city Josipa has
-                  won numerous International and National Competitions: József
-                  Simándy (2018 and 2021), Zoltán Kodály Award - ISA (2019),
-                  Lions grand prix (2017), Lav Mirski (2016), Vera Kovač Vitkai
-                  (2015), Croatian National Competition HDGPP (2017 and 2019),
-                  etc.
+                  In 2019 she made her professional opera debut while being a
+                  member of Zagreb Opera-studio, after which she became a
+                  soloist at the opera ensemble of the Croatian National Theatre
+                  in Zagreb, where she is currently based. Her significant roles
+                  include Pamina in The Magic Flute, Despina in Cosi fan tutté,
+                  (Mozart), Amor in Orfeo ed Euridice (Gluck), Adele in Die
+                  Flederumaus (Strauss II), Susanna in Il segreto di Susanna
+                  (Wolf- Ferrari), etc.
                 </p>
               </div>
             </div>
@@ -502,12 +517,14 @@ const About = () => {
                 <img src={beginning4} alt="beginning4" loading="lazy" />
                 <div className={styles['content']}>
                   <p>
-                    Before finishing musical studies in her native city Josipa
-                    has won numerous International and National Competitions:
-                    József Simándy (2018 and 2021), Zoltán Kodály Award - ISA
-                    (2019), Lions grand prix (2017), Lav Mirski (2016), Vera
-                    Kovač Vitkai (2015), Croatian National Competition HDGPP
-                    (2017 and 2019), etc.
+                    In 2019 she made her professional opera debut while being a
+                    member of Zagreb Opera-studio, after which she became a
+                    soloist at the opera ensemble of the Croatian National
+                    Theatre in Zagreb, where she is currently based. Her
+                    significant roles include Pamina in The Magic Flute, Despina
+                    in Cosi fan tutté, (Mozart), Amor in Orfeo ed Euridice
+                    (Gluck), Adele in Die Flederumaus (Strauss II), Susanna in
+                    Il segreto di Susanna (Wolf- Ferrari), etc.
                   </p>
                 </div>
               </div>
