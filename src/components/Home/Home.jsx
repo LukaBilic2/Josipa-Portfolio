@@ -223,18 +223,19 @@ const Home = () => {
             <li className={styles['list-element']}>
               <div className={styles['date-and-place']}>
                 <p>
-                  05, 06
+                  18
                   <br />
-                  July
+                  October
                 </p>
               </div>
               <p>
-                Susanna - Il segreto di Susanna (Wolf - Ferrari) <br />
-                <span>Croatian National Theatre in Zagreb</span>
+                „Opera evening” with the Zagreb Philharmonic
+                <br />
+                <span>Vatroslav Lisinski Hall in Zagreb, Croatia</span>
               </p>
               <button className={styles['schedule-button']}>
                 <a
-                  href="https://www.hnk.hr/hr/opera/predstave/suzanina-tajna-stanac/"
+                  href="https://www.ulaznice.hr/web/event/12/4185"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -248,16 +249,44 @@ const Home = () => {
             <li className={styles['list-element']}>
               <div className={styles['date-and-place']}>
                 <p>
-                  08, 09
+                  22
                   <br />
-                  July
+                  October
                 </p>
               </div>
               <p>
-                Danica - Stanac (Gotovac), <br />
-                <span>Croatian National Theatre in Zagreb</span>
+                Tesla - Full Circle
+                <br />
+                <span>Nova Gradiška, Croatia</span>
               </p>
               <button className={styles['schedule-button']}>Pending</button>
+            </li>
+
+            <hr />
+
+            <li className={styles['list-element']}>
+              <div className={styles['date-and-place']}>
+                <p>
+                  31
+                  <br />
+                  October
+                </p>
+              </div>
+              <p>
+                Quattro pezzi sacri (Verdi) With HRT Symphony Orchestra and
+                Maestro Ivan Repušić
+                <br />
+                <span>Vatroslav Lisinski Hall in Zagreb, Croatia</span>
+              </p>
+              <button className={styles['schedule-button']}>
+                <a
+                  href="https://glazba.hrt.hr/novosti/pezzi-sacri-11587035"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Tickets
+                </a>
+              </button>
             </li>
 
             <hr />

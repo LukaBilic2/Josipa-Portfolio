@@ -1,80 +1,79 @@
 .list-element {
-    display: flex;
-    align-items: center;
-    padding: 10px 0;
-    text-align: center;
-    justify-content: space-between;
-    margin-right: 5%;
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  text-align: center;
+  justify-content: space-between;
+  margin-right: 5%;
 }
 
 .date-and-place {
-    display: flex;
-    align-items: center;
-    margin-left: 5%;
+  display: flex;
+  align-items: center;
+  margin-left: 5%;
 }
 
-li>div>p,
-li>p {
-    color: var(--tuscan-color);
-    font-weight: bold;
+li > div > p,
+li > p {
+  color: var(--tuscan-color);
+  font-weight: bold;
 }
 
 span {
-    font-weight: normal;
+  font-weight: normal;
 }
 
-.list-element:nth-of-type(9) .date-and-place {
+/* .list-element:nth-of-type(9) .date-and-place {
     margin-left: 3%;
-}
+} */
 
 .schedule-button {
-    min-width: 5%;
-    height: 100%;
-    border: none;
-    border-radius: 5px;
-    background-color: var(--curry-color);
-    color: var(--white-color);
-    cursor: pointer;
+  min-width: 5%;
+  height: 100%;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--curry-color);
+  color: var(--white-color);
+  cursor: pointer;
 }
 
-.schedule-button>a:hover,
+.schedule-button > a:hover,
 .schedule-button:hover {
-    color: var(--black-color);
+  color: var(--black-color);
 }
 
 @media only screen and (max-width: 480px) {
+  .list-element {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 0;
+    text-align: center;
+    justify-content: space-between;
+    margin-right: 0%;
+    gap: 20px;
+  }
 
-    .list-element {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 25px 0;
-        text-align: center;
-        justify-content: space-between;
-        margin-right: 0%;
-        gap: 20px;
-    }
+  .list-element > p,
+  span {
+    font-size: 16px;
+  }
 
-    .list-element>p,
-    span {
-        font-size: 16px;
-    }
+  .date-and-place > p {
+    font-size: 20px;
+  }
 
-    .date-and-place>p {
-        font-size: 20px;
-    }
+  .date-and-place {
+    display: flex;
+    align-items: center;
+    margin-left: 0%;
+  }
 
-    .date-and-place {
-        display: flex;
-        align-items: center;
-        margin-left: 0%;
-    }
-
-    .schedule-button,
-    .schedule-button>a {
-        font-size: 16px;
-        padding: 1%;
-    }
+  .schedule-button,
+  .schedule-button > a {
+    font-size: 16px;
+    padding: 1%;
+  }
 }
 
 /* @media only screen and (max-width: 400px) {
