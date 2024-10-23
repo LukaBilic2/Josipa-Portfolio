@@ -79,13 +79,13 @@ const Upcoming = () => {
       <li className={styles['list-element']}>
         <div className={styles['date-and-place']}>
           <p>
-            9
+            8
             <br />
             November
           </p>
         </div>
         <p>
-          Gala concert
+          Gala concert with Croatian Radiotelevision Symphony Orchestra
           <br />
           <span>University of Zagreb, Croatia</span>
         </p>
@@ -178,7 +178,7 @@ const Upcoming = () => {
       <li className={styles['list-element']}>
         <div className={styles['date-and-place']}>
           <p>
-            16
+            2
             <br />
             February
             <br /> (2025)

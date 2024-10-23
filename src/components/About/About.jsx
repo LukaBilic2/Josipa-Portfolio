@@ -378,8 +378,8 @@ const About = () => {
             <p>
               She is one of the 10 laureates of the 12th edition of{' '}
               <b>Le Jardin des Voix</b>.<br />
-              This prestigious international <b>Les Arts Florrissants</b>{' '}
-              Academy allows new generations of singers to emerge as passionate
+              This prestigious international <b>Les Arts Florissants</b> Academy
+              allows new generations of singers to emerge as passionate
               interpreters and advocates of the Baroque repertoire.
               <br />
               After three weeks’ intensive training in Thiré, they will perform

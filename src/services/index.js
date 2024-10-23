@@ -62,6 +62,10 @@ export { default as image29Gallery } from '../images/Gallery/image29.avif';
 export { default as newSlider1 } from '../images/Gallery/newslider1.avif';
 export { default as newSlider2 } from '../images/Gallery/newslider2.avif';
 export { default as newSlider3 } from '../images/Gallery/newslider3.avif';
+export { default as newSlider01 } from '../images/Gallery/newslider01.avif';
+export { default as newSlider02 } from '../images/Gallery/newslider02.avif';
+export { default as newSlider03 } from '../images/Gallery/newslider03.avif';
+
 export { default as mobileButton } from '../components/Reusables/MobileButton.jsx';
 export { default as leftArrow } from '../images/left-arrow.webp';
 export { default as rightArrow } from '../images/right-arrow.webp';

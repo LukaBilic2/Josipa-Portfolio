@@ -35,6 +35,9 @@ import {
   newSlider2,
   newSlider3,
   youtubeIcon,
+  newSlider01,
+  newSlider02,
+  newSlider03,
 } from '../../services';
 import { NavLink } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
@@ -200,6 +203,17 @@ const Gallery = () => {
         >
           Gallery
         </h2>
+
+        <Slider
+          imageOne={newSlider01}
+          imageTwo={newSlider02}
+          imageThree={newSlider03}
+          hidden
+          h3Text="G. F. Handel: Arianna in Creta (Alceste)"
+          LocationText="Innsbruck Festwochen"
+          takenBy="© Innsbruck Festwochen"
+          ref={(el) => (elementRefs.current[17] = el)}
+        />
 
         <Slider
           imageOne={image27Gallery}
