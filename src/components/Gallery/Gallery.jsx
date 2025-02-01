@@ -35,9 +35,9 @@ import {
   newSlider2,
   newSlider3,
   youtubeIcon,
-  newSlider01,
-  newSlider02,
-  newSlider03,
+  odrezana1,
+  odrezana2,
+  odrezana3,
 } from '../../services';
 import { NavLink } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
@@ -205,9 +205,9 @@ const Gallery = () => {
         </h2>
 
         <Slider
-          imageOne={newSlider01}
-          imageTwo={newSlider02}
-          imageThree={newSlider03}
+          imageOne={odrezana1}
+          imageTwo={odrezana2}
+          imageThree={odrezana3}
           hidden
           h3Text="G. F. Handel: Arianna in Creta (Alceste)"
           LocationText="Innsbruck Festwochen"

@@ -230,8 +230,8 @@ const PastTwentyFour = () => {
           </p>
         </div>
         <p>
-          Zagreb Classic Open Air Summer Festival with Croatian Radiotelevision
-          Symphony Orchestra <br />
+          Zagreb Classic Open Air Summer Festival with HRT Symphony Orchestra{' '}
+          <br />
           <span>Zagreb - Croatia</span>
         </p>
         <button className={styles['schedule-button']}>
@@ -380,6 +380,242 @@ const PastTwentyFour = () => {
             Tickets
           </a>
         </button>
+      </li>
+
+      <hr />
+      <li className={styles['list-element']}>
+        <div className={styles['date-and-place']}>
+          <p>
+            18
+            <br />
+            October
+          </p>
+        </div>
+        <p>
+          „Opera evening” with the Zagreb Philharmonic
+          <br />
+          <span>Vatroslav Lisinski Hall in Zagreb, Croatia</span>
+        </p>
+        <button className={styles['schedule-button']}>
+          <a
+            href="https://www.ulaznice.hr/web/event/12/4185"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Tickets
+          </a>
+        </button>
+      </li>
+
+      <hr />
+
+      <li className={styles['list-element']}>
+        <div className={styles['date-and-place']}>
+          <p>
+            22
+            <br />
+            October
+          </p>
+        </div>
+        <p>
+          Tesla - Full Circle
+          <br />
+          <span>Nova Gradiška, Croatia</span>
+        </p>
+        <button className={styles['schedule-button']}>Pending</button>
+      </li>
+
+      <hr />
+
+      <li className={styles['list-element']}>
+        <div className={styles['date-and-place']}>
+          <p>
+            31
+            <br />
+            October
+          </p>
+        </div>
+        <p>
+          Quattro pezzi sacri (Verdi) With HRT Symphony Orchestra and Maestro
+          Ivan Repušić
+          <br />
+          <span>Vatroslav Lisinski Hall in Zagreb, Croatia</span>
+        </p>
+        <button className={styles['schedule-button']}>
+          <a
+            href="https://glazba.hrt.hr/novosti/pezzi-sacri-11587035"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Tickets
+          </a>
+        </button>
+      </li>
+      <hr />
+
+      <li className={styles['list-element']}>
+        <div className={styles['date-and-place']}>
+          <p>
+            8
+            <br />
+            November
+          </p>
+        </div>
+        <p>
+          Gala concert with HRT Symphony Orchestra
+          <br />
+          <span>University of Zagreb, Croatia</span>
+        </p>
+        <button className={styles['schedule-button']}>Pending</button>
+      </li>
+
+      <hr />
+
+      <li className={styles['list-element']}>
+        <div className={styles['date-and-place']}>
+          <p>
+            12
+            <br />
+            November
+          </p>
+        </div>
+        <p>
+          Orchestra at last! with Zagreb Philharmonic Orchestra
+          <br />
+          <span>Vatroslav Lisinski Hall, Croatia</span>
+        </p>
+        <button className={styles['schedule-button']}>
+          <a
+            href="https://www.zgf.hr/hr/koncertni-kalendar/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Tickets
+          </a>
+        </button>
+      </li>
+      <hr />
+
+      <li className={styles['list-element']}>
+        <div className={styles['date-and-place']}>
+          <p>
+            14, 18
+            <br />
+            December
+          </p>
+        </div>
+        <p>
+          Adele - Die Fledermaus (Strauss)
+          <br />
+          <span>Croatian National Theatre in Zagreb</span>
+        </p>
+        <button className={styles['schedule-button']}>
+          <a
+            href="https://www.hnk.hr/hr/opera/predstave/%C5%A1i%C5%A1mi%C5%A1/#14.12.18.00"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Tickets
+          </a>
+        </button>
+      </li>
+
+      <hr />
+
+      <li className={styles['list-element']}>
+        <div className={styles['date-and-place']}>
+          <p>
+            29
+            <br />
+            December
+          </p>
+        </div>
+        <p>
+          Lisinski Hall Celebration - Winter Carnival with HRT Symphony
+          Orchestra
+          <br />
+          <span>Vatroslav Lisinski Hall in Zagreb, Croatia</span>
+        </p>
+        <button className={styles['schedule-button']}>
+          <a
+            href="https://www.lisinski.hr/hr/dogadanja/dan-dvorane-br-zimski-karneval/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Tickets
+          </a>
+        </button>
+      </li>
+
+      <hr />
+
+      <li className={styles['list-element']}>
+        <div className={styles['date-and-place']}>
+          <p>
+            30
+            <br />
+            December
+          </p>
+        </div>
+        <p>
+          New Year’s Concert of the HRT Symphony Orchestra,
+          <br />
+          <span>CZK - Čakovec, Croatia</span>
+        </p>
+        <button className={styles['schedule-button']}>
+          <a
+            href="https://glazba.hr/event/novogodisnji-koncert-simfonijskog-orkestra-hrvatske-radiotelevizije/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Tickets
+          </a>
+        </button>
+      </li>
+
+      <hr />
+
+      <li className={styles['list-element']}>
+        <div className={styles['date-and-place']}>
+          <p>
+            31
+            <br />
+            December
+          </p>
+        </div>
+        <p>
+          Adele - Die Fledermaus (Strauss)
+          <br />
+          <span>Croatian National Theatre in Zagreb</span>
+        </p>
+        <button className={styles['schedule-button']}>
+          <a
+            href="https://www.hnk.hr/hr/opera/predstave/%C5%A1i%C5%A1mi%C5%A1/#14.12.18.00"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Tickets
+          </a>
+        </button>
+      </li>
+
+      <hr />
+
+      <li className={styles['list-element']}>
+        <div className={styles['date-and-place']}>
+          <p>
+            8
+            <br />
+            January
+            <br /> (2025)
+          </p>
+        </div>
+        <p>
+          Adele - Die Fledermaus (Strauss)
+          <br />
+          <span>Croatian National Theatre in Zagreb</span>
+        </p>
+        <button className={styles['schedule-button']}>Pending</button>
       </li>
 
       <hr />

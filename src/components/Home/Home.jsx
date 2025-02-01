@@ -223,19 +223,40 @@ const Home = () => {
             <li className={styles['list-element']}>
               <div className={styles['date-and-place']}>
                 <p>
-                  18
+                  27
                   <br />
-                  October
+                  February
+                  <br />
                 </p>
               </div>
               <p>
-                „Opera evening” with the Zagreb Philharmonic
+                Finnish Cultural Foundation anniversary celebration
                 <br />
-                <span>Vatroslav Lisinski Hall in Zagreb, Croatia</span>
+                <span>Finlandia Hall, Helsinki</span>
+              </p>
+              <button className={styles['schedule-button']}>Pending</button>
+            </li>
+
+            <hr />
+
+            <li className={styles['list-element']}>
+              <div className={styles['date-and-place']}>
+                <p>
+                  1, 3, 7
+                  <br />
+                  March
+                  <br />
+                </p>
+              </div>
+              <p>
+                Sophie - Werther (Massenet)
+                <br />
+                <span>Croatian National Theatre in Zagreb</span>
               </p>
               <button className={styles['schedule-button']}>
+                {' '}
                 <a
-                  href="https://www.ulaznice.hr/web/event/12/4185"
+                  href="https://www.hnk.hr/hr/opera/predstave/werther/#28.02.19.30"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -249,38 +270,20 @@ const Home = () => {
             <li className={styles['list-element']}>
               <div className={styles['date-and-place']}>
                 <p>
-                  22
+                  29, 4
                   <br />
-                  October
+                  March-April
+                  <br />
                 </p>
               </div>
               <p>
-                Tesla - Full Circle
+                Gilda - Rigoletto (Verdi)
                 <br />
-                <span>Nova Gradiška, Croatia</span>
-              </p>
-              <button className={styles['schedule-button']}>Pending</button>
-            </li>
-
-            <hr />
-
-            <li className={styles['list-element']}>
-              <div className={styles['date-and-place']}>
-                <p>
-                  31
-                  <br />
-                  October
-                </p>
-              </div>
-              <p>
-                Quattro pezzi sacri (Verdi) With HRT Symphony Orchestra and
-                Maestro Ivan Repušić
-                <br />
-                <span>Vatroslav Lisinski Hall in Zagreb, Croatia</span>
+                <span>Croatian National Theatre in Zagreb</span>
               </p>
               <button className={styles['schedule-button']}>
                 <a
-                  href="https://glazba.hrt.hr/novosti/pezzi-sacri-11587035"
+                  href="https://www.hnk.hr/hr/opera/predstave/rigoletto/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
