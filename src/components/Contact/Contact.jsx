@@ -64,7 +64,7 @@ const Contact = () => {
 
     emailjs
       .sendForm('service_ieon8kq', 'template_y8746sm', form.current, {
-        publicKey: 'zauEORATTOVSZ1M3d',
+        publicKey: 'DCDOoKVsR5UINQC3g',
       })
       .then(
         () => {
