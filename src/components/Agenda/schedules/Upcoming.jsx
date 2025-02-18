@@ -109,7 +109,26 @@ const Upcoming = () => {
       <li className={styles['list-element']}>
         <div className={styles['date-and-place']}>
           <p>
-            29, 31
+            25
+            <br />
+            May
+            <br />
+          </p>
+        </div>
+        <p>
+          Dinner with Handel, Julian Perkins, Croatian Baroque Orchestra
+          <br />
+          <span>Croatian National Theatre in Zagreb</span>
+        </p>
+        <button className={styles['schedule-button']}>Pending</button>
+      </li>
+
+      <hr />
+
+      <li className={styles['list-element']}>
+        <div className={styles['date-and-place']}>
+          <p>
+            28, 31
             <br />
             May
             <br />
@@ -120,7 +139,61 @@ const Upcoming = () => {
           <br />
           <span>Croatian National Theatre in Zagreb</span>
         </p>
+        <button className={styles['schedule-button']}>
+          <a
+            href="https://www.hnk.hr/hr/raspored/?predstava=nikola-%C5%A1ubi%C4%87-zrinjski"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Tickets
+          </a>
+        </button>
+      </li>
+
+      <hr />
+
+      <li className={styles['list-element']}>
+        <div className={styles['date-and-place']}>
+          <p>
+            28
+            <br />
+            June
+            <br />
+          </p>
+        </div>
+        <p>
+          Princess Jelena - The Coronation of King Tomislav
+          <br />
+          <span>Mostar, Bosnia and Herzegovina</span>
+        </p>
         <button className={styles['schedule-button']}>Pending</button>
+      </li>
+
+      <hr />
+
+      <li className={styles['list-element']}>
+        <div className={styles['date-and-place']}>
+          <p>
+            15
+            <br />
+            July
+            <br />
+          </p>
+        </div>
+        <p>
+          Quinta Essentia Ensemble
+          <br />
+          <span>Rector’s Palace Atrium, Dubrovnik Summer Festival</span>
+        </p>
+        <button className={styles['schedule-button']}>
+          <a
+            href="https://www.dubrovnik-festival.hr/program/ansambl-quinta-essentia/193"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Tickets
+          </a>
+        </button>
       </li>
 
       <hr />
