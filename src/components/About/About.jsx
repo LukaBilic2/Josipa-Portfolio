@@ -19,6 +19,7 @@ import {
   slide10,
   image0,
   josipaNagradaSest,
+  voix,
 } from '../../services';
 import { NavLink } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
@@ -388,7 +389,7 @@ const About = () => {
             </p>
             <img
               className={`${styles['newImage']}`}
-              src={image0}
+              src={voix}
               alt="image0"
               loading="lazy"
             />
@@ -405,7 +406,7 @@ const About = () => {
               Camerata Garestin ensemble she received Ivan Werner Award for the
               highest Young Artist’s achievement.
               <br /> In 2024 Season she will have the opportunity to debut at
-              the &#x201E;<b>Innsbruck Festwochen Baroque Festival</b>&#x201C;
+              the &#x201E;<b>Innsbruck Festwochen 2024 Baroque Festival</b>&#x201C;
               in Handel’s Arianna in Creta as Alceste.
             </p>
           </div>
