@@ -8,46 +8,19 @@ const Upcoming = () => {
       <li className={styles['list-element']}>
         <div className={styles['date-and-place']}>
           <p>
-            27
-            <br />
-            February
-            <br />
-          </p>
-        </div>
-        <p>
-          Finnish Cultural Foundation anniversary celebration
-          <br />
-          <span>Finlandia Hall, Helsinki</span>
-        </p>
-        <button className={styles['schedule-button']}>Pending</button>
-      </li>
-
-      <hr />
-
-      <li className={styles['list-element']}>
-        <div className={styles['date-and-place']}>
-          <p>
-            1, 3, 7
+            24
             <br />
             March
             <br />
           </p>
         </div>
         <p>
-          Sophie - Werther (Massenet)
+          Zadar Chamber Orchestra, Guillaume Jehl (trumpet), Maestro Ivan
+          Repušić
           <br />
-          <span>Croatian National Theatre in Zagreb</span>
+          <span>St. Mary&apos;s Church, Zadar (Croatia)</span>
         </p>
-        <button className={styles['schedule-button']}>
-          {' '}
-          <a
-            href="https://www.hnk.hr/hr/opera/predstave/werther/#28.02.19.30"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Tickets
-          </a>
-        </button>
+        <button className={styles['schedule-button']}>Pending</button>
       </li>
 
       <hr />

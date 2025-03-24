@@ -38,6 +38,12 @@ import {
   odrezana1,
   odrezana2,
   odrezana3,
+  newSlider4,
+  newSlider6,
+  newSlider5,
+  newSlider7,
+  newSlider8,
+  newSlider9,
 } from '../../services';
 import { NavLink } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
@@ -204,16 +210,42 @@ const Gallery = () => {
           Gallery
         </h2>
 
+        <div className={styles.blueBG}>
+          <Slider
+            imageOne={newSlider7}
+            imageTwo={newSlider8}
+            imageThree={newSlider9}
+            hidden
+            h3Text="J. Massenet: Werther (Sophie)"
+            LocationText="Croatian National Theater in Zagreb, 2025"
+            takenBy="© Mara Bratoš"
+            ref={(el) => (elementRefs.current[19] = el)}
+          />
+        </div>
+
         <Slider
-          imageOne={odrezana1}
-          imageTwo={odrezana2}
-          imageThree={odrezana3}
+          imageOne={newSlider4}
+          imageTwo={newSlider5}
+          imageThree={newSlider6}
           hidden
-          h3Text="G. F. Handel: Arianna in Creta (Alceste)"
-          LocationText="Innsbruck Festwochen"
-          takenBy="© Innsbruck Festwochen"
-          ref={(el) => (elementRefs.current[17] = el)}
+          h3Text="E. Wolf - Ferrari: Il segreto di Susanna"
+          LocationText="Klovićevi dvori Gallery, Zagreb 2024"
+          takenBy="© CNT Zagreb"
+          ref={(el) => (elementRefs.current[18] = el)}
         />
+
+        <div className={styles.blueBG}>
+          <Slider
+            imageOne={odrezana1}
+            imageTwo={odrezana2}
+            imageThree={odrezana3}
+            hidden
+            h3Text="G. F. Handel: Arianna in Creta (Alceste)"
+            LocationText="Innsbruck Festwochen 2024"
+            takenBy="© Innsbruck Festwochen"
+            ref={(el) => (elementRefs.current[17] = el)}
+          />
+        </div>
 
         <Slider
           imageOne={image27Gallery}

@@ -51,19 +51,19 @@ const Home = () => {
   }, []);
 
   const videoSets = [
-    ['https://www.youtube.com/embed/jXU2gdKx0ss'],
-    ['https://www.youtube.com/embed/9agQvXsp0Ug'],
+    ['https://www.youtube.com/embed/s6gQQs1DHGU'],
+    ['https://www.youtube.com/embed/yDU_JaLHRhY'],
+    ['https://www.youtube.com/embed/qwsrj4RwxrI'],
     ['https://www.youtube.com/embed/XAtG4f0cfSc'],
     ['https://www.youtube.com/embed/KckM9MPGcMc'],
+    ['https://www.youtube.com/embed/jXU2gdKx0ss'],
+    ['https://www.youtube.com/embed/LAk-KFGteYs'],
     ['https://www.youtube.com/embed/d05YPDjJUvs'],
-    ['https://www.youtube.com/embed/-PFDkqpyvtk'],
-    ['https://www.youtube.com/embed/oPO2mkE1ycg'],
-    ['https://www.youtube.com/embed/qwsrj4RwxrI'],
   ];
 
   const [currentSetIndex, setCurrentSetIndex] = useState(0);
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 480);
-  const [showNavigationButtons] = useState(false);
+  // const [showNavigationButtons] = useState(false);
 
   const handleSetChange = (index) => {
     setCurrentSetIndex(index);
@@ -71,7 +71,7 @@ const Home = () => {
 
   const handlePreviousVideo = () => {
     setCurrentSetIndex((prevIndex) =>
-      prevIndex === 0 ? videoSets.length - 1 : prevIndex - 1
+      prevIndex === videoSets.length - 1 ? 0 : prevIndex + 1
     );
   };
 
@@ -223,46 +223,19 @@ const Home = () => {
             <li className={styles['list-element']}>
               <div className={styles['date-and-place']}>
                 <p>
-                  27
-                  <br />
-                  February
-                  <br />
-                </p>
-              </div>
-              <p>
-                Finnish Cultural Foundation anniversary celebration
-                <br />
-                <span>Finlandia Hall, Helsinki</span>
-              </p>
-              <button className={styles['schedule-button']}>Pending</button>
-            </li>
-
-            <hr />
-
-            <li className={styles['list-element']}>
-              <div className={styles['date-and-place']}>
-                <p>
-                  1, 3, 7
+                  24
                   <br />
                   March
                   <br />
                 </p>
               </div>
               <p>
-                Sophie - Werther (Massenet)
+                Zadar Chamber Orchestra, Guillaume Jehl (trumpet), Maestro Ivan
+                Repušić
                 <br />
-                <span>Croatian National Theatre in Zagreb</span>
+                <span>St. Mary&apos;s Church, Zadar (Croatia)</span>
               </p>
-              <button className={styles['schedule-button']}>
-                {' '}
-                <a
-                  href="https://www.hnk.hr/hr/opera/predstave/werther/#28.02.19.30"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Tickets
-                </a>
-              </button>
+              <button className={styles['schedule-button']}>Pending</button>
             </li>
 
             <hr />
@@ -284,6 +257,33 @@ const Home = () => {
               <button className={styles['schedule-button']}>
                 <a
                   href="https://www.hnk.hr/hr/opera/predstave/rigoletto/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Tickets
+                </a>
+              </button>
+            </li>
+
+            <hr />
+
+            <li className={styles['list-element']}>
+              <div className={styles['date-and-place']}>
+                <p>
+                  17, 22, 24
+                  <br />
+                  April
+                  <br />
+                </p>
+              </div>
+              <p>
+                Pamina - The Magic Flute (Mozart)
+                <br />
+                <span>Croatian National Theatre in Zagreb</span>
+              </p>
+              <button className={styles['schedule-button']}>
+                <a
+                  href="https://www.hnk.hr/hr/opera/predstave/čarobna-frula/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -336,30 +336,52 @@ const Home = () => {
                 allowFullScreen
               ></iframe>
             ) : (
-              videoSets[currentSetIndex * 2] && (
-                <>
+              <>
+                {videoSets[currentSetIndex * 4] && (
                   <iframe
                     className="youtube-iframe"
-                    width="625"
-                    height="351"
-                    src={videoSets[currentSetIndex * 2][0]}
-                    title={`Video ${currentSetIndex * 2}`}
+                    width="400"
+                    height="225"
+                    src={videoSets[currentSetIndex * 4][0]}
+                    title={`Video ${currentSetIndex * 4}`}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
                   ></iframe>
-                  {videoSets[currentSetIndex * 2 + 1] && (
-                    <iframe
-                      className="youtube-iframe"
-                      width="625"
-                      height="351"
-                      src={videoSets[currentSetIndex * 2 + 1][0]}
-                      title={`Video ${currentSetIndex * 2 + 1}`}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    ></iframe>
-                  )}
-                </>
-              )
+                )}
+                {videoSets[currentSetIndex * 4 + 1] && (
+                  <iframe
+                    className="youtube-iframe"
+                    width="400"
+                    height="225"
+                    src={videoSets[currentSetIndex * 4 + 1][0]}
+                    title={`Video ${currentSetIndex * 4 + 1}`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
+                )}
+                {videoSets[currentSetIndex * 4 + 2] && (
+                  <iframe
+                    className="youtube-iframe"
+                    width="400"
+                    height="225"
+                    src={videoSets[currentSetIndex * 4 + 2][0]}
+                    title={`Video ${currentSetIndex * 4 + 2}`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
+                )}
+                {videoSets[currentSetIndex * 4 + 3] && (
+                  <iframe
+                    className="youtube-iframe"
+                    width="400"
+                    height="225"
+                    src={videoSets[currentSetIndex * 4 + 3][0]}
+                    title={`Video ${currentSetIndex * 4 + 3}`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
+                )}
+              </>
             )}
           </div>
 
@@ -380,11 +402,10 @@ const Home = () => {
             </div>
           )}
 
-          {!isSmallScreen && !showNavigationButtons && (
+          {!isSmallScreen && (
             <div className={styles['button-container']}>
-              {videoSets
-                .slice(0, Math.ceil(videoSets.length / 2))
-                .map((_, index) => (
+              {Array.from({ length: Math.ceil(videoSets.length / 4) }).map(
+                (_, index) => (
                   <button
                     className={
                       index === currentSetIndex ? styles['selectedButton'] : ''
@@ -392,7 +413,8 @@ const Home = () => {
                     key={index}
                     onClick={() => handleSetChange(index)}
                   ></button>
-                ))}
+                )
+              )}
             </div>
           )}
         </section>
