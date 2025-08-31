@@ -3,6 +3,14 @@
   font-size: 20px;
 }
 
+.new-pad {
+  padding: 3% 0;
+}
+
+.new-mar {
+  padding: 0 0 3% 0;
+}
+
 .about-home-header {
   height: 85vh;
   color: var(--white-color);

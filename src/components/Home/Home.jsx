@@ -13,6 +13,59 @@ import {
 } from '../../services';
 import { Link, NavLink } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
+import Chair from '../Reusables/Chair';
+
+const quoteData = [
+  {
+    title: 'OPERA MUSIK MAGAZIN',
+    description:
+      'Alceste has some of the best music in the opera, the lovely, lyrical Tal’or d’oscuro velo, but especially the beautiful aria with cello obligato Son quel stanco pellegrino, perhaps the highlight of the whole score, was sung in sympathetic and thoroughly convincing fashion by soprano Josipa Bilić.',
+    quote: '— Charles Jernigan',
+  },
+  {
+    title: 'OPERA TODAY',
+    description:
+      'Josipa Bilić is the most lively performer of the evening, bringing depth to her trouser role with expressive gestures and skilled facial expressions. Her soprano voice shines with flawless clarity while serving the narrative.',
+    quote: '- Stefan Fuchs',
+  },
+  {
+    title: 'OPERAWIRE',
+    description:
+      'Josipa Bilić possesses a bright, agile soprano with appealing upper register, which she used to spin out delicious lines of delicate beauty which were both technically and expressively strong.',
+    quote: '— Alan Neilson',
+  },
+
+  {
+    title: 'MÜNCHNER MERKUR',
+    description:
+      'Josipa Bilić (Alceste) shapes her performance with a striking delicacy.',
+    quote: '— Markus Thiel',
+  },
+  {
+    title: 'GOTHIC NETWORK-MUSICA',
+    description:
+      'A well-deserved recognition for the beautiful voice of Croatian soprano Josipa Bilić. Her voice was radiant, her singing always clear and comprehensible. She moved gracefully on stage, delivering her actions with presicison and intensity.',
+    quote: '— Daily Notes',
+  },
+  {
+    title: 'KLASIKA.HR',
+    description:
+      'The final vocal movement of Mahler 4th, set to the verses of the Ode to Heavenly Joy from the follk poetry collection Des Knaben Wunderhorn, remained a manifestation of pure delight, characterized by lyrical clarity and seamless phrasing. Soprano Josipa Bilić delivered a musically refined and textually articulate interpretation, her timbre luminous and almost childlike in its crystalline purity.',
+    quote: '- Klasika.hr',
+  },
+  {
+    title: 'KLASIKA.HR',
+    description:
+      'With impeccable diction (despite the complexities of French pronunciation), a richly nuanced timbre, and masterful vocal control in the service of expression, Josipa Bilić delivered a deeply compelling portrayal of the tragic heroine in Juliette’s sole aria. Unsurprisingly, her performance was met with an enthusiastic and rapturous response from the audience.',
+    quote: '— Klasika.hr',
+  },
+  {
+    title: 'KLASIKA.HR',
+    description:
+      'It is impossible to overlook the beauty of Josipa Bilić’s voice, seamlessly blended with exceptional vocal placement, innate musicality, and remarkable ease across her wide vocal range, all the registers, tempi, and dynamic nuances with impeccable breath control and crystal-clear French diction. She brings a sense of depth and maturit to interpretation of a once-beloved yet now nearly forgotten repertoire, leaving a lasting impression on the listener.',
+    quote: '— Klasika.hr',
+  },
+];
 
 const Home = () => {
   const elementRefs = useRef([]);
@@ -223,40 +276,20 @@ const Home = () => {
             <li className={styles['list-element']}>
               <div className={styles['date-and-place']}>
                 <p>
-                  24
+                  4
                   <br />
-                  March
-                  <br />
-                </p>
-              </div>
-              <p>
-                Zadar Chamber Orchestra, Guillaume Jehl (trumpet), Maestro Ivan
-                Repušić
-                <br />
-                <span>St. Mary&apos;s Church, Zadar (Croatia)</span>
-              </p>
-              <button className={styles['schedule-button']}>Pending</button>
-            </li>
-
-            <hr />
-
-            <li className={styles['list-element']}>
-              <div className={styles['date-and-place']}>
-                <p>
-                  29, 4
-                  <br />
-                  March-April
+                  September
                   <br />
                 </p>
               </div>
               <p>
-                Gilda - Rigoletto (Verdi)
+                Dinner with Handel, Julian Perkins, Croatian Baroque Orchestra
                 <br />
-                <span>Croatian National Theatre in Zagreb</span>
+                <span>Korkyra baroque festival, Croatia</span>
               </p>
               <button className={styles['schedule-button']}>
                 <a
-                  href="https://www.hnk.hr/hr/opera/predstave/rigoletto/"
+                  href="https://korkyrabaroque.com/en/event/2025-cultural-center-korcula-dinner-with-handel-croatian-baroque-ensemble-julian-perkins-stephen-pettitt-and-dramatis-personae-handel-purcell-vivaldi-pepusch-arne/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -270,20 +303,48 @@ const Home = () => {
             <li className={styles['list-element']}>
               <div className={styles['date-and-place']}>
                 <p>
-                  17, 22, 24
+                  8
                   <br />
-                  April
+                  September
                   <br />
                 </p>
               </div>
               <p>
-                Pamina - The Magic Flute (Mozart)
+                Les Arts Florissants / La Descente d&apos;Orphée aux Enfers
+                (Charpentier)
                 <br />
-                <span>Croatian National Theatre in Zagreb</span>
+                <span>Lucerne Festival, Switzerland</span>
               </p>
               <button className={styles['schedule-button']}>
                 <a
-                  href="https://www.hnk.hr/hr/opera/predstave/čarobna-frula/"
+                  href="https://www.lucernefestival.ch/en/program/les-arts-florissants-william-christie/2205"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Tickets
+                </a>
+              </button>
+            </li>
+
+            <hr />
+
+            <li className={styles['list-element']}>
+              <div className={styles['date-and-place']}>
+                <p>
+                  19
+                  <br />
+                  October
+                  <br />
+                </p>
+              </div>
+              <p>
+                William Christie & Les Arts Florissants - Divines idylles
+                <br />
+                <span>Philharmonie Luxembourg, Grand Auditorium</span>
+              </p>
+              <button className={styles['schedule-button']}>
+                <a
+                  href="https://www.philharmonie.lu/en/programme/2025-26/william-christie-les-arts-florissants-000000e90019b320"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -298,7 +359,10 @@ const Home = () => {
             <button className={styles['agendaButton']}>See all</button>
           </Link>
         </div>
-        <blockquote
+
+        <Chair quotes={quoteData} />
+
+        {/* <blockquote
           className={`${styles['quote-home']} hidden`}
           ref={(el) => (elementRefs.current[2] = el)}
         >
@@ -317,7 +381,7 @@ const Home = () => {
               <i>Klasika.hr</i>
             </p>
           </footer>
-        </blockquote>
+        </blockquote> */}
 
         <section
           className={`${styles['performance-section']} hidden`}

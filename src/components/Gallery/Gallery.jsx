@@ -210,150 +210,151 @@ const Gallery = () => {
           Gallery
         </h2>
 
-        <div className={styles.blueBG}>
-          <Slider
-            imageOne={newSlider7}
-            imageTwo={newSlider8}
-            imageThree={newSlider9}
-            hidden
-            h3Text="J. Massenet: Werther (Sophie)"
-            LocationText="Croatian National Theater in Zagreb, 2025"
-            takenBy="© Mara Bratoš"
-            ref={(el) => (elementRefs.current[19] = el)}
-          />
-        </div>
-
         <Slider
-          imageOne={newSlider4}
-          imageTwo={newSlider5}
-          imageThree={newSlider6}
+          imageOne={newSlider7}
+          imageTwo={newSlider8}
+          imageThree={newSlider9}
           hidden
-          h3Text="E. Wolf - Ferrari: Il segreto di Susanna"
-          LocationText="Klovićevi dvori Gallery, Zagreb 2024"
-          takenBy="© CNT Zagreb"
-          ref={(el) => (elementRefs.current[18] = el)}
-        />
-
-        <div className={styles.blueBG}>
-          <Slider
-            imageOne={odrezana1}
-            imageTwo={odrezana2}
-            imageThree={odrezana3}
-            hidden
-            h3Text="G. F. Handel: Arianna in Creta (Alceste)"
-            LocationText="Innsbruck Festwochen 2024"
-            takenBy="© Innsbruck Festwochen"
-            ref={(el) => (elementRefs.current[17] = el)}
-          />
-        </div>
-
-        <Slider
-          imageOne={image27Gallery}
-          imageTwo={image28Gallery}
-          imageThree={image29Gallery}
-          hidden
-          h3Text="Wolfgang Amadeus Mozart: The Magic Flute (Pamina)"
-          LocationText="Croatian National Theatre in Zagreb, 2024"
+          h3Text="J. Massenet: Werther (Sophie)"
+          LocationText="Croatian National Theater in Zagreb, 2025"
           takenBy="© Mara Bratoš"
-          ref={(el) => (elementRefs.current[16] = el)}
+          ref={(el) => (elementRefs.current[19] = el)}
         />
 
         <div className={styles.blueBG}>
           <Slider
-            imageOne={newSlider1}
-            imageTwo={newSlider2}
-            imageThree={newSlider3}
+            imageOne={newSlider4}
+            imageTwo={newSlider5}
+            imageThree={newSlider6}
             midnightBackground={true}
             hidden
-            h3Text="Wolfgang Amadeus Mozart: Così fan tutte (Despina)"
+            h3Text="E. Wolf - Ferrari: Il segreto di Susanna"
+            LocationText="Klovićevi dvori Gallery, Zagreb 2024"
+            takenBy="© CNT Zagreb"
+            ref={(el) => (elementRefs.current[18] = el)}
+          />
+        </div>
+
+        <Slider
+          imageOne={odrezana1}
+          imageTwo={odrezana2}
+          imageThree={odrezana3}
+          hidden
+          h3Text="G. F. Handel: Arianna in Creta (Alceste)"
+          LocationText="Innsbruck Festwochen 2024"
+          takenBy="© Innsbruck Festwochen"
+          ref={(el) => (elementRefs.current[17] = el)}
+        />
+
+        <div className={styles.blueBG}>
+          <Slider
+            imageOne={image27Gallery}
+            imageTwo={image28Gallery}
+            imageThree={image29Gallery}
+            midnightBackground={true}
+            hidden
+            h3Text="Wolfgang Amadeus Mozart: The Magic Flute (Pamina)"
             LocationText="Croatian National Theatre in Zagreb, 2024"
-            takenBy="© Saša Novković"
-            ref={(el) => (elementRefs.current[15] = el)}
+            takenBy="© Mara Bratoš"
+            ref={(el) => (elementRefs.current[16] = el)}
           />
         </div>
 
         <Slider
-          imageOne={image1Gallery}
-          imageTwo={image2Gallery}
-          imageThree={image3Gallery}
+          imageOne={newSlider1}
+          imageTwo={newSlider2}
+          imageThree={newSlider3}
           hidden
-          h3Text={
-            <>
-              Gustav Mahler: Symphony No. 4 <br />
-              HRT Symphony Orchestra, maestro David Danzmayir
-            </>
-          }
-          LocationText="Concert Hall Vatroslav Lisinski in Zagreb, 2023"
-          takenBy="© Igor Šoban"
-          ref={(el) => (elementRefs.current[2] = el)}
-        />
-
-        <div className={styles.blueBG}>
-          <Slider
-            imageOne={image4Gallery}
-            imageTwo={image5Gallery}
-            imageThree={image6Gallery}
-            midnightBackground={true}
-            hidden
-            h3Text="Jakov Gotovac: Stanac (Danica)"
-            LocationText="Klovićevi dvori Gallery Zagreb, 2023"
-            takenBy="© Saša Novković"
-            ref={(el) => (elementRefs.current[3] = el)}
-          />
-        </div>
-
-        <Slider
-          imageOne={image7Gallery}
-          imageTwo={image8Gallery}
-          imageThree={image9Gallery}
-          hidden
-          h3Text="Peter Lund: Hillary the Witch goes to the Opera"
-          LocationText="Croatian National Theatre in Zagreb, 2023"
+          h3Text="Wolfgang Amadeus Mozart: Così fan tutte (Despina)"
+          LocationText="Croatian National Theatre in Zagreb, 2024"
           takenBy="© Saša Novković"
-          ref={(el) => (elementRefs.current[4] = el)}
+          ref={(el) => (elementRefs.current[15] = el)}
         />
 
         <div className={styles.blueBG}>
           <Slider
-            imageOne={image10Gallery}
-            imageTwo={image11Gallery}
-            imageThree={image12Gallery}
-            midnightBackground={true}
+            imageOne={image1Gallery}
+            imageTwo={image2Gallery}
+            imageThree={image3Gallery}
             hidden
-            h3Text="Zagreb Classic Open Air Festival 2023"
-            LocationText={
+            midnightBackground={true}
+            h3Text={
               <>
-                Zagreb Philharmonic Orchestra,
-                <br />
-                maestro Martin Yates
+                Gustav Mahler: Symphony No. 4 <br />
+                HRT Symphony Orchestra, maestro David Danzmayir
               </>
             }
-            takenBy="© Samir Cerić Kovačević/Arhiva TZGZ i M.Š./HRT"
-            ref={(el) => (elementRefs.current[5] = el)}
+            LocationText="Concert Hall Vatroslav Lisinski in Zagreb, 2023"
+            takenBy="© Igor Šoban"
+            ref={(el) => (elementRefs.current[2] = el)}
           />
         </div>
 
-        {isMobile ? (
-          <SliderTwoMobile
-            imageOne={image13Gallery}
-            imageTwo={image14Gallery}
-            hidden={false}
-            h3Text="Emmerich Kálmán: Gräfin Mariza"
-            LocationText="Komedija Theatre Zagreb, 2022"
-            takenBy="© Ines Novković"
-            ref={(el) => (elementRefs.current[6] = el)}
-          />
-        ) : (
-          <SliderTwo
-            imageOne={image13Gallery}
-            imageTwo={image14Gallery}
+        <Slider
+          imageOne={image4Gallery}
+          imageTwo={image5Gallery}
+          imageThree={image6Gallery}
+          hidden
+          h3Text="Jakov Gotovac: Stanac (Danica)"
+          LocationText="Klovićevi dvori Gallery Zagreb, 2023"
+          takenBy="© Saša Novković"
+          ref={(el) => (elementRefs.current[3] = el)}
+        />
+
+        <div className={styles.blueBG}>
+          <Slider
+            imageOne={image7Gallery}
+            imageTwo={image8Gallery}
+            imageThree={image9Gallery}
+            midnightBackground={true}
             hidden
-            h3Text="Emmerich Kálmán: Gräfin Mariza"
-            LocationText="Komedija Theatre Zagreb, 2022"
-            takenBy="© Ines Novković"
-            ref={(el) => (elementRefs.current[6] = el)}
+            h3Text="Peter Lund: Hillary the Witch goes to the Opera"
+            LocationText="Croatian National Theatre in Zagreb, 2023"
+            takenBy="© Saša Novković"
+            ref={(el) => (elementRefs.current[4] = el)}
           />
-        )}
+        </div>
+
+        <Slider
+          imageOne={image10Gallery}
+          imageTwo={image11Gallery}
+          imageThree={image12Gallery}
+          hidden
+          h3Text="Zagreb Classic Open Air Festival 2023"
+          LocationText={
+            <>
+              Zagreb Philharmonic Orchestra,
+              <br />
+              maestro Martin Yates
+            </>
+          }
+          takenBy="© Samir Cerić Kovačević/Arhiva TZGZ i M.Š./HRT"
+          ref={(el) => (elementRefs.current[5] = el)}
+        />
+
+        <div className={styles.blueBG}>
+          {isMobile ? (
+            <SliderTwoMobile
+              imageOne={image13Gallery}
+              imageTwo={image14Gallery}
+              hidden={false}
+              h3Text="Emmerich Kálmán: Gräfin Mariza"
+              LocationText="Komedija Theatre Zagreb, 2022"
+              takenBy="© Ines Novković"
+              ref={(el) => (elementRefs.current[6] = el)}
+            />
+          ) : (
+            <SliderTwo
+              imageOne={image13Gallery}
+              imageTwo={image14Gallery}
+              hidden
+              h3Text="Emmerich Kálmán: Gräfin Mariza"
+              LocationText="Komedija Theatre Zagreb, 2022"
+              takenBy="© Ines Novković"
+              ref={(el) => (elementRefs.current[6] = el)}
+            />
+          )}
+        </div>
 
         <SliderOne
           imageOne={image15Gallery}
@@ -363,89 +364,92 @@ const Gallery = () => {
           firstImage
           ref={(el) => (elementRefs.current[7] = el)}
         />
-
-        <Slider
-          imageOne={image16Gallery}
-          imageTwo={image17Gallery}
-          imageThree={image18Gallery}
-          hidden
-          h3Text={
-            <>
-              Sarajevo Philharmonic Orchestra,
-              <br />
-              maestro Josip Šego
-            </>
-          }
-          LocationText="Sarajevo National Theatre, 2022"
-          takenBy="© Raisa Šehu"
-          ref={(el) => (elementRefs.current[8] = el)}
-        />
-
-        <div className={`${styles.blueBG}`}>
+        <div className={styles.blueBG}>
           <Slider
-            imageOne={image19Gallery}
-            imageTwo={image20Gallery}
-            imageThree={image21Gallery}
+            imageOne={image16Gallery}
+            imageTwo={image17Gallery}
+            imageThree={image18Gallery}
             midnightBackground={true}
             hidden
-            h3Text="63d International Childern Festival in Šibenik"
-            LocationText="Orchestra at last! (Show for childern), 2022"
-            takenBy="© MDF Šibenik"
-            ref={(el) => (elementRefs.current[9] = el)}
+            h3Text={
+              <>
+                Sarajevo Philharmonic Orchestra,
+                <br />
+                maestro Josip Šego
+              </>
+            }
+            LocationText="Sarajevo National Theatre, 2022"
+            takenBy="© Raisa Šehu"
+            ref={(el) => (elementRefs.current[8] = el)}
           />
         </div>
-        {isMobile ? (
-          <SliderTwoMobile
-            imageOne={image22Gallery}
-            imageTwo={image23Gallery}
-            hidden={false}
-            h3Text="Engelbert Humperdinck: Hansel and Gretel (Gretel)"
-            LocationText="Vatroslav Lisinski Concert Hall Zagreb, 2021"
-            takenBy="© Borna Filić"
-            ref={(el) => (elementRefs.current[11] = el)}
-          />
-        ) : (
-          <SliderTwo
-            imageOne={image22Gallery}
-            imageTwo={image23Gallery}
-            hidden
-            h3Text="Engelbert Humperdinck: Hansel and Gretel (Gretel)"
-            LocationText="Vatroslav Lisinski Concert Hall Zagreb, 2021"
-            takenBy="© Borna Filić"
-            ref={(el) => (elementRefs.current[11] = el)}
-          />
-        )}
 
-        <SliderOne
-          imageOne={image24Gallery}
+        <Slider
+          imageOne={image19Gallery}
+          imageTwo={image20Gallery}
+          imageThree={image21Gallery}
           hidden
-          h3Text="Aleksandar Švabić and Zrinka Posavec: The Bald Soprano"
-          LocationText="(Chamber Opera inspired by Eugène Ionesco’s drama), Zagreb, 2021"
-          takenBy="© Dominik Vujičić"
-          ref={(el) => (elementRefs.current[12] = el)}
+          h3Text="63d International Childern Festival in Šibenik"
+          LocationText="Orchestra at last! (Show for childern), 2022"
+          takenBy="© MDF Šibenik"
+          ref={(el) => (elementRefs.current[9] = el)}
         />
-
-        {isMobile ? (
-          <SliderTwoMobile
-            imageOne={image25Gallery}
-            imageTwo={image26Gallery}
-            hidden={false}
-            h3Text="Zagreb Philharmonic Orchestra, maestro Tomislav Fačini"
-            LocationText="Vatroslav Lisinski Concert Hall Zagreb, 2020"
-            takenBy="© Karlo Vuković"
-            ref={(el) => (elementRefs.current[13] = el)}
-          />
-        ) : (
-          <SliderTwo
-            imageOne={image25Gallery}
-            imageTwo={image26Gallery}
+        <div className={styles.blueBG}>
+          {isMobile ? (
+            <SliderTwoMobile
+              imageOne={image22Gallery}
+              imageTwo={image23Gallery}
+              hidden={false}
+              h3Text="Engelbert Humperdinck: Hansel and Gretel (Gretel)"
+              LocationText="Vatroslav Lisinski Concert Hall Zagreb, 2021"
+              takenBy="© Borna Filić"
+              ref={(el) => (elementRefs.current[11] = el)}
+            />
+          ) : (
+            <SliderTwo
+              imageOne={image22Gallery}
+              imageTwo={image23Gallery}
+              hidden
+              h3Text="Engelbert Humperdinck: Hansel and Gretel (Gretel)"
+              LocationText="Vatroslav Lisinski Concert Hall Zagreb, 2021"
+              takenBy="© Borna Filić"
+              ref={(el) => (elementRefs.current[11] = el)}
+            />
+          )}
+        </div>
+        <div className={styles.blueBG}>
+          <SliderOne
+            imageOne={image24Gallery}
             hidden
-            h3Text="Zagreb Philharmonic Orchestra, maestro Tomislav Fačini"
-            LocationText="Vatroslav Lisinski Concert Hall Zagreb, 2020"
-            takenBy="© Karlo Vuković"
-            ref={(el) => (elementRefs.current[13] = el)}
+            h3Text="Aleksandar Švabić and Zrinka Posavec: The Bald Soprano"
+            LocationText="(Chamber Opera inspired by Eugène Ionesco’s drama), Zagreb, 2021"
+            takenBy="© Dominik Vujičić"
+            ref={(el) => (elementRefs.current[12] = el)}
           />
-        )}
+        </div>
+        <div className={styles.blueBG}>
+          {isMobile ? (
+            <SliderTwoMobile
+              imageOne={image25Gallery}
+              imageTwo={image26Gallery}
+              hidden={false}
+              h3Text="Zagreb Philharmonic Orchestra, maestro Tomislav Fačini"
+              LocationText="Vatroslav Lisinski Concert Hall Zagreb, 2020"
+              takenBy="© Karlo Vuković"
+              ref={(el) => (elementRefs.current[13] = el)}
+            />
+          ) : (
+            <SliderTwo
+              imageOne={image25Gallery}
+              imageTwo={image26Gallery}
+              hidden
+              h3Text="Zagreb Philharmonic Orchestra, maestro Tomislav Fačini"
+              LocationText="Vatroslav Lisinski Concert Hall Zagreb, 2020"
+              takenBy="© Karlo Vuković"
+              ref={(el) => (elementRefs.current[13] = el)}
+            />
+          )}
+        </div>
       </main>
 
       <footer

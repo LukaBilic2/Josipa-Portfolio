@@ -64,7 +64,7 @@ const About = () => {
   const [currentIndexBottom, setCurrentIndexBottom] = useState(0);
   const [currentIndexMiddle, setCurrentIndexMiddle] = useState(0);
   const intervalRef = useRef(null);
-  const totalSlidesTop = 5;
+  const totalSlidesTop = 4;
   const totalSlidesBottom = 3;
   const totalSlidesMiddle = 2;
 
@@ -284,7 +284,7 @@ const About = () => {
           className={`${styles['slider']} hidden`}
           ref={(el) => (elementRefs.current[2] = el)}
         >
-          <div className={styles['slideTop']}>
+          {/* <div className={styles['slideTop']}>
             <img src={josipaNagradaSest} alt="slider" loading="lazy" />
             <div className={styles['content']}>
               <p>
@@ -294,7 +294,7 @@ const About = () => {
                 Orchestra and Maestro Sir Mark Elder.
               </p>
             </div>
-          </div>
+          </div> */}
 
           <div className={styles['slideTop']}>
             <img src={slide4} alt="slider4" loading="lazy" />
@@ -375,43 +375,62 @@ const About = () => {
           className={`${styles['project-container']} hidden`}
           ref={(el) => (elementRefs.current[5] = el)}
         >
-          <div className={styles['project-container-box']}>
-            <p>
-              She is one of the 10 laureates of the 12th edition of{' '}
-              <b>Le Jardin des Voix</b>.<br />
-              This prestigious international <b>Les Arts Florissants</b> Academy
-              allows new generations of singers to emerge as passionate
-              interpreters and advocates of the Baroque repertoire.
-              <br />
-              After three weeks’ intensive training in Thiré, they will perform
-              a concert directed by <b>William Christie</b> and{' '}
-              <b>Paul Agnew</b> that afterwards tours the globe.
-            </p>
-            <img
-              className={`${styles['newImage']}`}
-              src={voix}
-              alt="image0"
-              loading="lazy"
-            />
-          </div>
-
-          <div className={styles['project-container-box']}>
-            <img src={about1} alt="about1" loading="lazy" />
+          <div
+            className={`${styles['project-container-box']} ${styles['new-mar']}`}
+          >
+            <img src={josipaNagradaSest} alt="about1" loading="lazy" />
             <p className={styles['row-1-p']}>
-              In 2023 she won the prestigious &#x201E;Froville International
-              Baroque Singing Competition&#x201C; as well as a professional
-              recording special prize with <b>I Gemelli ensemble.</b>
-              <br /> For her debut at the &#x201E;
-              <b>International Varaždin Baroque Festival</b>&#x201C; with
-              Camerata Garestin ensemble she received Ivan Werner Award for the
-              highest Young Artist’s achievement.
-              <br /> In 2024 Season she will have the opportunity to debut at
-              the &#x201E;<b>Innsbruck Festwochen 2024 Baroque Festival</b>&#x201C;
-              in Handel’s Arianna in Creta as Alceste.
+              As a finalist at one of the world&apos;s leading singing
+              competitions, <b>9th Mirjam Helin Competition</b>, Miss Bilić made
+              her debut at &#x201E;Musiikkitalo Concert Hall&#x201C; with{' '}
+              <b>Helsinki Philharmonic Orchestra</b> and{' '}
+              <b>Maestro Sir Mark Elder</b>.
             </p>
           </div>
+          <div
+            className={`${styles['beginnings-blue-background']} ${styles['new-pad']}`}
+          >
+            <div className={styles['project-container-box']}>
+              <p>
+                She is one of the 10 laureates of the 12th edition of{' '}
+                <b>Le Jardin des Voix</b>.<br />
+                This prestigious international <b>Les Arts Florissants</b>{' '}
+                Academy allows new generations of singers to emerge as
+                passionate interpreters and advocates of the Baroque repertoire.
+                <br />
+                With two Charpentier&apos;s operas Les Arts Florissants / La
+                Descente d&apos;Orphee aux Enfers they begin their tour in
+                France, Spain, Switzerland, Luxembourg and Canada directed by{' '}
+                <b>William Christie</b> and <b>Paul Agnew.</b>
+              </p>
+              <img
+                className={`${styles['newImage']}`}
+                src={voix}
+                alt="image0"
+                loading="lazy"
+              />
+            </div>
 
-          <div className={styles['project-container-box']}>
+            <div className={styles['project-container-box']}>
+              <img src={about1} alt="about1" loading="lazy" />
+              <p className={styles['row-1-p']}>
+                In 2023 she won the prestigious &#x201E;Froville International
+                Baroque Singing Competition&#x201C; as well as a professional
+                recording special prize with <b>I Gemelli ensemble.</b>
+                <br /> For her debut at the &#x201E;
+                <b>International Varaždin Baroque Festival</b>&#x201C; with
+                Camerata Garestin ensemble she received Ivan Werner Award for
+                the highest Young Artist’s achievement.
+                <br /> In 2024 Season she will have the opportunity to debut at
+                the &#x201E;<b>Innsbruck Festwochen 2024 Baroque Festival</b>
+                &#x201C; in Handel’s Arianna in Creta as Alceste.
+              </p>
+            </div>
+          </div>
+
+          <div
+            className={`${styles['project-container-box']} ${styles['new-pad']}`}
+          >
             <p>
               She continues to perfect her baroque repertory and has had the
               opportunity to sing with distinguished ensembles such as Le

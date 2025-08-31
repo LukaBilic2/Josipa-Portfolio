@@ -1,0 +1,167 @@
+.chair-wrapper {
+  width: 100%;
+  position: relative;
+  padding: 1rem 0;
+  overflow: hidden;
+}
+
+.chair-inner {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.chair-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  cursor: grab;
+  padding: 1rem 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.chair-grabbing {
+  cursor: grabbing;
+}
+
+.chair-box {
+  flex: 0 0 18.5vw;
+  box-sizing: border-box;
+  margin: 0 0.5rem;
+  background-color: var(--midnight-color);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.chair-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: white;
+  text-align: center;
+  min-height: 3.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chair-description {
+  font-size: 0.8rem;
+  margin-bottom: 0.75rem;
+  max-width: 100%;
+  word-wrap: break-word;
+  line-height: 1.4;
+  color: white;
+  font-style: italic;
+  text-align: center;
+}
+
+.chair-quote {
+  font-style: italic;
+  color: white;
+  font-size: 0.8rem;
+}
+
+.chair-quote-icon {
+  position: absolute;
+  top: 2px;
+  left: 15px;
+  font-size: 3rem;
+  color: white;
+  pointer-events: none;
+  font-family: serif;
+}
+
+@media (min-width: 601px) {
+  .chair-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}
+
+.chair-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.chair-arrow {
+  all: unset;
+  display: inline-block;
+  text-align: center;
+  background: none;
+  border: 2px solid #333;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.chair-arrow:hover {
+  background: #333;
+  color: white;
+}
+
+.chair-arrow.active {
+  background-color: var(--curry-color);
+  color: white;
+}
+
+.chair-arrow.inactive {
+  background-color: var(--midnight-color);
+  color: white;
+}
+
+/* Responsive: Tablet */
+@media (max-width: 900px) {
+  .chair-box {
+    flex: 0 0 40vw;
+  }
+}
+
+/* Responsive: Mobile */
+@media (max-width: 600px) {
+  .chair-box {
+    flex: 0 0 74.5vw;
+  }
+
+  .chair-controls {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    transform: translateY(-50%);
+    pointer-events: none; /* ensure only buttons are clickable */
+  }
+
+  .chair-arrow {
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+    padding: 0;
+    z-index: 2;
+    pointer-events: auto;
+  }
+
+  .chair-arrow.inactive,
+  .chair-arrow.active {
+    border-width: 1px;
+  }
+
+  .chair-arrow:first-of-type {
+    left: 5%;
+  }
+
+  .chair-arrow:last-of-type {
+    right: 5%;
+  }
+}

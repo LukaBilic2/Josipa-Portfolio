@@ -6,12 +6,14 @@ import Upcoming from './schedules/Upcoming.jsx';
 import PastTwentyFour from './schedules/PastTwentyFour.jsx';
 import PastTwentyThree from './schedules/PastTwentyThree.jsx';
 import PastTwentyTwo from './schedules/PastTwentyTwo.jsx';
+import PastTwentyFive from './schedules/PastTwentyFive.jsx';
 
 const componentMap = {
   1: <Upcoming />,
-  2: <PastTwentyFour />,
-  3: <PastTwentyThree />,
-  4: <PastTwentyTwo />,
+  2: <PastTwentyFive />,
+  3: <PastTwentyFour />,
+  4: <PastTwentyThree />,
+  5: <PastTwentyTwo />,
 };
 
 const Agenda = () => {
@@ -177,7 +179,7 @@ const Agenda = () => {
                 activeButton === 2 ? styles.selected : ''
               }`}
             >
-              2024
+              2025
             </button>
             <button
               onClick={() => handleButtonClick(3)}
@@ -185,12 +187,20 @@ const Agenda = () => {
                 activeButton === 3 ? styles.selected : ''
               }`}
             >
-              2023
+              2024
             </button>
             <button
               onClick={() => handleButtonClick(4)}
               className={`${styles['schedule-button']} ${
                 activeButton === 4 ? styles.selected : ''
+              }`}
+            >
+              2023
+            </button>
+            <button
+              onClick={() => handleButtonClick(5)}
+              className={`${styles['schedule-button']} ${
+                activeButton === 5 ? styles.selected : ''
               }`}
             >
               2022
