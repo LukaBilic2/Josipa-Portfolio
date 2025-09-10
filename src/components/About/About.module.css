@@ -587,6 +587,10 @@ button.nav-toggle {
     flex-direction: column-reverse;
   }
 
+  .project-container-box.new-mar {
+    flex-direction: column;
+  }
+
   .project-container-box:nth-child(1) img {
     height: auto;
   }
