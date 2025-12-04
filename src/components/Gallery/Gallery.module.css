@@ -38,9 +38,9 @@
 }
 
 .gallery-background-image {
-  background-image: url(../../images/Gallery/Gallery-background2.avif);
+  background-image: url(../../images/Gallery/gallery_background3.avif);
   background-size: cover;
-  background-position: center 20%;
+  background-position: center 45%;
   width: 100%;
   min-height: 85vh;
   position: fixed;

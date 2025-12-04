@@ -44,6 +44,12 @@ import {
   newSlider7,
   newSlider8,
   newSlider9,
+  newSlider05,
+  newSlider04,
+  newSlider06,
+  newSlider07,
+  newSlider09,
+  newSlider08,
 } from '../../services';
 import { NavLink } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
@@ -211,6 +217,17 @@ const Gallery = () => {
         </h2>
 
         <Slider
+          imageOne={newSlider07}
+          imageTwo={newSlider09}
+          imageThree={newSlider08}
+          hidden
+          h3Text="Marc-Antoine Charpentiere: La Descente d'Orpheé aux Enfers"
+          LocationText="Les Arts Florissants, 2025"
+          takenBy="© Priska Ketterer, Julien Gazeau"
+          ref={(el) => (elementRefs.current[21] = el)}
+        />
+
+        <Slider
           imageOne={newSlider7}
           imageTwo={newSlider8}
           imageThree={newSlider9}
@@ -229,7 +246,7 @@ const Gallery = () => {
             midnightBackground={true}
             hidden
             h3Text="E. Wolf - Ferrari: Il segreto di Susanna"
-            LocationText="Klovićevi dvori Gallery, Zagreb 2024"
+            LocationText="Klovićevi dvori Gallery Zagreb, 2024"
             takenBy="© CNT Zagreb"
             ref={(el) => (elementRefs.current[18] = el)}
           />
@@ -241,7 +258,7 @@ const Gallery = () => {
           imageThree={odrezana3}
           hidden
           h3Text="G. F. Handel: Arianna in Creta (Alceste)"
-          LocationText="Innsbruck Festwochen 2024"
+          LocationText="Innsbruck Festwochen, 2024"
           takenBy="© Innsbruck Festwochen"
           ref={(el) => (elementRefs.current[17] = el)}
         />
@@ -269,6 +286,17 @@ const Gallery = () => {
           LocationText="Croatian National Theatre in Zagreb, 2024"
           takenBy="© Saša Novković"
           ref={(el) => (elementRefs.current[15] = el)}
+        />
+
+        <Slider
+          imageOne={newSlider06}
+          imageTwo={newSlider04}
+          imageThree={newSlider05}
+          hidden
+          h3Text="Johann Strauss II: Die Fledermaus (Adele)"
+          LocationText="Croatian National Theatre in Zagreb, 2024"
+          takenBy="© Saša Novković"
+          ref={(el) => (elementRefs.current[20] = el)}
         />
 
         <div className={styles.blueBG}>

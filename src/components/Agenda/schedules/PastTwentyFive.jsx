@@ -1,10 +1,21 @@
 import styles from './PastTwentyFive.module.css';
+import concerts from './concerts';
 
 const PastTwentyFive = () => {
+  const today = new Date();
+
+  const dynamicPast2025 = concerts
+    .filter(concert => {
+      const concertDate = new Date(concert.date);
+      return (
+        concertDate.getFullYear() === 2025 && concertDate < today
+      );
+    })
+    .sort((a, b) => new Date(a.date) - new Date(b.date));
+
   return (
     <ul>
       <hr />
-
       <li className={styles['list-element']}>
         <div className={styles['date-and-place']}>
           <p>
@@ -252,7 +263,126 @@ const PastTwentyFive = () => {
           </a>
         </button>
       </li>
+
       <hr />
+
+      <li className={styles['list-element']}>
+        <div className={styles['date-and-place']}>
+          <p>
+            4
+            <br />
+            September
+            <br />
+          </p>
+        </div>
+        <p>
+          Dinner with Handel, Julian Perkins, Croatian Baroque Orchestra
+          <br />
+          <span>Korkyra baroque festival, Croatia</span>
+        </p>
+        <button className={styles['schedule-button']}>
+          <a
+            href="https://korkyrabaroque.com/en/event/2025-cultural-center-korcula-dinner-with-handel-croatian-baroque-ensemble-julian-perkins-stephen-pettitt-and-dramatis-personae-handel-purcell-vivaldi-pepusch-arne/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Tickets
+          </a>
+        </button>
+      </li>
+
+      <hr />
+
+      <li className={styles['list-element']}>
+        <div className={styles['date-and-place']}>
+          <p>
+            8
+            <br />
+            September
+            <br />
+          </p>
+        </div>
+        <p>
+          Les Arts Florissants / La Descente d&apos;Orphée aux Enfers
+          (Charpentier)
+          <br />
+          <span>Lucerne Festival, Switzerland</span>
+        </p>
+        <button className={styles['schedule-button']}>
+          <a
+            href="https://www.lucernefestival.ch/en/program/les-arts-florissants-william-christie/2205"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Tickets
+          </a>
+        </button>
+      </li>
+
+      <hr />
+
+      <li className={styles['list-element']}>
+        <div className={styles['date-and-place']}>
+          <p>
+            30
+            <br />
+            September
+            <br />
+          </p>
+        </div>
+        <p>
+        Princess Jelena - The Coronation of King Tomislav
+          <br />
+          <span>Croatian National Theatre in Split</span>
+        </p>
+        <button className={styles['schedule-button']}>
+          <a
+            href="https://www.lucernefestival.ch/en/program/les-arts-florissants-william-christie/2205"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Tickets
+          </a>
+        </button>
+      </li>
+
+      <hr />
+
+      {/* keep all your other static concerts here … */}
+
+      {/* --- DYNAMIC CONCERTS --- */}
+      {dynamicPast2025.map((concert, index) => (
+        <>
+          <li key={concert.id} className={styles['list-element']}>
+            <div className={styles['date-and-place']}>
+              <p>
+                {new Date(concert.date).getDate()}
+                <br />
+                {new Date(concert.date).toLocaleString('default', { month: 'long' })}
+              </p>
+            </div>
+            <p>
+              {concert.title}
+              <br />
+              <span>{concert.venue}</span>
+            </p>
+            <button className={styles['schedule-button']}>
+              {concert.ticketsUrl ? (
+                <a
+                  href={concert.ticketsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Tickets
+                </a>
+              ) : (
+                'Pending'
+              )}
+            </button>
+          </li>
+          {index < dynamicPast2025.length - 1 && <hr />}
+        </>
+      ))}
     </ul>
   );
 };

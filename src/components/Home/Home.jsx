@@ -14,8 +14,27 @@ import {
 import { Link, NavLink } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import Chair from '../Reusables/Chair';
+import concerts from '../Agenda/schedules/concerts';
 
 const quoteData = [
+  {
+    title: 'MUSE BAROQUE',
+    description:
+      'A palette of allegories of the arts and embodied sentiments, among which stands out the sovereign voice of Josipa Bilić, securely placed and marked by refined prosody in the role of La Paix.',
+    quote: '— tbd',
+  },
+  {
+    title: 'OLYRIX',
+    description:
+      'Josipa Bilić, entrusted with the roles of La Paix and Daphné, revealed a generous and expansive voice, displaying the full breadth of her timbre with and unrestrained command of the chest register',
+    quote: '— tbd',
+  },
+  {
+    title: 'ÓPERA ACTUAL',
+    description:
+      'For her part, Josipa Bilić (La Paix) revealed a wide tessitura and a velvety, mellifluous timbre.',
+    quote: '— tbd',
+  },
   {
     title: 'OPERA MUSIK MAGAZIN',
     description:
@@ -69,6 +88,13 @@ const quoteData = [
 
 const Home = () => {
   const elementRefs = useRef([]);
+
+  // get 3 nearest upcoming concerts
+  const today = new Date();
+  const upcomingConcerts = concerts
+    .filter((concert) => new Date(concert.date) >= today)
+    .sort((a, b) => new Date(a.date) - new Date(b.date))
+    .slice(0, 3);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -272,89 +298,46 @@ const Home = () => {
           <h2>UPCOMING PERFORMANCES</h2>
           <ul>
             <hr />
-
-            <li className={styles['list-element']}>
-              <div className={styles['date-and-place']}>
-                <p>
-                  4
-                  <br />
-                  September
-                  <br />
-                </p>
-              </div>
-              <p>
-                Dinner with Handel, Julian Perkins, Croatian Baroque Orchestra
-                <br />
-                <span>Korkyra baroque festival, Croatia</span>
-              </p>
-              <button className={styles['schedule-button']}>
-                <a
-                  href="https://korkyrabaroque.com/en/event/2025-cultural-center-korcula-dinner-with-handel-croatian-baroque-ensemble-julian-perkins-stephen-pettitt-and-dramatis-personae-handel-purcell-vivaldi-pepusch-arne/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Tickets
-                </a>
-              </button>
-            </li>
-
-            <hr />
-
-            <li className={styles['list-element']}>
-              <div className={styles['date-and-place']}>
-                <p>
-                  8
-                  <br />
-                  September
-                  <br />
-                </p>
-              </div>
-              <p>
-                Les Arts Florissants / La Descente d&apos;Orphée aux Enfers
-                (Charpentier)
-                <br />
-                <span>Lucerne Festival, Switzerland</span>
-              </p>
-              <button className={styles['schedule-button']}>
-                <a
-                  href="https://www.lucernefestival.ch/en/program/les-arts-florissants-william-christie/2205"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Tickets
-                </a>
-              </button>
-            </li>
-
-            <hr />
-
-            <li className={styles['list-element']}>
-              <div className={styles['date-and-place']}>
-                <p>
-                  19
-                  <br />
-                  October
-                  <br />
-                </p>
-              </div>
-              <p>
-                William Christie & Les Arts Florissants - Divines idylles
-                <br />
-                <span>Philharmonie Luxembourg, Grand Auditorium</span>
-              </p>
-              <button className={styles['schedule-button']}>
-                <a
-                  href="https://www.philharmonie.lu/en/programme/2025-26/william-christie-les-arts-florissants-000000e90019b320"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Tickets
-                </a>
-              </button>
-            </li>
-
-            <hr />
+            {upcomingConcerts.map((concert, index) => (
+              <>
+                <li key={concert.id} className={styles['list-element']}>
+                  <div className={styles['date-and-place']}>
+                    <p>
+                      {new Date(concert.date).getDate()}
+                      <br />
+                      {new Date(concert.date).toLocaleString('default', {
+                        month: 'long',
+                      })}
+                      <br />
+                      {new Date(concert.date).getFullYear() >
+                        today.getFullYear() &&
+                        `(${new Date(concert.date).getFullYear()})`}
+                    </p>
+                  </div>
+                  <p>
+                    {concert.title}
+                    <br />
+                    <span>{concert.venue}</span>
+                  </p>
+                  <button className={styles['schedule-button']}>
+                    {concert.ticketsUrl ? (
+                      <a
+                        href={concert.ticketsUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Tickets
+                      </a>
+                    ) : (
+                      'Pending'
+                    )}
+                  </button>
+                </li>
+                {index < upcomingConcerts.length - 1 && <hr />}
+              </>
+            ))}
           </ul>
+          <hr />
           <Link to="/agenda">
             <button className={styles['agendaButton']}>See all</button>
           </Link>
